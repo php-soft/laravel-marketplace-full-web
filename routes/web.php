@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ProductController@home');
+Route::get('admin', 'AdminController@admin');
+Route::get('update/product/{id}', 'AdminController@viewupdateProduct');
+
+Route::post('storeCategory', 'AdminController@storeCategory');
+Route::post('storeShop', 'AdminController@storeShop');
+Route::post('storeProduct', 'AdminController@storeProduct');
+Route::post('updateProduct', 'AdminController@updateProduct');
+

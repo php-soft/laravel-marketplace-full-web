@@ -23,7 +23,8 @@ class Addresses extends Migration
             $table->string('zip_code');
             $table->string('phone_number');
             $table->timestamps();    
-        }
+        });
+    }
 
     /**
      * Reverse the migrations.

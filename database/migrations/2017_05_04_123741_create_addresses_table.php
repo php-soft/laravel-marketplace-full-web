@@ -22,7 +22,7 @@ class Addresses extends Migration
             $table->string('street');
             $table->string('zip_code');
             $table->string('phone_number');
-            $table->timestamps();    
+            $table->timestamps();   
         });
     }
 

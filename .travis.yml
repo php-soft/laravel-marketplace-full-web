@@ -1,0 +1,16 @@
+language: php
+
+php:
+- 7.0
+
+before_script:
+  - composer self-update
+  - composer install
+
+script:
+  - ./vendor/bin/phpcs --standard=./phpcs.xml  --ignore=*.blade.php,*.config.php,*.twig.php,./vendor,./database,./storage,./bootstrap .
+  - ./vendor/bin/phpmd . text ./phpmd.xml --exclude vendor,database,storage,bootstrap,app/Console/Kernel,app/Exceptions/Handler
+
+notifications:
+  on_success: always
+  on_failure: always

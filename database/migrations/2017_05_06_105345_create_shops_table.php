@@ -23,7 +23,7 @@ class CreateShopsTable extends Migration
             $table->integer('country_id')->unsigned();
             $table->longText('description');
             $table->string('image');
-            $table->string('status');
+            $table->tinyInteger('status');
             $table->timestamps();
         });
     }

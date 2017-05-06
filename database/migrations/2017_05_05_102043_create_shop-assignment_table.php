@@ -13,7 +13,7 @@ class CreateShopAssignmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('shop-assignment', function (Blueprint $table) {
+        Schema::create('shop_assignments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('user_id')->unsigned();
@@ -30,6 +30,6 @@ class CreateShopAssignmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shop-assignment');
+        Schema::dropIfExists('shop_assignments');
     }
 }

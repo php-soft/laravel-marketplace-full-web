@@ -13,7 +13,8 @@ class CreateShopImageTable extends Migration
      */
     public function up()
     {
-        Schema::create('shop_images', function (Blueprint $table) {
+        Schema::create('shop_images', function (Blueprint $table) 
+        {
             $table->increments('id');
             $table->increments('shop_id');
             $table->string('image');

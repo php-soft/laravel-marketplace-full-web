@@ -29,5 +29,6 @@ class CreateShopImageTable extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('shop_images');    }
+         Schema::dropIfExists('shop_images');    
+    }
 }

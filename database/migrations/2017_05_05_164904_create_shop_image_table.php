@@ -15,7 +15,7 @@ class CreateShopImageTable extends Migration
     {
         Schema::create('shop_image', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('shop_id');
+            $table->unsignedInteger('shop_id');
             $table->string('image');
             $table->timestamps();
         });

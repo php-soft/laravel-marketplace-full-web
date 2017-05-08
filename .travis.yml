@@ -10,6 +10,11 @@ before_script:
 script:
   - ./vendor/bin/phpcs --standard=./phpcs.xml  --ignore=*.blade.php,*.config.php,*.twig.php,./vendor,./database,./storage,./bootstrap .
   - ./vendor/bin/phpmd . text ./phpmd.xml --exclude vendor,database,storage,bootstrap,app/Console/Kernel,app/Exceptions/Handler
+  - cp .env.example .env
+  - sed -i -e "s/^DB_CONNECTION.*/DB_CONNECTION=sqlite/"  .env
+  - sed -i -e "/^DB_DATABASE.*/d" .env
+  - php artisan key:generate
+  - php artisan migrate
 
 notifications:
   on_success: always

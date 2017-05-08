@@ -14,15 +14,15 @@ class Update2UsersTable extends Migration
     public function up()
     {
         Schema::table('users', function ($table) {
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('phone_number');
-            $table->date('date_of_birth');
-            $table->unsignedInteger('city_id');
-            $table->unsignedInteger('country_id');
-            $table->unsignedInteger('district_id');
-            $table->string('address');
-            $table->string('avatar');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->unsignedInteger('city_id')->nullable();
+            $table->unsignedInteger('country_id')->nullable();
+            $table->unsignedInteger('district_id')->nullable();
+            $table->string('address')->nullable();
+            $table->string('avatar')->nullable();
         });
     }
 

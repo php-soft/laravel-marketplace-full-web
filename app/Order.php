@@ -12,7 +12,7 @@ class Order extends Model
         'shipping_address',
         'shipping_phone',
         'shipping_email',
-        'couuntry_id',
+        'country_id',
         'city_id',
         'district_id',
         'status'

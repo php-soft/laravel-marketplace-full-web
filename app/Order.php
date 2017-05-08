@@ -30,4 +30,9 @@ class Order extends Model
     {
         return $this->belongsTo('App\City');
     }
+
+    public function orderProducts()
+    {
+        return $this->hasMany('App\OrderProduct');
+    }
 }

@@ -11,7 +11,7 @@ class ProductImage extends Model
         'image'
     ];
 
-    public function order()
+    public function product()
     {
         return $this->belongsTo('App\Product');
     }

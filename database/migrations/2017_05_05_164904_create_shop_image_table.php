@@ -10,7 +10,8 @@ class CreateShopImageTable extends Migration {
      *
      * @return void
      */
-    public function up() {
+    public function up() 
+    {
         Schema::create('shop_images', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('shop_id');
@@ -24,7 +25,8 @@ class CreateShopImageTable extends Migration {
      *
      * @return void
      */
-    public function down() {
+    public function down() 
+    {
         Schema::dropIfExists('shop_images');
     }
 }

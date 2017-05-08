@@ -34,7 +34,15 @@ class Update2UsersTable extends Migration
     public function down()
     {
         Schema::table('users', function ($table) {
-            $table->dropColumn('name');
+            $table->dropColumn('first_name');
+            $table->dropColumn('last_name');
+            $table->dropColumn('phone_number');
+            $table->dropColumn('date_of_birth');
+            $table->dropColumn('city_id');
+            $table->dropColumn('country_id');
+            $table->dropColumn('district_id');
+            $table->dropColumn('address');
+            $table->dropColumn('avatar');
         });
     }
 }

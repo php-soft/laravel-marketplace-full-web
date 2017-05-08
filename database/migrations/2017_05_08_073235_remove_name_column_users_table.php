@@ -13,7 +13,9 @@ class RemoveNameColumnUsersTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('users', function ($table) {
+            $table->dropColumn('name');
+        });
     }
 
     /**
@@ -23,8 +25,6 @@ class RemoveNameColumnUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function ($table) {
-            $table->dropColumn('name');
-        });
+        
     }
 }

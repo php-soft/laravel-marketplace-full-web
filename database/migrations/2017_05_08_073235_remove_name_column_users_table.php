@@ -25,6 +25,8 @@ class RemoveNameColumnUsersTable extends Migration
      */
     public function down()
     {
-        
+        Schema::table('users', function ($table) {
+            $table->string('name')->nullable();
+        });
     }
 }

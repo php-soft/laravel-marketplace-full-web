@@ -15,7 +15,7 @@ class CreateOrdersReferencesTable extends Migration
     {
         Schema::table('orders', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('contry_id')->references('id')->on('countries');
+            $table->foreign('country_id')->references('id')->on('countries');
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('district_id')->references('id')->on('districts');
         });

@@ -15,9 +15,6 @@ class CreateOrderProductReferencesTable extends Migration
     {
         Schema::table('order_products', function (Blueprint $table) {
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
-        });
-
-        Schema::table('order_products', function (Blueprint $table) {
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
@@ -29,8 +26,9 @@ class CreateOrderProductReferencesTable extends Migration
      */
     public function down()
     {
-        Schema::dropForeign('order_products_order_id_foreign');
-
-        Schema::dropForeign('order_products_product_id_foreign');
+        Schema::table('order_products', function (Blueprint $table) {
+            $table->dropForeign(['order_id']);
+            $table->dropForeign(['product_id']);
+        });
     }
 }

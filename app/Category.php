@@ -13,7 +13,7 @@ class Category extends Model
         return $this->belongsTo('App\Type');
     }
 
-    public function product()
+    public function products()
     {
         return $this->hasMany('App\Product');
     }

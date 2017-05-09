@@ -14,7 +14,7 @@ class UpdateCitiesTable extends Migration
     public function up()
     {
         Schema::table('cities', function ($table) {
-            $table->unsignedInteger('country_id ')->nullable();
+            $table->unsignedInteger('country_id')->nullable();
         });
     }
 

@@ -9,6 +9,6 @@ class Role extends Model
     protected $fillable = ['name', 'description'];
     public function assignments()
     {
-    	return $this->hasMany('app\Assignment');
+        return $this->hasMany('app\Assignment');
     }
 }

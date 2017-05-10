@@ -17,6 +17,11 @@ class Product extends Model
     {
         return $this->belongsTo('App\Shop');
     }
+    
+    public function orderProducts()
+    {
+        return $this->hasMany('App\OrderProduct');
+    }
 
     public function productImages()
     {

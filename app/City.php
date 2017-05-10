@@ -10,4 +10,14 @@ class City extends Model
     {
         return $this->hasMany('App\Order');
     }
+
+    public function districts()
+    {
+        return $this->hasMany('App\District');
+    }
+
+    public function country()
+    {
+        return $this->belongsTo('App\Country');
+    }
 }

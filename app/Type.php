@@ -9,8 +9,8 @@ class Type extends Model
     protected $fillable = [
     'name'
     ];
-    public function shop()
+    public function shops()
     {
-    	 return $this->belongsTo('App\Shop');
+    	 return $this->hasMany('App\Shop');
     }
 }

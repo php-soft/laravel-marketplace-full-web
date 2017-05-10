@@ -10,17 +10,16 @@ use App\Category;
 use App\Product;
 use App\Shop;
 
-
 class AdminController extends Controller
 {
     public function admin()
     {
-        $type_pluck=Type::pluck('name','id');
-        $category_pluck=Category::pluck('name','id');
-        $shop_pluck=Shop::pluck('name','id');
-        $category_all=Category::all();
-        $product_all=Product::all();
-        $type_all=Type::all();
+        $type_pluck = Type::pluck('name','id');
+        $category_pluck = Category::pluck('name','id');
+        $shop_pluck = Shop::pluck('name','id');
+        $category_all = Category::all();
+        $product_all = Product::all();
+        $type_all = Type::all();
         return view('admin')->with('type_pluck',$type_pluck)
                             ->with('category_pluck',$category_pluck)
                             ->with('shop_pluck',$shop_pluck)
@@ -40,5 +39,4 @@ class AdminController extends Controller
         Product::create(Input::all());
         return redirect('admin');
     }
-
 }

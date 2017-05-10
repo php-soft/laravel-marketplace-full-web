@@ -24,5 +24,4 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::post('storeProduct', 'AdminController@storeProduct');
     Route::post('storeCategory', 'AdminController@storeCategory');
-
 });

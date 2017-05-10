@@ -10,4 +10,14 @@ class Country extends Model
     {
         return $this->hasMany('App\Order');
     }
+
+    public function addresses()
+    {
+        return $this->hasMany('App\Address');
+    }
+
+    public function cities()
+    {
+        return $this->hasMany('App\City');
+    }
 }

@@ -7,25 +7,34 @@ use Illuminate\Database\Eloquent\Model;
 class Address extends Model
 {
     protected $fillable = [
-    'user_id',
-    'address', 
-    'street',
-    'district_id',
-    'city_id',
-    'country_id',
-    'phone_number',
-    'zip_code'
+
+        'user_id',
+        'city_id',
+        'country_id',
+        'district_id',
+        'street',
+        'zip_code',
+        'phone_number'
     ];
-    public function user(){ 
-      return $this->belongsTo('app\User'); 
-    }  
-    public function district(){ 
-      return $this->belongsTo('app\District'); 
+
+    public function user()
+    {
+        return $this->belongTo('App\User');
     }
-    public function city(){ 
-      return $this->belongsTo('app\City'); 
-    }  
-    public function country(){ 
-      return $this->belongsTo('app\Country'); 
-    } 
+
+    public function country()
+    {
+        return $this->belongsTo('App\Country');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo('App\City');
+    }
+
+    public function district()
+    {
+        return $this->belongsTo('App\District');
+    }
+
 }

@@ -10,4 +10,8 @@ class Type extends Model
     {
         return $this->hasMany('App\Category');
     }
+    public function shops()
+    {
+        return $this->hasMany('App\Shop');
+    }
 }

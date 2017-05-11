@@ -10,11 +10,11 @@
                 <div class="panel-body">
                     <table class="table table-hover">
                         @foreach($types as $type)
-                            <tr>
-                                <td>{{ $type->name }}</td>
-                                <td>{{ $type->created_at }}</td>
-                                <td>{{ $type->updated_at }}</td>
-                            </tr>
+                        <tr>
+                            <td>{{ $type->name }}</td>
+                            <td>{{ $type->created_at }}</td>
+                            <td>{{ $type->updated_at }}</td>
+                        </tr>
                         @endforeach
                     </table>
                 </div>

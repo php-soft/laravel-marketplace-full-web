@@ -13,7 +13,7 @@ class CreateReferencesShopassignmentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('shops_assignments', function (Blueprint $table) {
+        Schema::table('shop_assignments', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
@@ -27,7 +27,7 @@ class CreateReferencesShopassignmentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('shops_assignments', function (Blueprint $table) {
+        Schema::table('shop_assignments', function (Blueprint $table) {
             $table->dropForeign(['user_id','shop_id','role_id']);
         });
     }

@@ -10,4 +10,32 @@ class Shop extends Model
     {
         return $this->hasMany('App\Product');
     }
+    public function cities()
+    {
+        return $this->hasMany('App\City');
+    }
+    public function districts()
+    {
+        return $this->hasMany('App\District');
+    }
+    public function countries()
+    {
+        return $this->hasMany('App\Country');
+    }
+    public function types()
+    {
+        return $this->hasMany('App\Type');
+    }
+    public function shopImages()
+    {
+        return $this->hasMany('App\ShopImgae');
+    }
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
+    public function shopAssignment()
+    {
+        return $this->belongsTo('App\ShopAssignment');
+    }
 }

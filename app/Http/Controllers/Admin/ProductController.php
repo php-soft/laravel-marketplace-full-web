@@ -33,7 +33,7 @@ class ProductController extends Controller
     {
         $image=Input::get('image');
         $file=Input::file('image');
-        if(!empty($file)){
+        if (!empty($file)) {
             $destinationPath = 'images';
             Input::file('image')
                 ->move($destinationPath, $image.'.png');

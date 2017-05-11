@@ -45,6 +45,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('adminProducts') }}">Products</a></li>
                     </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ route('adminTypes') }}">Types</a></li>
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">

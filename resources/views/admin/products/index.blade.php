@@ -9,6 +9,16 @@
 
                 <div class="panel-body">
                     <table class="table table-hover">
+                            <tr>
+                                <td>Name</td>
+                                <td>Description</td>
+                                <td>Price</td>
+                                <td>Quantity</td>
+                                <td>Shop</td>
+                                <td>Category</td>
+                                <td>Created_at</td>
+                                <td>Updated_at</td>
+                            </tr>
                         @foreach($products as $product)
                             <tr>
                                 <td>{{ $product->name }}</td>
@@ -22,6 +32,7 @@
                             </tr>
                         @endforeach
                     </table>
+                    <a href="{{ route('adminProducts_create')}}">Create Products</a>
                 </div>
             </div>
         </div>

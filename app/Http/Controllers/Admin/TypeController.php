@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Type;
 use Illuminate\Http\Request;
 
-
 class TypeController extends Controller
 {
     /**
@@ -18,7 +17,7 @@ class TypeController extends Controller
     {
         {
             $this->data['types'] = Type::all();
-            return view('admin.types.index',$this->data);
+            return view('admin.types.index', $this->data);
         }
     }
 

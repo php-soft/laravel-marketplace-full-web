@@ -26,7 +26,7 @@ class Shop extends Model
     {
         return $this->hasMany('App\Type');
     }
-    public function shopimages()
+    public function shopImages()
     {
         return $this->hasMany('App\ShopImgae');
     }
@@ -34,7 +34,7 @@ class Shop extends Model
     {
         return $this->hasMany('App\User');
     }
-    public function shopassignment()
+    public function shopAssignment()
     {
         return $this->belongsTo('App\ShopAssignment');
     }

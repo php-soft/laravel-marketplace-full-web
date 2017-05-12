@@ -17,7 +17,12 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('admin.products.index')->with('products', $products);
+        $categories = Category::pluck('name', 'id');
+        $shops = Shop::pluck('name', 'id');
+        return view('admin.products.index')
+            ->with('products', $products)
+            ->with('categories', $categories)
+            ->with('shops', $shops);;
     }
 
     public function create()
@@ -29,17 +34,28 @@ class ProductController extends Controller
             ->with('shops', $shops);
     }
 
-    public function storeProduct()
+    public function store()
     {
         $image=Input::get('image');
         $file=Input::file('image');
         if (!empty($file)) {
-            $destinationPath = 'images';
+            $destinationPath = 'upload';
             Input::file('image')
                 ->move($destinationPath, $image.'.png');
         }
 
         Product::create(Input::all());
         return redirect('admin/products');
+    }
+
+    public function viewUpdate($id)
+    {
+        $product = Product::find($id);
+        $categories = Category::pluck('name', 'id');
+        $shops = Shop::pluck('name', 'id');
+        return view('admin.products.viewUpdate')
+            ->with('categories', $categories)
+            ->with('shops', $shops)
+            ->with('product', $product);
     }
 }

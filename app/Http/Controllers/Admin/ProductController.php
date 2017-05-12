@@ -20,9 +20,7 @@ class ProductController extends Controller
         $categories = Category::pluck('name', 'id');
         $shops = Shop::pluck('name', 'id');
         return view('admin.products.index')
-            ->with('products', $products)
-            ->with('categories', $categories)
-            ->with('shops', $shops);;
+            ->with('products', $products);
     }
 
     public function create()

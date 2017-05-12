@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index');
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin');
 
-    Route::get('/countries', 'CountryController@index');
+    Route::get('/countries', 'CountryController@index')->name('adminCountries');
 
     Route::get('/products', 'ProductController@index')->name('adminProducts');
 });

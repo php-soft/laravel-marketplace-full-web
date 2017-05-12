@@ -9,6 +9,6 @@ use Illuminate\Http\Request;
 class CityController extends Controller
 {
     public function index(){
-    	return "hello";
+    	return view('admin.cities.index')->with('cities', $cities);
     }
 }

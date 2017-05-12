@@ -12,16 +12,16 @@ class ShopAssignment extends Model
         'role_id'
     ];
 
-    public function users()
+    public function user()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsTo('App\User');
     }
-    public function roles()
+    public function role()
     {
-        return $this->hasMany('App\Role');
+        return $this->belongsTo('App\Role');
     }
-    public function shops()
+    public function shop()
     {
-        return $this->hasMany('App\Shop')
+        return $this->belongsTo('App\Shop');
     }
 }

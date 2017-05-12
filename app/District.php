@@ -20,4 +20,9 @@ class District extends Model
     {
         return $this->belongsTo('App\City');
     }
+
+    public function shops()
+    {
+        return $this->hasMany('App\Shop');
+    }
 }

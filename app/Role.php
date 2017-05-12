@@ -12,4 +12,9 @@ class Role extends Model
     {
         return $this->hasMany('app\Assignment');
     }
+
+    public function shop_assignments()
+    {
+        return $this->hasMany('App\ShopAssignment');
+    }
 }

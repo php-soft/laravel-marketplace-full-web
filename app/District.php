@@ -26,3 +26,4 @@ class District extends Model
         return $this->hasMany('App\Shop');
     }
 }
+ 

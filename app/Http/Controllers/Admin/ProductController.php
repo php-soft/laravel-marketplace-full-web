@@ -16,7 +16,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $shops = Shop::pluck('name', 'id');
+        $products = Product::all();
         return view('admin.products.index')
             ->with('products', $products);
     }

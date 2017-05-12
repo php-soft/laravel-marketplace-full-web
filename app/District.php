@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class District extends Model
 {
+    protected $fillable = ['name', 'city_id'];
+
     public function orders()
     {
         return $this->hasMany('App\Order');

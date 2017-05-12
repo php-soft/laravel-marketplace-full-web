@@ -10,4 +10,8 @@ class Type extends Model
     {
         return $this->hasMany('App\Category');
     }
+    public function shop()
+    {
+        retrun $this->belongTo('App\Shop')
+    }
 }

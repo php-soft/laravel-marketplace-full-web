@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShopAssignment extends Model
 {
-    protected $fillable = [
-        'shop_id',
-        'user_id',
-        'role_id'
-    ];
+    protected $fillable = ['shop_id', 'user_id', 'role_id'];
 
     public function user()
     {

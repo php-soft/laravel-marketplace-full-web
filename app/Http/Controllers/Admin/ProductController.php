@@ -44,14 +44,10 @@ class ProductController extends Controller
         return redirect('admin/products');
     }
 
-    public function viewUpdate($id)
+    public function delete($id)
     {
-        $product = Product::find($id);
-        $categories = Category::pluck('name', 'id');
-        $shops = Shop::pluck('name', 'id');
-        return view('admin.products.viewUpdate')
-            ->with('categories', $categories)
-            ->with('shops', $shops)
-            ->with('product', $product);
+        Product::destroy($id);
+        return redirect('admin/products');
     }
+
 }

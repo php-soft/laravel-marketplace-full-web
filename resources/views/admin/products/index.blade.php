@@ -24,14 +24,31 @@
                             <tr>
                                 <td>{{ $product->name }}</td>
                                 <td>
-                                    <a href="" onclick="myFunction()"><span class="glyphicon glyphicon-trash" >Delete</a>
-                                        <script>
-                                        function myFunction() {
-                                            var r = confirm("Do you sure you want to delete this item?");
-                                            if (r == true) {
-                                            }
-                                        }
-                                        </script>
+                                    <a href="" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-trash" >Delete</a>
+                                        <div id="myModal" class="modal fade" role="dialog">
+                                          <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Warning!</h4>
+                                              </div>
+                                              <div class="modal-body">
+                                                <p>Do you sure want to delete this product?</p><br>
+                                                <h4>{{$product->name}}</h4>
+
+                                              </div>
+                                              <div class="modal-footer">
+                                                <a href="{{ route('adminProducts_delete', ['id' => $product->id] ) }}"><button type="button" class="btn btn-danger">Yes</button></a>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+
+
                                     <a href="" >
                                         <span class="glyphicon glyphicon-leaf">Edit</span>
                                     </a>

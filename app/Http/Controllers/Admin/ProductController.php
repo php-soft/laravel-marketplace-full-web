@@ -33,10 +33,10 @@ class ProductController extends Controller
     public function store()
     {
         $image=Input::get('image');
-        $file=Input::file('image');
+        $file=Input::file('photo');
         if (!empty($file)) {
             $destinationPath = 'upload';
-            Input::file('image')
+            Input::file('photo')
                 ->move($destinationPath, $image.'.png');
         }
 
@@ -47,6 +47,31 @@ class ProductController extends Controller
     public function delete($id)
     {
         Product::destroy($id);
+        return redirect('admin/products');
+    }
+
+    public function viewUpdate($id)
+    {
+        $product = Product::find($id);
+        $categories = Category::pluck('name', 'id');
+        $shops = Shop::pluck('name', 'id');
+        return view('admin/products/viewUpdate')
+            ->with('product', $product)
+            ->with('categories', $categories)
+            ->with('shops', $shops);
+    }
+
+    public function update($id)
+    {
+        $image=Input::get('image');
+        $file=Input::file('photo');
+        if (!empty($file)) {
+            $destinationPath = 'upload';
+            Input::file('photo')
+                ->move($destinationPath, $image.'.png');
+        }
+        $product = Product::find($id);
+        $product->update(Input::all());
         return redirect('admin/products');
     }
 }

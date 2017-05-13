@@ -24,8 +24,7 @@
                             <tr>
                                 <td>{{ $product->name }}<img src="{{asset('upload/'.$product->image.'.png')}}" style="width: 100px;"></td>
                                 <td>
-                                    <a href="" ><span class="glyphicon glyphicon-trash" >Delete</a>
-
+                                    <a href="{{ route('adminProducts_delete', ['id' => $product->id] ) }}" ><span class="glyphicon glyphicon-trash" >Delete</a>
 
                                     <a href="{{ route('adminProducts_viewUpdate', ['id' => $product->id] ) }}" >
                                     <span class="glyphicon glyphicon-leaf" >Edit</span>

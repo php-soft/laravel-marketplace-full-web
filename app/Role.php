@@ -13,7 +13,7 @@ class Role extends Model
         return $this->hasMany('app\Assignment');
     }
 
-    public function shop_assignments()
+    public function shopAssignments()
     {
         return $this->hasMany('App\ShopAssignment');
     }

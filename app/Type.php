@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type extends Model
 {
+    protected $fillable = [
+        'name',
+
     public function categories()
     {
         return $this->hasMany('App\Category');
     }
-    public function shop()
+    public function shops()
     {
-        retrun $this->belongTo('App\Shop')
+        retrun $this->hasMany('App\Shop')
     }
 }

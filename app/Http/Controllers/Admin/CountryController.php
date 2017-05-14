@@ -32,4 +32,17 @@ class CountryController extends Controller
         Country::destroy($id);
         return redirect('admin/countries');
     }
+
+    public function update($id)
+    {
+        $country = Country::find($id);
+        return view('admin.countries.edit')->with('country', $country);
+    }
+
+    public function updateCountry($id)
+    {
+        $country = Country::find($id);
+        $country->update(Input::all());
+        return redirect('admin/countries');
+    }
 }

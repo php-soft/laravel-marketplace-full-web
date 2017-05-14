@@ -22,7 +22,7 @@
                             </tr>
                         @foreach($products as $product)
                             <tr>
-                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->name }}<img src="{{asset('upload/'.$product->image.'.png')}}" style="width: 100px;"></td>
                                 <td>
                                     <a href="" data-toggle="modal" data-target="{{"#".$product->id}}"><span class="glyphicon glyphicon-trash" >Delete</a>
                                         <div id="{{$product->id}}" class="modal fade" role="dialog">

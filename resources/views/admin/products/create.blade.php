@@ -16,7 +16,7 @@
                             </tr>
                             <tr>
                                 <td>Image</td>
-                                <td>{{Form::file('image')}}</td>
+                                <td>{{Form::file('photo')}}</td>
                             </tr>
                             <tr>
                                 <td>Code:</td>

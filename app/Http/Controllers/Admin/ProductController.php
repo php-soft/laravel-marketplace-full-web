@@ -9,7 +9,7 @@ use App\Product;
 use App\Shop;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
-
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -33,10 +33,10 @@ class ProductController extends Controller
     public function store()
     {
         $image=Input::get('image');
-        $file=Input::file('image');
+        $file=Input::file('photo');
         if (!empty($file)) {
             $destinationPath = 'upload';
-            Input::file('image')
+            Input::file('photo')
                 ->move($destinationPath, $image.'.png');
         }
 
@@ -46,6 +46,11 @@ class ProductController extends Controller
 
     public function delete($id)
     {
+        $product = Product::find($id);
+        $image_path = "upload/$product->image.png";
+        if (File::exists($image_path)) {
+            unlink($image_path);
+        }
         Product::destroy($id);
         return redirect('admin/products');
     }

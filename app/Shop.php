@@ -6,33 +6,45 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shop extends Model
 {
+    protected $fillable = [
+        'name',
+        'user_id',
+        'type_id',
+        'city_id',
+        'district_id',
+        'country_id',
+        'description',
+        'image',
+        'status'
+    ];
+
     public function products()
     {
         return $this->hasMany('App\Product');
     }
-    public function cities()
+    public function city()
     {
-        return $this->hasMany('App\City');
+        return $this->belongsTo('App\City');
     }
-    public function districts()
+    public function district()
     {
-        return $this->hasMany('App\District');
+        return $this->belongsTo('App\District');
     }
-    public function countries()
+    public function country()
     {
-        return $this->hasMany('App\Country');
+        return $this->belongsTo('App\Country');
     }
-    public function types()
+    public function type()
     {
-        return $this->hasMany('App\Type');
+        return $this->belongsTo('App\Type');
     }
     public function shopImages()
     {
         return $this->hasMany('App\ShopImgae');
     }
-    public function users()
+    public function user()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsTo('App\User');
     }
     public function shopAssignment()
     {

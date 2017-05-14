@@ -26,4 +26,10 @@ class CountryController extends Controller
         Country::create(Input::all());
         return redirect('admin/countries/');
     }
+
+    public function destroy($id)
+    {
+        Country::destroy($id);
+        return redirect('admin/countries');
+    }
 }

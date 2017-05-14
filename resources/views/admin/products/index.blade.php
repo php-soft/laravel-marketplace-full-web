@@ -24,8 +24,8 @@
                             <tr>
                                 <td>{{ $product->name }}</td>
                                 <td>
-                                    <a href="" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-trash" >Delete</a>
-                                        <div id="myModal" class="modal fade" role="dialog">
+                                    <a href="" data-toggle="modal" data-target="{{"#".$product->id}}"><span class="glyphicon glyphicon-trash" >Delete</a>
+                                        <div id="{{$product->id}}" class="modal fade" role="dialog">
                                           <div class="modal-dialog">
 
                                             <!-- Modal content-->

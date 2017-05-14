@@ -8,6 +8,7 @@ class Type extends Model
 {
     protected $fillable = [
         'name',
+    ];
 
     public function categories()
     {
@@ -15,6 +16,6 @@ class Type extends Model
     }
     public function shops()
     {
-        retrun $this->hasMany('App\Shop')
+        return $this->hasMany('App\Shop')
     }
 }

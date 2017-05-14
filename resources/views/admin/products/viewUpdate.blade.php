@@ -47,7 +47,7 @@
                             <tr>
                                 <td></td>
                                 <td>{{Form::submit('Update')}}
-                                <a href="{{ route('adminProducts')}}"><button>Cancel</button></a>
+                                <a href="{{ route('adminProducts')}}" style="display: inline-block;background: #acacac;width: 75px;border: 1px solid #f8f8f8;text-decoration:none;text-align: center;padding: .2em">Cancel</a>
                                 </td>
                             </tr>
                         </table>

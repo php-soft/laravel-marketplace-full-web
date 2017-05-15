@@ -13,6 +13,6 @@ class ShopImage extends Model
     
     public function shop()
     {
-        retrun $this->belongsTo('App\Shop');
+        return $this->belongsTo('App\Shop');
     }
 }

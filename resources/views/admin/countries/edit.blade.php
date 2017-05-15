@@ -9,18 +9,11 @@
 
                 <div class="panel-body">
                     {{Form::open(['url'=>'admin/updateCountry/'.$country->id, 'method' => 'put'])}}
-                        <table class="table table-hover">
-                            <tr>
-                                <td>Country Name:</td>
-                                <td>{{ Form::text('name', $country->name) }}</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>{{Form::submit('Update')}}
-                                <a href="{{ route('adminCountries')}}"><button>Cancel</button></a>
-                                </td>
-                            </tr>
-                        </table>
+                        Country Name:
+                        {{ Form::text('name', $country->name) }}
+                        
+                        {{Form::submit('Update')}}
+                        <a href="{{ route('adminCountries')}}">Cancel</a>
                     {{Form::close()}}
                 </div>
             </div>

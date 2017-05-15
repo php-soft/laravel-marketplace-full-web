@@ -23,4 +23,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin');
 
     Route::get('/products', 'ProductController@index')->name('adminProducts');
+
+    Route::get('/types', 'TypeController@index')->name('adminTypes');
 });

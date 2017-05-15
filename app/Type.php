@@ -12,6 +12,6 @@ class Type extends Model
     }
     public function shop()
     {
-        retrun $this->belongTo('App\Shop')
+        return $this->belongTo('App\Shop');
     }
 }

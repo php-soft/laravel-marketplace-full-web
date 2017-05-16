@@ -14,9 +14,9 @@
 
                         {{ Form::text('name') }}
 
-                        Country_id:
+                        {{-- Country_id:
 
-                        {{ Form::select('country_id', $countries)}}
+                        {{ Form::select('country_id', $countries)}} --}}
 
                         {{Form::submit('Create')}}
                     {{Form::close()}}

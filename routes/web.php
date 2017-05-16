@@ -23,6 +23,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin');
 
     Route::get('/products', 'ProductController@index')->name('adminProducts');
-    Route::get('/products/create', 'ProductController@create')->name('adminProducts_create');
-    Route::post('/storeProduct', 'ProductController@storeProduct');
+    Route::get('/products/create', 'ProductController@create')->name('adminProductsCreate');
+    Route::post('/products', 'ProductController@store')->name('adminProducts');
+    
+    Route::get('/categories', 'CategoryController@index')->name('adminCategories');
+
+    Route::get('/countries', 'CountryController@index')->name('adminCountries');
+    Route::get('/countries/create', 'CountryController@create')->name('adminCountriesCreate');
+    Route::post('/countries', 'CountryController@store')->name('adminCountries');
+
 });

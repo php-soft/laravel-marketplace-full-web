@@ -43,7 +43,45 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('adminProducts') }}">Products</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">System <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Roles</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Users</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Assignments</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('adminCountries') }}">Countries</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Cities</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Districts</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Types</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('adminCategories') }}">Categories</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Market <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Shops</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Shop Assignments</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('adminProducts') }}">Products</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Orders</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

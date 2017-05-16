@@ -9,7 +9,11 @@
         "doctrine/dbal": "^2.5",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+<<<<<<< HEAD
         "laravelcollective/html": "^5.3.0"
+=======
+        "laravelcollective/html": "^5.4"
+>>>>>>> ecacfe6bc58b10eae24241923241396453f3ebfa
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -8,46 +8,43 @@
                 <div class="panel-heading">Create products</div>
 
                 <div class="panel-body">
-                    {{Form::open(['url'=>'admin/storeProduct','files' => true])}}
-                        <table class="table table-hover">
-                            <tr>
-                                <td>Product Name:</td>
-                                <td>{{ Form::text('name') }}</td>
-                            </tr>
-                            <tr>
-                                <td>Image</td>
-                                <td>{{Form::file('image')}}</td>
-                            </tr>
-                            <tr>
-                                <td>Code:</td>
-                                <td>{{ Form::text('image') }}</td>
-                            </tr>
-                            <tr>
-                                <td>Description:</td>
-                                <td>{{ Form::textarea('description') }}</td>
-                            </tr>
-                            <tr>
-                                <td>Price:</td>
-                                <td>{{ Form::text('price') }}</td>
-                            </tr>
-                            <tr>
-                                <td>Quantity:</td>
-                                <td>{{ Form::text('quantity') }}</td>
-                            </tr>
-                            <tr>
-                                <td>Category:</td>
-                                <td>{{ Form::select('category_id',$categories)}}</td>
-                            </tr>
-                            <tr>
-                                <td>Shop:</td>
-                                <td>{{ Form::select('shop_id',$shops)}}</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>{{Form::submit('Add')}}</td>
-                            </tr>
-                        </table>
-                    {{Form::close()}}
+                    {{Form::open(['url'=>'admin/products', 'files' => true])}}
+                        <div class="form-group">
+                            {!! Form::label('name', 'Product Name:') !!}
+                            <div class="form-controls">
+                                {{ Form::text('name', null, ['class'=>'form-control']) }}
+                            </div>
+                            {!! Form::label('photo', 'Image:') !!}
+                            <div class="form-controls">
+                                {{ Form::file('photo', null, ['class'=>'form-control']) }}
+                            </div>
+                            {!! Form::label('image', 'Code:') !!}
+                            <div class="form-controls">
+                                {{ Form::text('image', null, ['class'=>'form-control']) }}
+                            </div>
+                            {!! Form::label('description', 'Description:') !!}
+                            <div class="form-controls">
+                                {{ Form::textarea('description', null, ['class'=>'form-control']) }}
+                            </div>
+                            {!! Form::label('price', 'Price:') !!}
+                            <div class="form-controls">
+                                {{ Form::text('price', null, ['class'=>'form-control']) }}
+                            </div>
+                            {!! Form::label('quantity', 'Quantity:') !!}
+                            <div class="form-controls">
+                                {{ Form::text('quantity', null, ['class'=>'form-control']) }}
+                            </div>
+                            {!! Form::label('category_id', 'Category:') !!}
+                            <div class="form-controls">
+                                {{ Form::select('category_id',$categories, null, ['class'=>'form-control']) }}
+                            </div>
+                            {!! Form::label('shop_id', 'Shop:') !!}
+                            <div class="form-controls">
+                                {{ Form::select('shop_id',$shops, null, ['class'=>'form-control']) }}
+                            </div>
+                        </div>
+                    {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>

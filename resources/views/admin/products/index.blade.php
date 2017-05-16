@@ -6,10 +6,11 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">List of products</div>
-
+                <div class="panel-heading pull-right"><a href="{{ route('adminProductsCreate') }}"><button class="btn btn-primary ">Create</button></a></div>
                 <div class="panel-body">
-                    <table class="table table-hover">
+                    <table class="table table-striped">
                             <tr>
+                                <td>#</td>
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Price</td>
@@ -21,9 +22,10 @@
                             </tr>
                         @foreach($products as $product)
                             <tr>
+                                <td>{{ $product->id }}</td>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->description }}</td>
-                                <td>{{ $product->price }}</td>
+                                <td>{{ number_format($product->price) }}</td>
                                 <td>{{ $product->quantity }}</td>
                                 <td>{{ $product->shop['name'] }}</td>
                                 <td>{{ $product->category['name'] }}</td>
@@ -32,7 +34,6 @@
                             </tr>
                         @endforeach
                     </table>
-                    <a href="{{ route('adminProducts_create')}}">Create Products</a>
                 </div>
             </div>
         </div>

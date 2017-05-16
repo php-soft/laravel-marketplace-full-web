@@ -29,13 +29,13 @@ class ProductController extends Controller
             ->with('shops',$shops);
     }
 
-    public function storeProduct()
+    public function store()
     {
         $image=Input::get('image');
-        $file=Input::file('image');
+        $file=Input::file('photo');
         if(!empty($file)) {
             $destinationPath = 'images';
-            Input::file('image')
+            Input::file('photo')
                 ->move($destinationPath,$image.'.png');
         }
 

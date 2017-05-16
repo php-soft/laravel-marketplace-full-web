@@ -24,7 +24,7 @@ class CategoryController extends Controller
 
     public function store()
     {
-        $categories=Category::create(Input::all());
+        $categories = Category::create(Input::all());
         $categories = Category::all();
         return view('admin.categories.index')->with('categories', $categories);
     }

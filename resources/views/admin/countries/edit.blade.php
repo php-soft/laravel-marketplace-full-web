@@ -9,13 +9,13 @@
 
                 <div class="panel-body">
                     {{Form::open(['url'=>'admin/updateCountry/'.$country->id, 'method' => 'put'])}}
-                    <div class="form-group">
-                        {!! Form::label('name', 'Country Name:') !!}
-                        <div class="form-controls">
-                             {{ Form::text('name', $country->name, ['class'=>'form-control']) }}
+                        <div class="form-group">
+                            {!! Form::label('name', 'Country Name:') !!}
+                            <div class="form-controls">
+                                {{ Form::text('name', $country->name, ['class'=>'form-control']) }}
+                            </div>
                         </div>
-                    </div>
-                        {{Form::submit('Update')}}
+                            {{Form::submit('Update')}}
                         <a href="{{ route('adminCountries')}}">Cancel</a>
                     {{Form::close()}}
                 </div>

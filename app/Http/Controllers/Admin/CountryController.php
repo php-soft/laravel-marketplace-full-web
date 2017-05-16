@@ -23,19 +23,19 @@ class CountryController extends Controller
     public function store()
     {
         Country::create(Input::all());
-        return redirect('admin/countries');
+        return redirect()->route('adminCountries');
     }
 
     public function update($id)
     {
-        $country = Country::find($id);
+        $country = Country::findOrFail($id);
         return view('admin.countries.edit')->with('country', $country);
     }
 
     public function updateCountry($id)
     {
-        $country = Country::find($id);
+        $country = Country::findOrFail($id);
         $country->update(Input::all());
-        return redirect('admin/countries');
+        return redirect()->route('adminCountries');
     }
 }

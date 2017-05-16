@@ -9,14 +9,14 @@
                 <div class="panel-heading">Create Countries</div>
 
                 <div class="panel-body">
-                    {{Form::open(['url'=>'admin/countries'])}}
+                    {{ Form::open(['url'=>'admin/countries']) }}
                     <div class="form-group">
-                        {!!Form::label('name', 'Country Name:')!!}
+                        {!! Form::label('name', 'Country Name:') !!}
                     </div>
                     <div class="form-controls">
                         {{ Form::text('name') }}
                     </div><br>
-                        {{Form::submit('Create')}}
+                        {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}
                     {{Form::close()}}
                 </div>
             </div>

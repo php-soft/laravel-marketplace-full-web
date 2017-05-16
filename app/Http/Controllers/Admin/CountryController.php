@@ -17,8 +17,7 @@ class CountryController extends Controller
 
     public function create()
     {
-        $countries = Country::all();
-        return view('admin.countries.create')->with('countries', $countries);
+        return view('admin.countries.create');
     }
 
     public function store()

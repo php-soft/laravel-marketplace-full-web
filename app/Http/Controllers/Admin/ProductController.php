@@ -7,7 +7,7 @@ use App\Type;
 use App\Category;
 use App\Product;
 use App\Shop;
-use Illuminate\Support\Facades\Input;
+use Input;
 
 use Illuminate\Http\Request;
 

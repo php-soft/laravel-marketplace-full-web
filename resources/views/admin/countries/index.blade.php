@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">List of countries
-                <div class="panel-heading"><a href="{{ route('adminCountries_create') }}"><button class="btn btn-primary">Create</button></a></div>
+                <div class="panel-heading"><a href="{{ route('adminCountriesCreate') }}"><button class="btn btn-primary">Create</button></a></div>
                 </div>
 
                 <div class="panel-body">

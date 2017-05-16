@@ -14,4 +14,16 @@ class CountryController extends Controller
         $countries = Country::all();
         return view('admin.countries.index')->with('countries', $countries);
     }
+
+    public function create()
+    {
+        $countries = Country::all();
+        return view('admin.countries.create')->with('countries', $countries);
+    }
+
+    public function store()
+    {
+        Country::create(Input::all());
+        return redirect('admin/countries');
+    }
 }

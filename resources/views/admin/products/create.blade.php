@@ -14,10 +14,6 @@
                             <div class="form-controls">
                                 {{ Form::text('name', null, ['class'=>'form-control']) }}
                             </div>
-                            {!! Form::label('photo', 'Image:') !!}
-                            <div class="form-controls">
-                                {{ Form::file('photo', null, ['class'=>'form-control']) }}
-                            </div>
                             {!! Form::label('image', 'Code:') !!}
                             <div class="form-controls">
                                 {{ Form::text('image', null, ['class'=>'form-control']) }}

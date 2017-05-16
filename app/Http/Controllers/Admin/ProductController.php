@@ -31,14 +31,6 @@ class ProductController extends Controller
 
     public function store()
     {
-        $image=Input::get('image');
-        $file=Input::file('photo');
-        if (!empty($file)) {
-            $destinationPath = 'images';
-            Input::file('photo')
-                ->move($destinationPath, $image.'.png');
-        }
-
         Product::create(Input::all());
         return redirect('admin/products');
     }

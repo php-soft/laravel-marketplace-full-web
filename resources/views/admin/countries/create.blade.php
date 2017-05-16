@@ -10,12 +10,12 @@
 
                 <div class="panel-body">
                     {{ Form::open(['url'=>'admin/countries']) }}
-                    <div class="form-group">
-                        {!! Form::label('name', 'Country Name:') !!}
-                    </div>
-                    <div class="form-controls">
-                        {{ Form::text('name') }}
-                    </div><br>
+                        <div class="form-group">
+                            {!! Form::label('name', 'Country Name:') !!}
+                            <div class="form-controls">
+                                {{ Form::text('name', null, ['class'=>'form-control']) }}
+                            </div>
+                        </div>
                         {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}
                     {{Form::close()}}
                 </div>

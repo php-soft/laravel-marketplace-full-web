@@ -19,8 +19,8 @@
                         <tbody>
                         @foreach($categories as $category)
                             <tr class="odd gradeX" align="center">
-                                <td><a href="categories/show/{{$category->id}}">{{ $category->name }}</a></td>
-                                <td><a href="types">{{ $category->type->name }}</a></td>
+                                <td>{{ $category->name }}</td>
+                                <td>{{ $category->type->name }}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="categories/edit/{{$category->id}}">Edit</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="categories/delete/{{$category->id}}">Delete</a></td>
                             </tr>

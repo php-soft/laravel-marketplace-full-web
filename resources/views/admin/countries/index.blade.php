@@ -15,7 +15,7 @@
                             <tr>
                                 <td>{{ $country->name }}</td>
                                 <td>
-                                    <a href="{{ route('adminCountriesUpdate', ['id' => $country->id] ) }}"><button class="btn btn-info">Edit</button></a>
+                                    <a href="{{ route('adminCountriesEdit', ['id' => $country->id] ) }}"><button class="btn btn-info">Edit</button></a>
                                 </td>
                             </tr>
                         @endforeach

@@ -25,4 +25,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/products', 'ProductController@index')->name('adminProducts');
 
     Route::get('/categories', 'CategoryController@index')->name('adminCategory');
+
+    Route::get('/countries', 'CountryController@index')->name('adminCountries');
+
 });

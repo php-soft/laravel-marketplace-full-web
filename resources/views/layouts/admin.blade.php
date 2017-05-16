@@ -44,12 +44,43 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">System <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('adminProducts') }}">Products</a></li>
+                                <li><a href="#">Roles</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="{{ route('adminCategory') }}">Categories</a></li>
+                                <li><a href="#">Users</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Assignments</a></li>
                             </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('adminCountries') }}">Countries</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Cities</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Districts</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Types</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Categories</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Market <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Shops</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Shop Assignments</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Products</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Orders</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact </a>
                         </li>
                     </ul>
 

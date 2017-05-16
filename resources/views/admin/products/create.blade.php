@@ -8,7 +8,7 @@
                 <div class="panel-heading">Create products</div>
 
                 <div class="panel-body">
-                    {{Form::open(['url'=>'admin/products', 'files' => true])}}
+                    {{Form::open(['route'=>'adminProductsStore', 'files' => true])}}
                         <div class="form-group">
                             {!! Form::label('name', 'Product Name:') !!}
                             <div class="form-controls">

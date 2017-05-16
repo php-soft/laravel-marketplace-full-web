@@ -10,17 +10,10 @@
 
                 <div class="panel-body">
                     {{Form::open(['url'=>'admin/countries'])}}
-                        <table class="table table-hover">
-                            <tr>
-                                <td>Country Name:</td>
-                                <td>{{ Form::text('name') }}</td>
-                            </tr>
-
-                            <tr>
-                                <td></td>
-                                <td>{{Form::submit('Create')}}</td>
-                           </tr>
-                        </table>
+                        Country Name:
+                        {{ Form::text('name') }}
+                        
+                        {{Form::submit('Create')}}
                     {{Form::close()}}
                 </div>
             </div>

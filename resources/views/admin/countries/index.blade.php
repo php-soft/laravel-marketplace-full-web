@@ -12,12 +12,6 @@
                         @foreach($countries as $country)
                             <tr>
                                 <td>{{ $country->name }}</td>
-                                <td>
-                                    <a href="{{ route('adminCountries_update', ['id' => $country->id] ) }}"><span class="glyphicon glyphicon-trash" ><button type="button">Edit</button></a>
-                                </td>
-                                <td>
-                                    <a href="{{ route('adminCountries_delete', ['id' => $country->id] ) }}" ><span class="glyphicon glyphicon-trash" ><button type="button">Delete</button></a>
-                                </td>
                             </tr>
                         @endforeach
                     </table>

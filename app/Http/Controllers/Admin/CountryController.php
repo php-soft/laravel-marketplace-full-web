@@ -14,35 +14,4 @@ class CountryController extends Controller
         $countries = Country::all();
         return view('admin.countries.index')->with('countries', $countries);
     }
-
-    public function create()
-    {
-        $countries = Country::all();
-        return view('admin.countries.create')->with('countries', $countries);
-    }
-
-    public function store()
-    {
-        Country::create(Input::all());
-        return redirect('admin/countries/');
-    }
-
-    public function destroy($id)
-    {
-        Country::destroy($id);
-        return redirect('admin/countries');
-    }
-
-    public function update($id)
-    {
-        $country = Country::find($id);
-        return view('admin.countries.edit')->with('country', $country);
-    }
-
-    public function updateCountry($id)
-    {
-        $country = Country::find($id);
-        $country->update(Input::all());
-        return redirect('admin/countries');
-    }
 }

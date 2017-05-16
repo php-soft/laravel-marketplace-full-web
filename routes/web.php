@@ -27,5 +27,4 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/categories', 'CategoryController@index')->name('adminCategory');
 
     Route::get('/countries', 'CountryController@index')->name('adminCountries');
-
 });

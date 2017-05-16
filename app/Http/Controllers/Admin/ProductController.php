@@ -7,7 +7,6 @@ use App\Type;
 use App\Category;
 use App\Product;
 use App\Shop;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
 use Illuminate\Http\Request;

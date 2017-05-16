@@ -46,6 +46,10 @@
                         <li><a href="{{ route('adminProducts') }}">Products</a></li>
                     </ul>
 
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ route('adminCountries') }}">Countries</a></li>
+                    </ul>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->

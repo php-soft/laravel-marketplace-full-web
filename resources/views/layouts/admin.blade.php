@@ -64,7 +64,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Types</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="{{ route('adminCategory') }}">Categories</a></li>
+                                <li><a href="{{ route('adminCategories') }}">Categories</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

@@ -64,7 +64,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Types</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Categories</a></li>
+                                <li><a href="{{ route('adminCategory') }}">Categories</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -74,7 +74,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Shop Assignments</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Products</a></li>
+                                <li><a href="{{ route('adminProducts') }}">Products</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Orders</a></li>
                             </ul>

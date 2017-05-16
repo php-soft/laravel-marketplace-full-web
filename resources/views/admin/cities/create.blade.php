@@ -19,7 +19,9 @@
                         {{ Form::select('country_id', $countries)}}
 
                         {{Form::submit('Create')}}
+                        
                     {{Form::close()}}
+
                 </div>
             </div>
         </div>

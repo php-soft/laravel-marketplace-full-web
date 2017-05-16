@@ -20,6 +20,7 @@ class CityController extends Controller
     {
         $cities = City::all();
         return view('admin.cities.create')->with('cities', $cities);
+        
     }
     
 }

@@ -14,6 +14,7 @@
                                 <td>{{ $city->name }}</td>
                                 <td>{{ $city->created_at }}</td>
                                 <td>{{ $city->updated_at }}</td>
+                                
                             </tr>
                         @endforeach
                     </table>

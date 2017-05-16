@@ -31,6 +31,6 @@ class ProductController extends Controller
     public function store()
     {
         Product::create(Input::all());
-        return redirect('admin/products');
+        return redirect()->route('adminProducts');
     }
 }

@@ -19,6 +19,7 @@ class CityController extends Controller
     {
         return view('admin.cities.create');
     }
+    
     public function store()
     {
         City::create(Input::all());

@@ -10,14 +10,9 @@
                 </div>
 
                 <div class="panel-body">
-                    <table class="table table-hover">
+                    <ul class="list-group">                        
                         @foreach($cities as $city)
-                            <tr>
-                                <td>{{ $city->name }}</td>
-                                <td>
-                                    <a href="{{ route('adminCitiesUpdate', ['id' => $city->id] ) }}"><button class="btn btn-info">Edit</button></a>
-                                </td>
-                            </tr>
+                            <li class="list-group-item">{{ $city->name }}</li>
                         @endforeach
                     </table>
                 </div>

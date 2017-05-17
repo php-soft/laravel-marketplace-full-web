@@ -26,16 +26,5 @@ class CountryController extends Controller
         return redirect()->route('adminCountries');
     }
 
-    public function update($id)
-    {
-        $country = Country::findOrFail($id);
-        return view('admin.countries.edit')->with('country', $country);
-    }
-
-    public function updateCountry($id)
-    {
-        $country = Country::findOrFail($id);
-        $country->update(Input::all());
-        return redirect()->route('adminCountries');
-    }
+    
 }

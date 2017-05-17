@@ -24,7 +24,7 @@ class CategoryController extends Controller
 
     public function store()
     {
-        $categories=Category::create(Input::all());
+        Category::create(Input::all());
         return redirect('admin/categories');
     }
 }

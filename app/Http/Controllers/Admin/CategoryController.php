@@ -27,4 +27,18 @@ class CategoryController extends Controller
         Category::create(Input::all());
         return redirect()->route('adminCategories');
     }
+
+    public function edit($id)
+    {
+        $categories = Category::findOrFail($id);
+        $types = Type::pluck('name', 'id');
+        return view('admin.categories.edit')->with('categories', $categories)->with('types', $types);
+    }
+
+    public function update($id)
+    {
+        $categories = Category::findOrFail($id);
+        $categories->update(Input::all());
+        return redirect()->route('adminCategories');
+    }
 }

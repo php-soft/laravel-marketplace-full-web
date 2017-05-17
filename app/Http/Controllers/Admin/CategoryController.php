@@ -16,9 +16,9 @@ class CategoryController extends Controller
         return view('admin.categories.index')->with('categories', $categories);
     }
 
-        public function create()
+    public function store()
     {
-        $types = Type::pluck('name', 'id');
-        return view('admin.categories.create')->with('types', $types);
+        Category::create(Input::all());
+        return redirect('admin/categories');
     }
 }

@@ -15,4 +15,10 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view('admin.categories.index')->with('categories', $categories);
     }
+
+        public function create()
+    {
+        $types = Type::pluck('name', 'id');
+        return view('admin.categories.create')->with('types', $types);
+    }
 }

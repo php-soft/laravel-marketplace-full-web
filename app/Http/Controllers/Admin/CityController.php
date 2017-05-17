@@ -18,7 +18,7 @@ class CityController extends Controller
 
     public function create()
     {
-    	$countries = Country::pluck('name', 'id');
+    	$countries = Country::pluck('name','id');
         return view('admin.cities.create')->with('countries', $countries);
     }
 

@@ -58,7 +58,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('adminCountries') }}">Countries</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Cities</a></li>
+                                <li><a href="{{ route('adminCities') }}">Cities</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Districts</a></li>
                                 <li role="separator" class="divider"></li>

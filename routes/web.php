@@ -31,4 +31,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/countries', 'CountryController@store')->name('adminCountriesStore');
     Route::get('/countries/{id}/edit', 'CountryController@edit')->name('adminCountriesEdit');
     Route::put('/countries/{id}', 'CountryController@update')->name('adminCountriesUpdate');
+    Route::get('/countries/{id}/delete', 'CountryController@destroy')->name('adminCountriesDelete');
 });

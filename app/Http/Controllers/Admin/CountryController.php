@@ -38,4 +38,10 @@ class CountryController extends Controller
         $country->update(Input::all());
         return redirect()->route('adminCountries');
     }
+
+    public function destroy($id)
+    {
+        Country::destroy($id);
+        return redirect()->route('adminCountries');
+    }
 }

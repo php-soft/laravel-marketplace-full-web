@@ -30,15 +30,15 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-        $categories = Category::findOrFail($id);
+        $category = Category::findOrFail($id);
         $types = Type::pluck('name', 'id');
-        return view('admin.categories.edit')->with('categories', $categories)->with('types', $types);
+        return view('admin.categories.edit')->with('category', $category)->with('types', $types);
     }
 
     public function update($id)
     {
-        $categories = Category::findOrFail($id);
-        $categories->update(Input::all());
+        $category = Category::findOrFail($id);
+        $category->update(Input::all());
         return redirect()->route('adminCategories');
     }
 }

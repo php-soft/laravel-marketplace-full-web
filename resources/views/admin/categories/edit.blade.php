@@ -8,11 +8,11 @@
                 <div class="panel-heading">Update Category</div>
 
                 <div class="panel-body">
-                    {{ Form::open(['route' => ['adminCategoriesUpdate', $categories->id], 'method' => 'put']) }}
+                    {{ Form::model($category, ['route' => ['adminCategoriesUpdate', $category->id], 'method' => 'put']) }}
                         <div class="form-group">
                             {!! Form::label('name', 'Category Name') !!}
                             <div class="form-controls">
-                                {{ Form::text('name', $categories->name, ['class'=>'form-control']) }}
+                                {{ Form::text('name', $category->name, ['class'=>'form-control']) }}
                             </div>
                         </div>
                         <div class="form-group">

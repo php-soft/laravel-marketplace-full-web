@@ -5,23 +5,32 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">List of countries
-                <div class="panel-heading"><a href="{{ route('adminCountriesCreate') }}"><button class="btn btn-primary">Create</button></a></div>
+                <div class="panel-heading">
+                    List of countries
+                    <div class="pull-right"><a href="{{ route('adminCountriesCreate') }}"><button class="btn btn-xs btn-primary">Create new country</button></a></div>
                 </div>
 
                 <div class="panel-body">
                     <table class="table table-hover">
-                        @foreach($countries as $country)
+                        <thead>
                             <tr>
-                                <td>{{ $country->name }}</td>
-                                <td>
-                                    <a href="{{ route('adminCountriesEdit', ['id' => $country->id] ) }}"><button class="btn btn-info">Edit</button></a>
-                                </td>
-                                <td>
-                                    <a href="{{ route('adminCountriesDelete', ['id' => $country->id] ) }}" ><button class="btn btn-danger">Delete</button></a>
-                                </td>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th class="text-right">Actions</th>
                             </tr>
-                        @endforeach
+                        </thead>
+                        <tbody>
+                            @foreach($countries as $country)
+                                <tr>
+                                    <td>{{ $country->id }}</td>
+                                    <td>{{ $country->name }}</td>
+                                    <td class="text-right">
+                                        <a href="{{ route('adminCountriesEdit', ['id' => $country->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                        <a href="{{ route('adminCountriesDelete', ['id' => $country->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

@@ -9,7 +9,7 @@
                 <div class="panel-heading">Create Countries</div>
 
                 <div class="panel-body">
-                    {{ Form::open(['url'=>'admin/countries']) }}
+                    {{ Form::open(['route' => 'adminCountriesStore']) }}
                         <div class="form-group">
                             {!! Form::label('name', 'Country Name:') !!}
                             <div class="form-controls">

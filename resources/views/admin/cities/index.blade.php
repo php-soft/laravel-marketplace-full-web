@@ -14,6 +14,9 @@
                         @foreach($cities as $city)
                             <tr>
                                 <td>{{ $city->name }}</td>
+                                <td>
+                                    <a href="{{ route('adminCitiesUpdate', ['id' => $city->id] ) }}"><button class="btn btn-info">Edit</button></a>
+                                </td>
                             </tr>
                         @endforeach
                     </table>

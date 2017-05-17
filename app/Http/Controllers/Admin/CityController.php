@@ -23,4 +23,15 @@ class CityController extends Controller
         City::create(Input::all());
         return redirect('admin/cities');
     }
+    public function update($id)
+    {
+        $city = City::findOrFail($id);
+        return view('admin.cities.edit')->with('city', $city);
+    }
+    public function updateCity($id)
+    {
+        $city = City::findOrFail($id);
+        $city->update(Input::all());
+        return redirect()->route('adminCities');
+    }
 }

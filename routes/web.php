@@ -25,16 +25,18 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/products', 'ProductController@index')->name('adminProducts');
 
     Route::get('/categories', 'CategoryController@index')->name('adminCategories');
+    Route::get('/categories/create', 'CategoryController@create')->name('adminCategoriesCreate');
+    Route::post('/categories', 'CategoryController@store')->name('adminCategoriesPost');
 
     Route::get('/countries', 'CountryController@index')->name('adminCountries');
     Route::get('/countries/create', 'CountryController@create')->name('adminCountriesCreate');
+    Route::post('/countries', 'CountryController@store')->name('adminCountriesStore');
+    Route::get('/countries/{id}/edit', 'CountryController@edit')->name('adminCountriesEdit');
+    Route::put('/countries/{id}', 'CountryController@update')->name('adminCountriesUpdate');
+    Route::get('/countries/{id}/delete', 'CountryController@destroy')->name('adminCountriesDelete');
+  
     Route::post('/countries', 'CountryController@store')->name('adminCountries');
     Route::get('/countries/{id}/edit', 'CountryController@update')->name('adminCountriesUpdate');
     Route::put('/countries/{id}', 'CountryController@updateCountry');
-    
-
-    Route::get('/cities', 'CityController@index')->name('adminCities');
-    Route::get('/cities/create', 'CityController@create')->name('adminCitiesCreate');
-    Route::post('/cities', 'CityController@store')->name('adminCities');
     
 });

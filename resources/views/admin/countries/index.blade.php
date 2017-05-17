@@ -17,6 +17,9 @@
                                 <td>
                                     <a href="{{ route('adminCountriesUpdate', ['id' => $country->id] ) }}"><button class="btn btn-info">Edit</button></a>
                                 </td>
+                                <td>
+                                    <a href="{{ route('adminCountriesDelete', ['id' => $country->id] ) }}" ><button class="btn btn-danger">Delete</button></a>
+                                </td>
                             </tr>
                         @endforeach
                     </table>

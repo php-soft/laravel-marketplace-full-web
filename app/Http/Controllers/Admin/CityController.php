@@ -14,4 +14,14 @@ class CityController extends Controller
         $cities = City::all();
         return view('admin.cities.index')->with('cities', $cities);
     }
+
+    public function create()
+    {
+        return view('admin.cities.create');
+    }
+    public function store()
+    {
+        City::create(Input::all());
+        return redirect('admin/cities');
+    }
 }

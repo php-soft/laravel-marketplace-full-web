@@ -8,7 +8,7 @@
                 <div class="panel-heading">Update Country</div>
 
                 <div class="panel-body">
-                    {{ Form::open(['route' => 'adminCountriesUpdate'), 'method' => 'put']) }}
+                    {{ Form::open(['route' => ['adminCountriesUpdate', $country->id], 'method' => 'put']) }}
                         <div class="form-group">
                             {!! Form::label('name', 'Country Name:') !!}
                             <div class="form-controls">

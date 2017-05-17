@@ -10,11 +10,13 @@
                 </div>
 
                 <div class="panel-body">
-                    <ul class="list-group">                        
+                    <ul class="list-group">
                         @foreach($cities as $city)
-                            <li class="list-group-item">{{ $city->name }}</li>
+                            <li class="list-group-item">
+                                {{ $city->name }}
+                            </li>
                         @endforeach
-                    </table>
+                    </ul>
                 </div>
             </div>
         </div>

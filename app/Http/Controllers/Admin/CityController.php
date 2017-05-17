@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\City;
+use App\Country;
 use Input;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,9 +18,10 @@ class CityController extends Controller
 
     public function create()
     {
-        return view('admin.cities.create');
+    	$countries = Country::pluck('name', 'id');
+        return view('admin.cities.create')->with('countries', $countries);
     }
-    
+
     public function store()
     {
         City::create(Input::all());

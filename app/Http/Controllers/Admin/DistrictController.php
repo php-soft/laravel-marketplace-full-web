@@ -38,13 +38,14 @@ class DistrictController extends Controller
         $cities = City::pluck('name', 'id');
         $district = District::findOrFail($id);
         return view('admin.districts.edit')->with('district', $district)
-                                            ->with('cities', $cities);
+                ->with('cities', $cities);
     }
 
     public function update(Request $request, $id)
     {
         $this->validate($request, [
             'name' => 'required|unique:districts,name,'.$id,
+            'city_id' => 'required|numeric|exists:cities,id',
         ]);
 
         $district = District::findOrFail($id);

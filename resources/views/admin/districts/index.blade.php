@@ -6,8 +6,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    List of countries
-                    <div class="pull-right"><a href="{{ route('adminCountriesCreate') }}"><button class="btn btn-xs btn-primary">Create new country</button></a></div>
+                    List of districts
                 </div>
 
                 <div class="panel-body">
@@ -16,18 +15,17 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>City Name</th>
                                 <th class="text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($countries as $country)
+                            @foreach($districts as $district)
                                 <tr>
-                                    <td>{{ $country->id }}</td>
-                                    <td>{{ $country->name }}</td>
-                                    <td class="text-right">
-                                        <a href="{{ route('adminCountriesEdit', ['id' => $country->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
-                                        <a href="{{ route('adminCountriesDelete', ['id' => $country->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
-                                    </td>
+                                    <td>{{ $district->id }}</td>
+                                    <td>{{ $district->name }}</td>
+                                    <td>{{ $district->city->name }}</td>
+                                    <td class="text-right">#</td>
                                 </tr>
                             @endforeach
                         </tbody>

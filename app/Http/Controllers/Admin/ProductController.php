@@ -66,4 +66,10 @@ class ProductController extends Controller
         $product->update($request->all());
         return redirect('admin/products');
     }
+
+    public function destroy($id)
+    {
+        Product::destroy($id);
+        return redirect('admin/products');
+    }
 }

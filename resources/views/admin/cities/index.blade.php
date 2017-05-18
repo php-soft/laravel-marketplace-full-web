@@ -16,6 +16,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Country</th>
                                 <th class="text-right">Actions</th>
                             </tr>
                         </thead>
@@ -24,6 +25,8 @@
                                 <tr>
                                     <td>{{ $city->id }}</td>
                                     <td>{{ $city->name }}</td>
+                                    <td>{{ $city->country->name }}</td>
+                                    <td class="text-right">#</td>
                                 </tr>
                             @endforeach
                         </tbody>

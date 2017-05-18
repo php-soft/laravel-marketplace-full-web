@@ -23,6 +23,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin');
 
     Route::get('/products', 'ProductController@index')->name('adminProducts');
+    Route::get('/products/create', 'ProductController@create')->name('adminProductsCreate');
+    Route::post('/products', 'ProductController@store')->name('adminProductsStore');
 
     Route::get('/categories', 'CategoryController@index')->name('adminCategories');
     Route::get('/categories/create', 'CategoryController@create')->name('adminCategoriesCreate');
@@ -41,4 +43,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/cities', 'CityController@index')->name('adminCities');
 
     Route::get('/types', 'TypeController@index')->name('adminTypes');
+
+    Route::get('/cities/create', 'CityController@create')->name('adminCitiesCreate');
+    Route::post('/cities', 'CityController@store')->name('adminCitiesStore');
+
+    Route::get('/districts', 'DistrictController@index')->name('adminDistricts');
 });

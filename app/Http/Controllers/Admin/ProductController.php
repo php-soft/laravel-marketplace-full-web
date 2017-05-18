@@ -16,4 +16,26 @@ class ProductController extends Controller
         $products = Product::all();
         return view('admin.products.index')->with('products', $products);
     }
+
+    public function create()
+    {
+        $categories = Category::pluck('name', 'id');
+        $shops = Shop::pluck('name', 'id');
+        return view('admin.products.create')
+            ->with('categories', $categories)
+            ->with('shops', $shops);
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|exists:products,name|max:255',
+            'image' => 'required',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'quantity' => 'required|numeric'
+        ]);
+        Product::create($request->all());
+        return redirect()->route('adminProducts');
+    }
 }

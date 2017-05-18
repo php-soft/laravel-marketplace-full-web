@@ -61,6 +61,7 @@
                             </div>
                         </div>
                         {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}
+                        <a href="{{ route('adminProducts') }}">Cancel</a>
                     {{ Form::close() }}
                 </div>
             </div>

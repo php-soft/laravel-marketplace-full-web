@@ -5,16 +5,33 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">List of shopImages</div>
+                <div class="panel-heading">
+                    List of shopimages
+                    <div class="pull-right"><a href="#"><button class="btn btn-xs btn-primary">Create new shopimage</button></a></div>
+                </div>
 
                 <div class="panel-body">
                     <table class="table table-hover">
-                        @foreach($shopImages as $shopimage)
+                        <thead>
                             <tr>
-                                <td>{{ $shopimage->shop['name'] }}</td>
-                                <td>{{ $shopimage->image }}</td>
+                                <th>#</th>
+                                <th>Shop id</th>
+                                <th>Image</th>
+                                <th class="text-right">Actions</th>
                             </tr>
-                        @endforeach
+                        </thead>
+                        <tbody>
+                            @foreach($shopImages as $shopimage)
+                                <tr>
+                                    <td>{{ $shopimage->shop['name'] }}</td>
+                                    <td>{{ $shopimage->image }}</td>
+                                    <td class="text-right">
+                                        <a href="#"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                        <a href="#"><button class="btn btn-xs btn-danger">Delete</button></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

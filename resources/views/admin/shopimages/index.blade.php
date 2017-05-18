@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of shopimages
-                    <div class="pull-right"><a href="#"><button class="btn btn-xs btn-primary">Create new shopimage</button></a></div>
+                    <div class="pull-right"><a href="#"><button class="btn btn-xs btn-primary">Create new image</button></a></div>
                 </div>
 
                 <div class="panel-body">
@@ -23,7 +23,7 @@
                         <tbody>
                             @foreach($shopImages as $shopimage)
                                 <tr>
-                                    <td>{{ $shopimage->shop['name'] }}</td>
+                                    <td>{{ $shopimage->shop->name }}</td>
                                     <td>{{ $shopimage->image }}</td>
                                     <td class="text-right">
                                         <a href="#"><button class="btn btn-xs btn-primary">Edit</button></a>

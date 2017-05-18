@@ -29,13 +29,41 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|exists:products,name|max:255',
+            'name' => 'required|max:255',
             'image' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
-            'quantity' => 'required|numeric'
+            'quantity' => 'required|numeric',
+            'category_id' => 'required|numeric|exists:categories,id',
+            'shop_id' => 'required|numeric|exists:shops,id'
         ]);
         Product::create($request->all());
         return redirect()->route('adminProducts');
+    }
+
+    public function edit($id)
+    {
+        $product = Product::findOrFail($id);
+        $categories = Category::pluck('name', 'id');
+        $shops = Shop::pluck('name', 'id');
+        return view('admin.products.edit')
+            ->with('product', $product)
+            ->with('categories', $categories)
+            ->with('shops', $shops);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'quantity' => 'required|numeric',
+            'category_id' => 'required|numeric|exists:categories,id',
+            'shop_id' => 'required|numeric|exists:shops,id'
+        ]);
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
+        return redirect('admin/products');
     }
 }

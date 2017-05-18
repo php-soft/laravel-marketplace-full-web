@@ -8,7 +8,7 @@
                 <div class="panel-heading">Create City</div>
 
                 <div class="panel-body">
-                    {{ Form::open(['url'=>'admin/cities']) }}
+                    {{ Form::open(['route'=>'adminCitiesStore']) }}
                         <div class="form-group">
                             {!! Form::label('name', 'City Name:') !!}
                             <div class="form-controls">

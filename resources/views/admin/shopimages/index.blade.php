@@ -11,7 +11,7 @@
                     <table class="table table-hover">
                         @foreach($shopimages as $shopimage)
                             <tr>
-                                <td>{{ $shopimage->shop['name'] }}</td>
+                                <td>{{ $shopimage->shop_id }}</td>
                                 <td>{{ $shopimage->image }}</td>
                             </tr>
                         @endforeach

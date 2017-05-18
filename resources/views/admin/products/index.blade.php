@@ -5,8 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">List of products</div>
-                <div class="panel-heading pull-right"><a href="{{ route('adminProductsCreate') }}"><button class="btn btn-primary ">Create</button></a></div>
+                <div class="panel-heading">List of products
+                <div class="panel-heading"><a href="{{ route('adminProductsCreate') }}"><button class="btn btn-primary ">Create</button></a></div>
+                </div>
+                
                 <div class="panel-body">
                     <table class="table table-striped">
                             <tr>
@@ -27,8 +29,8 @@
                                 <td>{{ $product->description }}</td>
                                 <td>{{ number_format($product->price) }}</td>
                                 <td>{{ $product->quantity }}</td>
-                                <td>{{ $product->shop['name'] }}</td>
-                                <td>{{ $product->category['name'] }}</td>
+                                <td>{{ $product->shop->name }}</td>
+                                <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->created_at }}</td>
                                 <td>{{ $product->updated_at }}</td>
                             </tr>

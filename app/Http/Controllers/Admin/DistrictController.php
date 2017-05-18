@@ -25,9 +25,6 @@ class DistrictController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|unique:districts|max:255',
-        ]);
-
-        $this->validate($request, [
             'city_id' => 'required|numeric|exists:cities,id',
         ]);
 

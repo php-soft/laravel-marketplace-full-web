@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of districts
+                    <div class="pull-right"><a href="{{ route('adminDistrictsCreate') }}"><button class="btn btn-xs btn-primary">Create new district</button></a></div>
                 </div>
 
                 <div class="panel-body">

@@ -30,6 +30,11 @@ class ProductController extends Controller
 
     public function store()
     {
+        $this->validate($request, [
+        'name' => 'required|exists:products,name|max:255',
+        'image' => 'required',
+        'description' => 'required',
+        ]);
         Product::create(Input::all());
         return redirect()->route('adminProducts');
     }

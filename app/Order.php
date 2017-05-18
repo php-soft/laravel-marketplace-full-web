@@ -20,7 +20,7 @@ class Order extends Model
 
     public function user()
     {
-        return $this->belongTo('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function country()
@@ -31,6 +31,11 @@ class Order extends Model
     public function city()
     {
         return $this->belongsTo('App\City');
+    }
+
+    public function district()
+    {
+        return $this->belongsTo('App\District');
     }
 
     public function orderProducts()

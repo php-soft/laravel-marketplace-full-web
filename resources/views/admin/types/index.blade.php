@@ -26,7 +26,7 @@
                                     <td>{{ $type->name }}</td>
                                     <td class="text-right">
                                         <a href="#"><button class="btn btn-xs btn-primary">Edit</button></a>
-                                        <a href="#}}" ><button class="btn btn-xs btn-danger">Delete</button></a>
+                                        <a href="#" ><button class="btn btn-xs btn-danger">Delete</button></a>
                                     </td>
                                 </tr>
                             @endforeach

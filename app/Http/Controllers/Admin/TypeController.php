@@ -4,9 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Type;
-use App\Category;
-use App\Product;
-use App\Shop;
 use Illuminate\Http\Request;
 
 class TypeController extends Controller

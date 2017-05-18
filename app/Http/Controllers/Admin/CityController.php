@@ -25,6 +25,6 @@ class CityController extends Controller
     public function store()
     {
         City::create(Input::all());
-        return redirect('admin/cities');
+        return redirect()->route('adminCities');
     }
 }

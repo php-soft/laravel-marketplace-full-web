@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Country;
-use Illuminate\Support\Facades\Input;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class CountryController extends Controller
@@ -20,9 +19,14 @@ class CountryController extends Controller
         return view('admin.countries.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        Country::create(Input::all());
+        $this->validate($request, [
+            'name' => 'required|unique:countries|max:255',
+        ]);
+
+        Country::create($request->all());
+
         return redirect()->route('adminCountries');
     }
 
@@ -32,10 +36,14 @@ class CountryController extends Controller
         return view('admin.countries.edit')->with('country', $country);
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required|unique:countries,name,'.$id,
+        ]);
+
         $country = Country::findOrFail($id);
-        $country->update(Input::all());
+        $country->update($request->all());
         return redirect()->route('adminCountries');
     }
 

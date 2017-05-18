@@ -7,8 +7,6 @@ use App\Type;
 use App\Category;
 use App\Product;
 use App\Shop;
-use Input;
-
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -28,14 +26,16 @@ class ProductController extends Controller
             ->with('shops', $shops);
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $this->validate($request, [
         'name' => 'required|exists:products,name|max:255',
         'image' => 'required',
         'description' => 'required',
+        'price' => 'required|numeric',
+        'quantity' => 'required|numeric'
         ]);
-        Product::create(Input::all());
+        Product::create($request->all());
         return redirect()->route('adminProducts');
     }
 }

@@ -38,4 +38,28 @@ class ProductController extends Controller
         Product::create($request->all());
         return redirect()->route('adminProducts');
     }
+
+    public function edit($id)
+    {
+        $product = Product::find($id);
+        $categories = Category::pluck('name', 'id');
+        $shops = Shop::pluck('name', 'id');
+        return view('admin/products/edit')
+            ->with('product', $product)
+            ->with('categories', $categories)
+            ->with('shops', $shops);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|exists:products,name|max:255',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'quantity' => 'required|numeric'
+        ]);
+        $product = Product::find($id);
+        $product->update($request->all());
+        return redirect('admin/products');
+    }
 }

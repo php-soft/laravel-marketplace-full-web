@@ -30,5 +30,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/countries/create', 'CountryController@create')->name('adminCountriesCreate');
     Route::post('/countries', 'CountryController@store')->name('adminCountries');
 
-    Route::get('/shopimages', 'ShopImageController@index')->name('adminShopImages');
+    Route::get('/shopImages', 'ShopImageController@index')->name('adminShopImages');
 });

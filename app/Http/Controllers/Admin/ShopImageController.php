@@ -10,7 +10,7 @@ class ShopImageController extends Controller
 {
     public function index()
     {
-        $shopimages = ShopImage::all();
-        return view('admin.shopimages.index')->with('shopimages', $shopimages);
+        $shopImages = ShopImage::all();
+        return view('admin.shopImages.index')->with('shopImages', $shopImages);
     }
 }

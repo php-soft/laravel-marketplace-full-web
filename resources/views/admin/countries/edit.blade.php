@@ -1,4 +1,3 @@
-
 @extends('layouts.admin')
 
 @section('content')
@@ -6,17 +5,17 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Create Countries</div>
+                <div class="panel-heading">Update Country</div>
 
                 <div class="panel-body">
-                    {{ Form::open(['route' => 'adminCountriesStore']) }}
+                    {{ Form::open(['route' => ['adminCountriesUpdate', $country->id], 'method' => 'put']) }}
                         <div class="form-group">
                             {!! Form::label('name', 'Country Name:') !!}
                             <div class="form-controls">
-                                {{ Form::text('name', null, ['class'=>'form-control']) }}
+                                {{ Form::text('name', $country->name, ['class'=>'form-control']) }}
                             </div>
                         </div>
-                        {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}
+                        {{ Form::submit('Update', ['class'=>'btn btn-primary']) }}
                         <a href="{{ route('adminCountries')}}">Cancel</a>
                     {{Form::close()}}
                 </div>

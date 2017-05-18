@@ -21,13 +21,13 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->type->name }}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="categories/edit/{{$category->id}}">Edit</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="categories/delete/{{$category->id}}">Delete</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{ route('adminCategoriesEdit', ['id' => $category->id] ) }}">Edit</a></td>
+                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ route('adminCategoriesDelete', ['id' => $category->id] ) }}">Delete</a></td>
                             </tr>
                         @endforeach    
                         </tbody>
                     </table>
-                    <a href="categories/create">Add Category</a>
+                    <a href="{{ route('adminCategoriesCreate') }}">Add Category</a>
                 </div>
             </div>
         </div>

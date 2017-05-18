@@ -6,21 +6,24 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">List of products
-                <div class="panel-heading"><a href="{{ route('adminProductsCreate') }}"><button class="btn btn-primary ">Create</button></a></div>
+                    <div class="pull-right">
+                        <a href="{{ route('adminProductsCreate') }}"><button class="btn btn-xs btn-primary ">Create new product</button></a>
+                    </div>
                 </div>
-                
+
                 <div class="panel-body">
                     <table class="table table-striped">
                             <tr>
-                                <td>#</td>
-                                <td>Name</td>
-                                <td>Description</td>
-                                <td>Price</td>
-                                <td>Quantity</td>
-                                <td>Shop</td>
-                                <td>Category</td>
-                                <td>Created_at</td>
-                                <td>Updated_at</td>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Shop</th>
+                                <th>Category</th>
+                                <th>Created_at</th>
+                                <th>Updated_at</th>
+                                <th class="text-right">Actions</th>
                             </tr>
                         @foreach($products as $product)
                             <tr>
@@ -33,6 +36,10 @@
                                 <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->created_at }}</td>
                                 <td>{{ $product->updated_at }}</td>
+                                <td>
+                                    <a href="{{ route('adminProductsEdit', ['id' => $product->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                    <a href="{{ route('adminProductsDelete', ['id' => $product->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
+                                </td>
                             </tr>
                         @endforeach
                     </table>

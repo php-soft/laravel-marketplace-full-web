@@ -33,7 +33,9 @@ class ProductController extends Controller
             'image' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
-            'quantity' => 'required|numeric'
+            'quantity' => 'required|numeric',
+            'category_id' => 'required|numeric|exists:categories,id',
+            'shop_id' => 'required|numeric|exists:shops,id'
         ]);
         Product::create($request->all());
         return redirect()->route('adminProducts');
@@ -59,7 +61,7 @@ class ProductController extends Controller
             'quantity' => 'required|numeric',
             'category_id' => 'required|numeric|exists:categories,id',
             'shop_id' => 'required|numeric|exists:shops,id'
-            ]);
+        ]);
         $product = Product::findOrFail($id);
         $product->update($request->all());
         return redirect('admin/products');

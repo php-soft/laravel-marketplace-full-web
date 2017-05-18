@@ -60,7 +60,7 @@
                                 {{ Form::select('shop_id', $shops, null, ['class'=>'form-control']) }}
                             </div>
                         </div>
-                    {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}
+                        {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}
                     {{ Form::close() }}
                 </div>
             </div>

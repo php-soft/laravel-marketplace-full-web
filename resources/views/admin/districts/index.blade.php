@@ -7,16 +7,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of districts
-                    <div class="pull-right"><a href="{{ route('adminCountriesCreate') }}"><button class="btn btn-xs btn-primary">Create new district</button></a></div>
                 </div>
 
                 <div class="panel-body">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>#</th>
                                 <th>Name</th>
-                                <th>City_id</th>
+                                <th>City Name</th>
                                 <th class="text-right">Actions</th>
                             </tr>
                         </thead>
@@ -25,7 +24,8 @@
                                 <tr>
                                     <td>{{ $district->id }}</td>
                                     <td>{{ $district->name }}</td>
-                                    <td>{{ $district->city_id }}</td>
+                                    <td>{{ $district->city->name }}</td>
+                                    <td class="text-right">#</td>
                                 </tr>
                             @endforeach
                         </tbody>

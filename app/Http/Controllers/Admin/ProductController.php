@@ -50,7 +50,7 @@ class ProductController extends Controller
             ->with('shops', $shops);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'name' => 'required|exists:products,name|max:255',

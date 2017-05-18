@@ -37,8 +37,8 @@
                                 <td>{{ $product->created_at }}</td>
                                 <td>{{ $product->updated_at }}</td>
                                 <td>
-                                    <a href="{{ route('adminProductsEdit', ['id' => $product->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
-                                    <a href="{{ route('adminProductsDelete', ['id' => $product->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
+                                    <a href="#"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                    <a href="#" ><button class="btn btn-xs btn-danger">Delete</button></a>
                                 </td>
                             </tr>
                         @endforeach

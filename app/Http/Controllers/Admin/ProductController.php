@@ -29,11 +29,11 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-        'name' => 'required|exists:products,name|max:255',
-        'image' => 'required',
-        'description' => 'required',
-        'price' => 'required|numeric',
-        'quantity' => 'required|numeric'
+            'name' => 'required|exists:products,name|max:255',
+            'image' => 'required',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'quantity' => 'required|numeric'
         ]);
         Product::create($request->all());
         return redirect()->route('adminProducts');

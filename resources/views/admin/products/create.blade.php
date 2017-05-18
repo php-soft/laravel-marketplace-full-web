@@ -51,13 +51,13 @@
                         <div class="form-group">
                             {!! Form::label('category_id', 'Category') !!}
                             <div class="form-controls">
-                                {{ Form::select('category_id',$categories, null, ['class'=>'form-control']) }}
+                                {{ Form::select('category_id', $categories, null, ['class'=>'form-control']) }}
                             </div>
                         </div>
                         <div class="form-group">
                             {!! Form::label('shop_id', 'Shop') !!}
                             <div class="form-controls">
-                                {{ Form::select('shop_id',$shops, null, ['class'=>'form-control']) }}
+                                {{ Form::select('shop_id', $shops, null, ['class'=>'form-control']) }}
                             </div>
                         </div>
                     {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}

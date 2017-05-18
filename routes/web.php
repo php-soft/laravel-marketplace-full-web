@@ -48,4 +48,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/cities', 'CityController@store')->name('adminCitiesStore');
 
     Route::get('/districts', 'DistrictController@index')->name('adminDistricts');
+
+    Route::get('/orders', 'OrderController@index')->name('adminOrders');
 });

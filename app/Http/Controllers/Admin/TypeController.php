@@ -13,4 +13,15 @@ class TypeController extends Controller
         $types = Type::all();
         return view('admin.types.index')->with('types', $types);
     }
+
+    public function create()
+    {
+        return view('admin.types.create');
+    }
+
+    public function store()
+    {
+        Country::create(Input::all());
+        return redirect()->route('adminTypes');
+    }
 }

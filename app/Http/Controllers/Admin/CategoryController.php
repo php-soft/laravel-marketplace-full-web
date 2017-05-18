@@ -41,4 +41,10 @@ class CategoryController extends Controller
         $category->update(Input::all());
         return redirect()->route('adminCategories');
     }
+
+    public function destroy($id)
+    {
+        Category::destroy($id);
+        return redirect()->route('adminCategories');
+    }
 }

@@ -27,6 +27,10 @@ class DistrictController extends Controller
             'name' => 'required|unique:districts|max:255',
         ]);
 
+        $this->validate($request, [
+            'city_id' => 'required|numeric|exists:cities,id',
+        ]);
+
         District::create($request->all());
 
         return redirect()->route('adminDistricts');

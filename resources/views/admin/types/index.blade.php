@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of type
-                    <div class="pull-right"><a href="{{ route('adminCountriesCreate') }}"><button class="btn btn-xs btn-primary">Create new type</button></a></div>
+                    <div class="pull-right"><a href="#"><button class="btn btn-xs btn-primary">Create new type</button></a></div>
                 </div>
 
                 <div class="panel-body">

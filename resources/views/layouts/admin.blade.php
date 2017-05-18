@@ -62,7 +62,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Districts</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Types</a></li>
+                                <li><a href="{{ route('adminTypes') }}">Types</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('adminCategories') }}">Categories</a></li>
                             </ul>
@@ -76,7 +76,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('adminProducts') }}">Products</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Orders</a></li>
+                                <li><a href="{{ route('adminOrders') }}">Orders</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

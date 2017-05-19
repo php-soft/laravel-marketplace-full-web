@@ -14,7 +14,6 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>User</th>
                                 <th>Street</th>
                                 <th>Zip Code</th>
                                 <th>Phone Number</th>
@@ -28,7 +27,6 @@
                             @foreach($addresses as $address)
                                 <tr>
                                     <td>{{ $address->id }}</td>
-                                    <td>{{ $address->user->id }}</td>
                                     <td>{{ $address->street }}</td>
                                     <td>{{ $address->zip_code }}</td>
                                     <td>{{ $address->phone_number }}</td>

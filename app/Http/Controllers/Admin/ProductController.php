@@ -7,6 +7,7 @@ use App\Type;
 use App\Category;
 use App\Product;
 use App\Shop;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -30,14 +31,22 @@ class ProductController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'image' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
             'quantity' => 'required|numeric',
             'category_id' => 'required|numeric|exists:categories,id',
-            'shop_id' => 'required|numeric|exists:shops,id'
+            'shop_id' => 'required|numeric|exists:shops,id',
+            'photo' => 'image'
         ]);
-        Product::create($request->all());
+        $data = $request->all();
+        $file = $request->file('photo');
+        if (!empty($file)) {
+            $data['image'] = str_slug(Carbon::now().'_'.$data['name'].'.'.$file->getClientOriginalExtension());
+            $file->move('upload', $data['image']);
+        } else {
+            $data['image'] = 'default.jpg';
+        }
+        Product::create($data);
         return redirect()->route('adminProducts');
     }
 

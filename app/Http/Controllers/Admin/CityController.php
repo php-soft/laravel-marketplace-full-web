@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\City;
 use App\Country;
-use Input;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
@@ -22,9 +21,14 @@ class CityController extends Controller
         return view('admin.cities.create')->with('countries', $countries);
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        City::create(Input::all());
+        $this->validate($request, [
+            'name' => 'required|unique:cities|max:255',
+            'country_id' => 'required|numeric|exists:countries,id',
+        ]);
+
+        City::create($request->all());
         return redirect()->route('adminCities');
     }
 

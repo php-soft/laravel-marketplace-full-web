@@ -36,13 +36,15 @@ class ProductController extends Controller
             'quantity' => 'required|numeric',
             'category_id' => 'required|numeric|exists:categories,id',
             'shop_id' => 'required|numeric|exists:shops,id',
-            'photo' => 'required|image'
+            'photo' => 'image'
         ]);
         $data = $request->all();
         $file = $request->file('photo');
         if (!empty($file)) {
             $data['image'] = str_slug(Carbon::now().'_'.$data['name'].'.'.$file->getClientOriginalExtension());
             $file->move('upload', $data['image']);
+        } else {
+            $data['image'] = 'default.png';
         }
         Product::create($data);
         return redirect()->route('adminProducts');

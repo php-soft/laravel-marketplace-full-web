@@ -45,4 +45,10 @@ class TypeController extends Controller
         $types->update($request->all());
         return redirect()->route('adminTypes');
     }
+
+    public function destroy($id)
+    {
+        Type::destroy($id);
+        return redirect()->route('adminTypes');
+    }
 }

@@ -52,6 +52,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::get('/cities/create', 'CityController@create')->name('adminCitiesCreate');
     Route::post('/cities', 'CityController@store')->name('adminCitiesStore');
+    Route::get('/cities/{id}/edit', 'CityController@edit')->name('adminCitiesEdit');
+    Route::put('/cities/{id}', 'CityController@update')->name('adminCitiesUpdate');
 
     Route::get('/districts', 'DistrictController@index')->name('adminDistricts');
     Route::get('/districts/create', 'DistrictController@create')->name('adminDistrictsCreate');

@@ -50,4 +50,10 @@ class CityController extends Controller
         $city->update($request->all());
         return redirect()->route('adminCities');
     }
+
+    public function destroy($id)
+    {
+        City::destroy($id);
+        return redirect()->route('adminCities');
+    }
 }

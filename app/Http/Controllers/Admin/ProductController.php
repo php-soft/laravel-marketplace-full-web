@@ -44,7 +44,7 @@ class ProductController extends Controller
             $data['image'] = str_slug(Carbon::now().'_'.$data['name'].'.'.$file->getClientOriginalExtension());
             $file->move('upload', $data['image']);
         } else {
-            $data['image'] = 'default.png';
+            $data['image'] = 'default.jpg';
         }
         Product::create($data);
         return redirect()->route('adminProducts');

@@ -31,13 +31,15 @@ class CityController extends Controller
     public function edit($id)
     {
         $city = City::findOrFail($id);
-        return view('admin.cities.edit')->with('city', $city);
+        $countries = Country::pluck('name', 'id');
+        return view('admin.cities.edit')->with('city', $city)->with('countries', $countries);
     }
 
     public function update(Request $request, $id)
     {
         $this->validate($request, [
             'name' => 'required|unique:cities,name,'.$id,
+            'country_id' => 'required|numeric|exists:countries,id',
         ]);
 
         $city = City::findOrFail($id);

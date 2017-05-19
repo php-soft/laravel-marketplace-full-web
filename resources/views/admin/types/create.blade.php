@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Create Types</div>
+                <div class="panel-heading">Create Type</div>
 
                 <div class="panel-body">
                     @if (count($errors) > 0)

@@ -17,6 +17,12 @@ class Order extends Model
         'district_id',
         'status'
     ];
+    const STATUS_NEW = 0;
+    const STATUS_CONFIRM = 1;
+    const STATUS_PAYMENT = 2;
+    const STATUS_SHIPPING = 3;
+    const STATUS_RETURN = 4;
+    const STATUS_DONE = 5;
 
     public function user()
     {

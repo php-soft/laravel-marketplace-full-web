@@ -30,7 +30,7 @@
                                     <td>{{ $order->orderProducts->sum('quantity') }}</td>
                                     <td>{{ $order->orderProducts->sum('price') }}</td>
                                     <td class="text-right">
-                                        <a href="#"><button class="btn btn-xs btn-primary">Show</button></a>
+                                        <a href="{{ route('adminOrdersShow', ['id' => $order->id] ) }}"><button class="btn btn-xs btn-primary">Show</button></a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -11,5 +11,4 @@
 
     <!-- Import the entire unused code rule set -->
     <rule ref="rulesets/unusedcode.xml" />
-    <rule ref="rulesets/design.xml" />
 </ruleset>

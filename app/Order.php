@@ -64,6 +64,8 @@ class Order extends Model
             return "Return";
         } elseif ($this->status == self::STATUS_DONE) {
             return "Done";
+        } else {
+            return 'New';
         }
     }
 }

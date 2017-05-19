@@ -14,4 +14,3 @@ class ContactController extends Controller
         return view('admin.contacts.index')->with('contacts', $contacts);
     }
 }
-

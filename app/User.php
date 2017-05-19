@@ -67,7 +67,7 @@ class User extends Authenticatable
         return $this->belongsTo('App\City');
     }
 
-        public function country()
+    public function country()
     {
         return $this->belongsTo('App\Country');
     }

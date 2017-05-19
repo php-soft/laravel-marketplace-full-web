@@ -32,4 +32,24 @@ class DistrictController extends Controller
 
         return redirect()->route('adminDistricts');
     }
+
+    public function edit($id)
+    {
+        $cities = City::pluck('name', 'id');
+        $district = District::findOrFail($id);
+        return view('admin.districts.edit')->with('district', $district)
+                ->with('cities', $cities);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:districts,name,'.$id,
+            'city_id' => 'required|numeric|exists:cities,id',
+        ]);
+
+        $district = District::findOrFail($id);
+        $district->update($request->all());
+        return redirect()->route('adminDistricts');
+    }
 }

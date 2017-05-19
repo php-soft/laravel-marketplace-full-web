@@ -58,6 +58,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/districts', 'DistrictController@index')->name('adminDistricts');
     Route::get('/districts/create', 'DistrictController@create')->name('adminDistrictsCreate');
     Route::post('/districts', 'DistrictController@store')->name('adminDistrictsStore');
+    Route::get('/districts/{id}/edit', 'DistrictController@edit')->name('adminDistrictsEdit');
+    Route::put('/districts/{id}', 'DistrictController@update')->name('adminDistrictsUpdate');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
 });

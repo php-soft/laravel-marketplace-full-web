@@ -13,4 +13,10 @@ class OrderController extends Controller
         $orders = Order::all();
         return view('admin.orders.index')->with('orders', $orders);
     }
+
+    public function show($id)
+    {
+        $order = Order::findOrFail($id);
+        return view('admin.orders.show')->with('order', $order);
+    }
 }

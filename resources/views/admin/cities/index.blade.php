@@ -26,7 +26,9 @@
                                     <td>{{ $city->id }}</td>
                                     <td>{{ $city->name }}</td>
                                     <td>{{ $city->country->name }}</td>
-                                    <td class="text-right">#</td>
+                                    <td class="text-right">
+                                      <a href="{{ route('adminCitiesEdit', ['id' => $city->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

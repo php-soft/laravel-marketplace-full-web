@@ -52,4 +52,10 @@ class DistrictController extends Controller
         $district->update($request->all());
         return redirect()->route('adminDistricts');
     }
+
+    public function destroy($id)
+    {
+        District::destroy($id);
+        return redirect()->route('adminDistricts');
+    }
 }

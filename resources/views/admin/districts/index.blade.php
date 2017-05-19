@@ -28,6 +28,7 @@
                                     <td>{{ $district->city->name }}</td>
                                     <td class="text-right">
                                         <a href="{{ route('adminDistrictsEdit', ['id' => $district->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                        <a href="{{ route('adminDistrictsDelete', ['id' => $district->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
                                     </td>
                                 </tr>
                             @endforeach

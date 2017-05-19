@@ -60,6 +60,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/districts', 'DistrictController@store')->name('adminDistrictsStore');
     Route::get('/districts/{id}/edit', 'DistrictController@edit')->name('adminDistrictsEdit');
     Route::put('/districts/{id}', 'DistrictController@update')->name('adminDistrictsUpdate');
+    Route::get('/districts/{id}/delete', 'DistrictController@destroy')->name('adminDistrictsDelete');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');

@@ -19,7 +19,7 @@
                     @endforeach
                     </p>
                     <p>Last Order at: {{ $order->updated_at }}</p>
-                    <p>Status: {{ $status }}</p>
+                    <p>Status: {{ $order->statusText() }}</p>
                     <p>Name: {{ $order->shipping_name }}</p>
                     <p>Address: {{ $order->shipping_address }} - {{ $order->district->name }} - {{ $order->city->name }} - {{ $order->country->name }}</p>
                     <p>Phone: {{ $order->shipping_phone }}</p>

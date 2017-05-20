@@ -21,7 +21,7 @@
                         <div class="form-group">
                             {!! Form::label('name', 'User:') !!}
                             <div class="form-controls">
-                                {{ Form::select('user_id', $users, ['class'=>'form-control']) }}
+                                {{ Form::select('user_id', $users, null, ['class'=>'form-control']) }}
                             </div>
                         </div>
                         <div class="form-group">

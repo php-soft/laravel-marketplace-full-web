@@ -17,13 +17,21 @@
                             </ul>
                         </div>
                     @endif
-                    {{ Form::open(['route'=>[ 'adminProductsUpdate', $product->id ], 'method' => 'put']) }}
+                    {{ Form::open(['route'=>[ 'adminProductsUpdate', $product->id ], 'method' => 'put', 'files' => true]) }}
                         <div class="form-group">
                             {!! Form::label('name', 'Product Name') !!}
                             <div class="form-controls">
                                 {{ Form::text('name', $product->name, ['class'=>'form-control']) }}
                             </div>
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('photo', 'Photo') !!}
+                            <div class="form-controls">
+                                {{ Form::file('photo', null, ['class'=>'form-control']) }}
+                            </div>
+                        </div>
+                        <img class="img-responsive img-thumbnail" src="{{ asset('upload/'.$product->image) }}" alt="noImage" style="width: 200px;height: 200px">
+                        {{ Form::hidden('image', $product->image) }}
                         <div class="form-group">
                             {!! Form::label('description', 'Description') !!}
                             <div class="form-controls">

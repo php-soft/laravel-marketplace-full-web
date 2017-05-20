@@ -1,11 +1,14 @@
+
 @extends('layouts.admin')
 
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Create Categories</div>
+                <div class="panel-heading">Create Type</div>
+
+                <div class="panel-body">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <ul>
@@ -15,22 +18,15 @@
                             </ul>
                         </div>
                     @endif
-                    
-                <div class="panel-body">
-                    {{ Form::open(['url'=>'admin/categories']) }}
+                    {{ Form::open(['route' => 'adminTypesStore']) }}
                         <div class="form-group">
-                            {!! Form::label('name', 'Category Name:') !!}
+                            {!! Form::label('name', 'Types Name:') !!}
                             <div class="form-controls">
                                 {{ Form::text('name', null, ['class'=>'form-control']) }}
                             </div>
                         </div>
-                        <div class="form-group">
-                            {!!Form::label('type_id', 'Type')!!}
-                            <div class="form-controls">
-                                {!!Form::select('type_id', $types, null, ['class'=>'form-control'])!!}
-                            </div>
-                        </div>
                         {!! Form::submit('Create', ['class'=>'btn btn-primary']) !!}
+                        <a href="{{ route('adminTypes')}}">Cancel</a>
                     {{Form::close()}}
                 </div>
             </div>

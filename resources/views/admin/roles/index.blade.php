@@ -6,8 +6,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    List of cities
-                    <div class="pull-right"><a href="{{ route('adminCitiesCreate') }}"><button class="btn btn-xs btn-primary">Create new city</button></a></div>
+                    List of roles
                 </div>
 
                 <div class="panel-body">
@@ -16,19 +15,17 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Country</th>
+                                <th>Description</th>
                                 <th class="text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($cities as $city)
+                            @foreach($roles as $role)
                                 <tr>
-                                    <td>{{ $city->id }}</td>
-                                    <td>{{ $city->name }}</td>
-                                    <td>{{ $city->country->name }}</td>
-                                    <td class="text-right">
-                                      <a href="{{ route('adminCitiesEdit', ['id' => $city->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
-                                      <a href="{{ route('adminCitiesDelete', ['id' => $city->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
+                                    <td>{{ $role->id }}</td>
+                                    <td>{{ $role->name }}</td>
+                                    <td>{{ $role->description }}</td>
+                                    <td class="text-right">#
                                     </td>
                                 </tr>
                             @endforeach

@@ -5,7 +5,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Update Category</div>
+                <div class="panel-heading">Update Type</div>
+                <div class="panel-body">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <ul>
@@ -15,23 +16,15 @@
                             </ul>
                         </div>
                     @endif
-
-                <div class="panel-body">
-                    {{ Form::model($category, ['route' => ['adminCategoriesUpdate', $category->id], 'method' => 'put']) }}
+                    {{ Form::open(['route' => ['adminTypesUpdate', $types->id], 'method' => 'put']) }}
                         <div class="form-group">
-                            {!! Form::label('name', 'Category Name') !!}
+                            {!! Form::label('name', 'Type Name:') !!}
                             <div class="form-controls">
-                                {{ Form::text('name', $category->name, ['class'=>'form-control']) }}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            {!!Form::label('type_id', 'Type')!!}
-                            <div class="form-controls">
-                                {!!Form::select('type_id', $types, null, ['class'=>'form-control'])!!}
+                                {{ Form::text('name', $types->name, ['class'=>'form-control']) }}
                             </div>
                         </div>
                         {{ Form::submit('Update', ['class'=>'btn btn-primary']) }}
-                        <a href="{{ route('adminCategories')}}">Cancel</a>
+                        <a href="{{ route('adminTypes')}}">Cancel</a>
                     {{Form::close()}}
                 </div>
             </div>

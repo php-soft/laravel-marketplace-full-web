@@ -6,8 +6,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    List of type
-                    <div class="pull-right"><a href="{{ route('adminTypesCreate') }}"><button class="btn btn-xs btn-primary">Create new type</button></a></div>
+                    List of contats
                 </div>
 
                 <div class="panel-body">
@@ -15,19 +14,18 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
+                                <th>Content</th>
+                                <th>Email</th>
                                 <th class="text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($types as $type)
+                            @foreach($contacts as $contact)
                                 <tr>
-                                    <td>{{ $type->id }}</td>
-                                    <td>{{ $type->name }}</td>
-                                    <td class="text-right">
-                                        <a href="{{ route('adminTypesEdit', ['id' => $type->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
-                                        <a href="{{ route('adminTypesDelete', ['id' => $type->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
-                                    </td>
+                                    <td>{{ $contact->id }}</td>
+                                    <td>{{ $contact->content }}</td>
+                                    <td>{{ $contact->email }}</td>
+                                    <td class="text-right">#</td>
                                 </tr>
                             @endforeach
                         </tbody>

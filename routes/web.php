@@ -50,11 +50,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/cities', 'CityController@index')->name('adminCities');
 
     Route::get('/types', 'TypeController@index')->name('adminTypes');
+    Route::get('/types/create', 'TypeController@create')->name('adminTypesCreate');
+    Route::post('/types', 'TypeController@store')->name('adminTypesStore');
+    Route::get('/types/{id}/edit', 'TypeController@edit')->name('adminTypesEdit');
+    Route::put('/types/{id}', 'TypeController@update')->name('adminTypesUpdate');
+    Route::get('/types/{id}/delete', 'TypeController@destroy')->name('adminTypesDelete');
+
+    Route::get('/shops', 'ShopController@index')->name('adminShops');
 
     Route::get('/cities/create', 'CityController@create')->name('adminCitiesCreate');
     Route::post('/cities', 'CityController@store')->name('adminCitiesStore');
     Route::get('/cities/{id}/edit', 'CityController@edit')->name('adminCitiesEdit');
     Route::put('/cities/{id}', 'CityController@update')->name('adminCitiesUpdate');
+    Route::get('/cities/{id}/delete', 'CityController@destroy')->name('adminCitiesDelete');
 
     Route::get('/districts', 'DistrictController@index')->name('adminDistricts');
     Route::get('/districts/create', 'DistrictController@create')->name('adminDistrictsCreate');
@@ -63,6 +71,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::put('/districts/{id}', 'DistrictController@update')->name('adminDistrictsUpdate');
     Route::get('/districts/{id}/delete', 'DistrictController@destroy')->name('adminDistrictsDelete');
 
+    Route::get('/addresses', 'AddressController@index')->name('adminAddresses');
+
+    Route::get('/users', 'UserController@index')->name('adminUsers');
+
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');
+
+    Route::get('/roles', 'RoleController@index')->name('adminRoles');
+
+    Route::get('/contacts', 'ContactController@index')->name('adminContacts');
 });

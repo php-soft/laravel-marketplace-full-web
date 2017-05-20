@@ -70,7 +70,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Market <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Shops</a></li>
+                                <li><a href="{{ route('adminShops') }}">Shops</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Shop Assignments</a></li>
                                 <li role="separator" class="divider"></li>

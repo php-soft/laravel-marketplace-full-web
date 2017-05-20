@@ -25,6 +25,7 @@
                                     <td>{{ $contact->id }}</td>
                                     <td>{{ $contact->content }}</td>
                                     <td>{{ $contact->email }}</td>
+                                    <td class="text-right">#</td>
                                 </tr>
                             @endforeach
                         </tbody>

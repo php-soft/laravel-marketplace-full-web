@@ -6,6 +6,15 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Update Category</div>
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                 <div class="panel-body">
                     {{ Form::model($category, ['route' => ['adminCategoriesUpdate', $category->id], 'method' => 'put']) }}

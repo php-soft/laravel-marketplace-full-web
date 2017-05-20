@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of type
-                    <div class="pull-right"><a href="#"><button class="btn btn-xs btn-primary">Create new type</button></a></div>
+                    <div class="pull-right"><a href="{{ route('adminTypesCreate') }}"><button class="btn btn-xs btn-primary">Create new type</button></a></div>
                 </div>
 
                 <div class="panel-body">
@@ -25,8 +25,8 @@
                                     <td>{{ $type->id }}</td>
                                     <td>{{ $type->name }}</td>
                                     <td class="text-right">
-                                        <a href="#"><button class="btn btn-xs btn-primary">Edit</button></a>
-                                        <a href="#" ><button class="btn btn-xs btn-danger">Delete</button></a>
+                                        <a href="{{ route('adminTypesEdit', ['id' => $type->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                        <a href="{{ route('adminTypesDelete', ['id' => $type->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
                                     </td>
                                 </tr>
                             @endforeach

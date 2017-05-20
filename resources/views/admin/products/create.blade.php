@@ -25,11 +25,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            {!! Form::label('image', 'Code') !!}
+                            {!! Form::label('photo', 'Photo') !!}
                             <div class="form-controls">
-                                {{ Form::text('image', null, ['class'=>'form-control']) }}
+                                {{ Form::file('photo', null, ['class'=>'form-control']) }}
                             </div>
                         </div>
+                        {{ Form::hidden('image') }}
                         <div class="form-group">
                             {!! Form::label('description', 'Description') !!}
                             <div class="form-controls">

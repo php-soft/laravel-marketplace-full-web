@@ -19,6 +19,10 @@
                     @endif
                     {{ Form::open(['route' => 'adminAddressesStore']) }}
                         <div class="form-group">
+                            {!! Form::label('user', 'User:') !!}
+                            <div class="form-controls">
+                                {{ Form::select('user_id', $users, ['class'=>'form-control']) }}
+                            </div>
                             {!! Form::label('street', 'Street:') !!}
                             <div class="form-controls">
                                 {{ Form::text('street', null, ['class'=>'form-control']) }}

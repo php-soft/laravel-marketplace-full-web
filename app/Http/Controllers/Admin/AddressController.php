@@ -8,6 +8,7 @@ use App\Country;
 use App\District;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
 
 class AddressController extends Controller
 {
@@ -19,12 +20,14 @@ class AddressController extends Controller
 
     public function create()
     {
+        $users = User::pluck('name', 'id');
         $cities = City::pluck('name', 'id');
         $districts = District::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
         return view('admin.addresses.create')->with('cities', $cities)
                 ->with('districts', $districts)
-                ->with('countries', $countries);
+                ->with('countries', $countries)
+                ->with('users', $users);
     }
 
     public function store(Request $request)

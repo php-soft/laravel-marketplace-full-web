@@ -22,21 +22,30 @@ class CategoryController extends Controller
         return view('admin.categories.create')->with('types', $types);
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required|max:255|min:3',
+            'type_id' => 'required|numeric|exists:types,id'
+        ]);
         Category::create(Input::all());
         return redirect()->route('adminCategories');
     }
 
     public function edit($id)
     {
+
         $category = Category::findOrFail($id);
         $types = Type::pluck('name', 'id');
         return view('admin.categories.edit')->with('category', $category)->with('types', $types);
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required|max:255|min:3',
+            'type_id' => 'required|numeric|exists:types,id'
+        ]);
         $category = Category::findOrFail($id);
         $category->update(Input::all());
         return redirect()->route('adminCategories');

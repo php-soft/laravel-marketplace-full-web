@@ -3,31 +3,37 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">List of Categories</div>
+                <div class="panel-heading">
+                    List of Categories
+                    <div class="pull-right"><a href="{{ route('adminCategoriesCreate') }}"><button class="btn btn-xs btn-primary">Add Category</button></a></div>
+                </div>
+
                 <div class="panel-body">
-                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <table class="table table-hover">
                         <thead>
-                            <tr align="center">
-                                <th>Category Name</th>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
                                 <th>Type</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th class="text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($categories as $category)
-                            <tr class="odd gradeX" align="center">
-                                <td>{{ $category->name }}</td>
-                                <td>{{ $category->type->name }}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{ route('adminCategoriesEdit', ['id' => $category->id] ) }}">Edit</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ route('adminCategoriesDelete', ['id' => $category->id] ) }}">Delete</a></td>
-                            </tr>
-                        @endforeach    
+                            @foreach($categories as $category)
+                                <tr>
+                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $category->name }}</td>
+                                    <td>{{ $category->type->name }}</td>
+                                    <td class="text-right">
+                                      <a href="{{ route('adminCategoriesEdit', ['id' => $category->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                      <a href="{{ route('adminCategoriesDelete', ['id' => $category->id] ) }}"><button class="btn btn-xs btn-primary">Delete</button></a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
-                    <a href="{{ route('adminCategoriesCreate') }}">Add Category</a>
                 </div>
             </div>
         </div>

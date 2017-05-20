@@ -77,6 +77,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');
 
     Route::get('/roles', 'RoleController@index')->name('adminRoles');
+    Route::get('/roles/{id}/edit', 'RoleController@edit')->name('adminRolesEdit');
+    Route::put('/roles/{id}', 'RoleController@update')->name('adminRolesUpdate');
 
     Route::get('/contacts', 'ContactController@index')->name('adminContacts');
 });

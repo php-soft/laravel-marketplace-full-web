@@ -20,7 +20,7 @@ class AddressController extends Controller
 
     public function create()
     {
-        $users = User::pluck('name', 'id');
+        $users = User::pluck('id');
         $cities = City::pluck('name', 'id');
         $districts = District::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
@@ -36,6 +36,7 @@ class AddressController extends Controller
             'street' => 'required|unique:addresses|max:255',
             'zip_code' => 'required|unique:addresses|max:255',
             'phone_number' => 'required|unique:addresses|max:255',
+            'user_id' => 'required|numeric|exists:users,id',
             'city_id' => 'required|numeric|exists:cities,id',
             'district_id' => 'required|numeric|exists:districts,id',
             'country_id' => 'required|numeric|exists:countries,id',

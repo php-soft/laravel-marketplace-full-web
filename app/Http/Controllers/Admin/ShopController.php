@@ -27,9 +27,7 @@ class ShopController extends Controller
         $cities = City::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
         $districts = District::pluck('name', 'id');
-        $shops = Shop::pluck('name', 'id');
         return view('admin.shops.create')
-            ->with('shops', $shops)
             ->with('cities', $cities)
             ->with('countries', $countries)
             ->with('districts', $districts)

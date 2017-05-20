@@ -20,7 +20,7 @@ class AddressController extends Controller
 
     public function create()
     {
-        $users = User::pluck('id');
+        $users = User::pluck('first_name', 'id');
         $cities = City::pluck('name', 'id');
         $districts = District::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');

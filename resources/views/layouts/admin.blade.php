@@ -80,7 +80,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact </a>
+                            <a href="{{ route('adminContacts') }}" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Contact </a>
                         </li>
                     </ul>
 

@@ -26,7 +26,8 @@
                                     <td>{{ $role->id }}</td>
                                     <td>{{ $role->name }}</td>
                                     <td>{{ $role->description }}</td>
-                                    <td class="text-right">#
+                                    <td class="text-right">
+                                      <a href="{{ route('adminRolesEdit', ['id' => $role->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
                                     </td>
                                 </tr>
                             @endforeach

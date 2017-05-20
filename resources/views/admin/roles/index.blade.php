@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of roles
+                    <div class="pull-right"><a href="{{ route('adminRolesCreate') }}"><button class="btn btn-xs btn-primary">Create new role</button></a></div>
                 </div>
 
                 <div class="panel-body">

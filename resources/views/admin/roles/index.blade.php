@@ -25,7 +25,8 @@
                                     <td>{{ $role->id }}</td>
                                     <td>{{ $role->name }}</td>
                                     <td>{{ $role->description }}</td>
-                                    <td class="text-right">#
+                                    <td class="text-right">
+                                      <a href="{{ route('adminRolesDelete', ['id' => $role->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -13,4 +13,10 @@ class RoleController extends Controller
         $roles = Role::all();
         return view('admin.roles.index')->with('roles', $roles);
     }
+
+    public function destroy($id)
+    {
+        Role::destroy($id);
+        return redirect()->route('adminRoles');
+    }
 }

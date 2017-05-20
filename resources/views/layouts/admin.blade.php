@@ -61,8 +61,10 @@
                                 <li><a href="{{ route('adminCities') }}">Cities</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Districts</a></li>
-                                <li role="separator" class="divider"><a href="{{ route('adminAddresses') }}">Addresses</a></li>
-                                <li role="separator" class="divider"><a href="{{ route('adminUsers') }}">Users</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('adminAddresses') }}">Addresses</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('adminUsers') }}">Users</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('adminTypes') }}">Types</a></li>
                                 <li role="separator" class="divider"></li>

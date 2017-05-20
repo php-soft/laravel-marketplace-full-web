@@ -27,13 +27,13 @@
                             <div class="form-controls">
                                 {{ Form::text('street', null, ['class'=>'form-control']) }}
                             </div>
-                            {!! Form::label('name', 'City:') !!}
-                            <div class="form-controls">
-                                {{ Form::select('city_id', $cities, ['class'=>'form-control']) }}
-                            </div>
                             {!! Form::label('name', 'District:') !!}
                             <div class="form-controls">
                                 {{ Form::select('district_id', $districts, ['class'=>'form-control']) }}
+                            </div>
+                            {!! Form::label('name', 'City:') !!}
+                            <div class="form-controls">
+                                {{ Form::select('city_id', $cities, ['class'=>'form-control']) }}
                             </div>
                             {!! Form::label('name', 'Country:') !!}
                             <div class="form-controls">

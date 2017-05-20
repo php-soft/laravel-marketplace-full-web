@@ -42,7 +42,7 @@ class AddressController extends Controller
             'country_id' => 'required|numeric|exists:countries,id',
         ]);
 
-        District::create($request->all());
+        Address::create($request->all());
 
         return redirect()->route('adminAddresses');
     }

@@ -40,7 +40,7 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',            
+            'name' => 'required|max:255',
             'user_id' => 'required|numeric|exists:users,id',
             'type_id' => 'required|numeric|exists:types,id',
             'city_id' => 'required|numeric|exists:cities,id',

@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/products', 'ProductController@store')->name('adminProductsStore');
     Route::get('/products/{id}/edit', 'ProductController@edit')->name('adminProductsEdit');
     Route::put('/products/{id}', 'ProductController@update')->name('adminProductsUpdate');
+    Route::get('/products/{id}/delete', 'ProductController@destroy')->name('adminProductsDelete');
 
     Route::get('/categories', 'CategoryController@index')->name('adminCategories');
     Route::get('/categories/create', 'CategoryController@create')->name('adminCategoriesCreate');
@@ -72,4 +73,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/addresses', 'AddressController@store')->name('adminAddressesStore');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
+    Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');
 });

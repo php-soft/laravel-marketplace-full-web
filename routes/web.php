@@ -81,6 +81,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::put('/roles/{id}', 'RoleController@update')->name('adminRolesUpdate');
     Route::get('/roles/create', 'RoleController@create')->name('adminRolesCreate');
     Route::post('/roles', 'RoleController@store')->name('adminRolesStore');
+    Route::get('/roles/{id}/delete', 'RoleController@destroy')->name('adminRolesDelete');
 
     Route::get('/contacts', 'ContactController@index')->name('adminContacts');
 });

@@ -14,6 +14,20 @@ class RoleController extends Controller
         return view('admin.roles.index')->with('roles', $roles);
     }
 
+    public function create()
+    {
+        return view('admin.roles.create');
+    }
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:roles|max:255',
+            'description' => 'required'
+        ]);
+        Role::create($request->all());
+        return redirect()->route('adminRoles');
+    }
+
     public function edit($id)
     {
         $role = Role::findOrFail($id);
@@ -33,20 +47,9 @@ class RoleController extends Controller
         return redirect()->route('adminRoles');
     }
 
-    public function create()
+    public function destroy($id)
     {
-        return view('admin.roles.create');
-    }
-
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required|unique:roles|max:255',
-            'description' => 'required'
-        ]);
-
-        Role::create($request->all());
-
+        Role::destroy($id);
         return redirect()->route('adminRoles');
     }
 }

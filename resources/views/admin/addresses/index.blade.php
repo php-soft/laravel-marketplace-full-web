@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of addresses
+                    <div class="pull-right"><a href="{{ route('adminAddressesCreate') }}"><button class="btn btn-xs btn-primary">Create new address</button></a></div>
                 </div>
 
                 <div class="panel-body">

@@ -72,6 +72,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/districts/{id}/delete', 'DistrictController@destroy')->name('adminDistrictsDelete');
 
     Route::get('/addresses', 'AddressController@index')->name('adminAddresses');
+    Route::get('/addresses/create', 'AddressController@create')->name('adminAddressesCreate');
+    Route::post('/addresses', 'AddressController@store')->name('adminAddressesStore');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');

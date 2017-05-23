@@ -24,12 +24,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            {!! Form::label('last_name', 'User:') !!}
-                            <div class="form-controls">
-                                {{ Form::select('last_name', $users, null, ['class'=>'form-control']) }}
-                            </div>
-                        </div>
-                        <div class="form-group">
                             {!! Form::label('street', 'Street:') !!}
                             <div class="form-controls">
                                 {{ Form::text('street', null, ['class'=>'form-control']) }}

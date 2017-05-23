@@ -6,9 +6,11 @@
         <div class="col-md-12">
             <div class="panel-group">
                 @foreach ($categories as $category)
-                    <div class="panel panel-default">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            {{ $category->name }}
+                        </div>
                         <div class="panel-body">
-                            <h2>{{ $category->name }}</h2>
                             <div class="row">
                                 @foreach ($category->products(['limit' => 4]) as $product)
                                     <a href="#">

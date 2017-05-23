@@ -8,11 +8,16 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Market-place</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+        .dropdown ul {display: none}
+        .dropdown:hover ul {display: block;background: #fff4aa}
+        .dropdown:hover {background: #8dd35e}
+    </style>
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -22,8 +27,8 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top" style="padding-top: 1em">
+            <div class="container" >
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -36,7 +41,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Market-place
                     </a>
                 </div>
 
@@ -45,12 +50,24 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="input-group" style="width: 200%;margin-left: 3em ">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ "#" }}"><span class="badge pull-right">2</span>
+                        <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-user">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
@@ -73,12 +90,40 @@
                                 </ul>
                             </li>
                         @endif
+                        <li><a href="{{ '#' }}"><button class="btn btn-danger btn-xs">Shop Register</button></a></li>
                     </ul>
                 </div>
             </div>
+            <div style="background-color:#196fb8 " style="position: relative;">
+                <div class="container">
+                    <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="nav navbar-nav">
+                            @foreach ($types as $type)
+                                <li class="dropdown">
+                                    <a href="" style="color:white">{{ $type->name }}</a>
+                                    <ul class="nav nav-pills nav-stacked" 
+                                    style="position: absolute;width: 200%">
+                                        @foreach ($type->categories as $category)
+                                            <li><a href="#">{{ $category->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </nav>
+        <div class="container" style="margin-top:150px;margin-bottom:150px;">
 
         @yield('content')
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container" style="padding: 1em">
+                &copy;2017 Copy right by iViettech PHP 16 team
+            </div>
+        </nav>
     </div>
 
     <!-- Scripts -->

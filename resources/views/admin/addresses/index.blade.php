@@ -36,7 +36,8 @@
                                     <td>{{ $address->district->name }}</td>
                                     <td>{{ $address->city->name }}</td>
                                     <td>{{ $address->country->name }}</td>
-                                    <td class="text-right">#</td>
+                                    <td class="text-right">
+                                        <a href="{{ route('adminAddressesEdit', ['id' => $address->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
                                 </tr>
                             @endforeach
                         </tbody>

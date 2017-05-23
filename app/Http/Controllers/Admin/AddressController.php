@@ -46,4 +46,32 @@ class AddressController extends Controller
 
         return redirect()->route('adminAddresses');
     }
+
+    public function edit($id)
+    {
+        $users = User::pluck('first_name', 'id', 'last_name');
+        $countries = Country::pluck('name', 'id');
+        $cities = City::pluck('name', 'id');
+        $districts = District::pluck('name', 'id');
+        $address = Address::findOrFail($id);
+        return view('admin.addresses.edit')->with('address', $address)
+                ->with('cities', $cities)
+                ->with('countries', $countries)
+                ->with('districts', $districts)
+                ->with('users', $users);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'street' => 'required|unique:addresses,street,'.$id,
+            'city_id' => 'required|numeric|exists:cities,id',
+            'district_id' => 'required|numeric|exists:districts,id',
+            'country_id' => 'required|numeric|exists:countries,id',
+        ]);
+
+        $address = Address::findOrFail($id);
+        $address->update($request->all());
+        return redirect()->route('adminAddresses');
+    }
 }

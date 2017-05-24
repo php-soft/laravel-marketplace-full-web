@@ -10,10 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
         $types = Type::all();
         return view('home')
-            ->with('categories', $categories)
             ->with('types', $types);
     }
 }

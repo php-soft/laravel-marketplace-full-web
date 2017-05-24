@@ -16,9 +16,17 @@ class Category extends Model
     public function products($options = [])
     {
         $relation = $this->hasMany('App\Product');
-
-        if (!empty($options['limit'])) {
-            $relation = $relation->orderBy('id', 'desc')->take($options['limit'])->get();
+        if (!empty($options['newest'])) {
+            $relation = $relation->orderBy('id', 'desc');
+            if (!empty($options['limit'])) {
+            $relation = $relation->take($options['limit'])->get();
+            } else {
+                $relation = $relation->get();
+            }
+        } else {
+            if (!empty($options['limit'])) {
+            $relation = $relation->take($options['limit'])->get();
+            }
         }
 
         return $relation;

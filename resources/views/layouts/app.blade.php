@@ -8,16 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Market-place</title>
+    <title>{{ config('app.name', 'Market-place') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <style>
-        .dropdown ul {display: none}
-        .dropdown:hover ul {display: block;background: #fff4aa}
-        .dropdown:hover {background: #8dd35e}
-    </style>
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -27,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-fixed-top" style="padding-top: 1em">
+        <nav class="navbar navbar-default navbar-fixed-top m-x-auto">
             <div class="container" >
                 <div class="navbar-header">
 
@@ -41,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Market-place
+                        {{ config('app.name', 'Market-place') }}
                     </a>
                 </div>
 
@@ -94,16 +89,15 @@
                     </ul>
                 </div>
             </div>
-            <div style="background-color:#196fb8 " style="position: relative;">
+            <div class="bg-primary">
                 <div class="container">
                     <div class="collapse navbar-collapse" id="app-navbar-collapse">
                         <!-- Left Side Of Navbar -->
                         <ul class="nav navbar-nav">
                             @foreach ($types as $type)
                                 <li class="dropdown">
-                                    <a href="" style="color:white">{{ $type->name }}</a>
-                                    <ul class="nav nav-pills nav-stacked" 
-                                    style="position: absolute;width: 200%">
+                                    <a href="#" style="color: white">{{ $type->name }}</a>
+                                    <ul class="nav nav-pills nav-stacked">
                                         @foreach ($type->categories as $category)
                                             <li><a href="#">{{ $category->name }}</a></li>
                                         @endforeach
@@ -115,12 +109,12 @@
                 </div>
             </div>
         </nav>
-        <div class="container" style="margin-top:150px;margin-bottom:150px;">
+        <div class="container content">
 
         @yield('content')
         </div>
         <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container" style="padding: 1em">
+            <div class="container">
                 &copy;2017 Copy right by iViettech PHP 16 team
             </div>
         </nav>

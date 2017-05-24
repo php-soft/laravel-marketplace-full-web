@@ -14,7 +14,7 @@
                             </div>
                             <div class="panel-body">
                                 <div class="row">
-                                    @foreach ($category->products(['limit' => 4]) as $product)
+                                    @foreach ($category->products(['limit' => 4, 'newest' => 1]) as $product)
                                         <a href="#">
                                             <div class="col-md-3">
                                                 <div class="thumbnail" style="height: 450px">

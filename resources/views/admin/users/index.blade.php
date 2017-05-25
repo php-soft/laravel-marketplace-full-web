@@ -37,7 +37,7 @@
                                     <td>{{ $user->date_of_birth }}</td>
                                     <td>{{ $user->phone_number }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->address->street }}</td>
+                                    <td>{{ $user->address }}</td>
                                     <td>{{ $user->district->name }}</td>
                                     <td>{{ $user->city->name }}</td>
                                     <td>{{ $user->country->name }}</td>

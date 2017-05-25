@@ -100,4 +100,5 @@ class ShopController extends Controller
         $shops->update($data);
         return redirect('admin/shops');
     }
+
 }

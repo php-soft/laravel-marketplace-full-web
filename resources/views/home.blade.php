@@ -29,7 +29,7 @@
                                     @endforeach
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{ "#" }}"><button class="btn btn-xs btn-primary ">More>></button></a>
+                                    <a href="{{ "#" }}"><button class="btn btn-xs btn-primary ">View more</button></a>
                                 </div>
                             </div>
                         </div>

@@ -90,25 +90,25 @@
                 </div>
             </div>
             @if (!empty($type))
-            <div class="bg-primary">
-                <div class="container">
-                    <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="nav navbar-nav">
-                            @foreach ($types as $type)
-                                <li class="dropdown">
-                                    <a href="#" style="color: white">{{ $type->name }}</a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        @foreach ($type->categories as $category)
-                                            <li><a href="#">{{ $category->name }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            @endforeach
-                        </ul>
+                <div class="bg-primary">
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                            <!-- Left Side Of Navbar -->
+                            <ul class="nav navbar-nav">
+                                @foreach ($types as $type)
+                                    <li class="dropdown">
+                                        <a href="#" style="color: white">{{ $type->name }}</a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            @foreach ($type->categories as $category)
+                                                <li><a href="#">{{ $category->name }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endif
         </nav>
     </header>

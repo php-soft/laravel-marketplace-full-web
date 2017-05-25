@@ -49,6 +49,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::get('/cities', 'CityController@index')->name('adminCities');
 
+
     Route::get('/types', 'TypeController@index')->name('adminTypes');
     Route::get('/types/create', 'TypeController@create')->name('adminTypesCreate');
     Route::post('/types', 'TypeController@store')->name('adminTypesStore');
@@ -57,6 +58,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/types/{id}/delete', 'TypeController@destroy')->name('adminTypesDelete');
 
     Route::get('/shops', 'ShopController@index')->name('adminShops');
+    Route::get('/shops/create', 'ShopController@create')->name('adminShopsCreate');
+    Route::post('/shops', 'ShopController@store')->name('adminShopsStore');
+
 
     Route::get('/cities/create', 'CityController@create')->name('adminCitiesCreate');
     Route::post('/cities', 'CityController@store')->name('adminCitiesStore');
@@ -72,7 +76,18 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/districts/{id}/delete', 'DistrictController@destroy')->name('adminDistrictsDelete');
 
     Route::get('/addresses', 'AddressController@index')->name('adminAddresses');
+    Route::get('/addresses/create', 'AddressController@create')->name('adminAddressesCreate');
+    Route::post('/addresses', 'AddressController@store')->name('adminAddressesStore');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');
+
+    Route::get('/roles', 'RoleController@index')->name('adminRoles');
+    Route::get('/roles/{id}/edit', 'RoleController@edit')->name('adminRolesEdit');
+    Route::put('/roles/{id}', 'RoleController@update')->name('adminRolesUpdate');
+    Route::get('/roles/create', 'RoleController@create')->name('adminRolesCreate');
+    Route::post('/roles', 'RoleController@store')->name('adminRolesStore');
+    Route::get('/roles/{id}/delete', 'RoleController@destroy')->name('adminRolesDelete');
+
+    Route::get('/contacts', 'ContactController@index')->name('adminContacts');
 });

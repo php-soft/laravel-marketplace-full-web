@@ -48,7 +48,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{route('adminRoles') }}">Roles</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Users</a></li>
+                                <li><a href="{{route('adminUsers') }}">Users</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Assignments</a></li>
                             </ul>

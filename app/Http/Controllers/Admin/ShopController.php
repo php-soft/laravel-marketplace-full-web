@@ -19,7 +19,7 @@ class ShopController extends Controller
         $shops = Shop::all();
         return view('admin.shops.index')->with('shops', $shops);
     }
-
+    
     public function create()
     {
         $types = Type::pluck('name', 'id');

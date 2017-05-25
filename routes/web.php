@@ -59,6 +59,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/shops', 'ShopController@index')->name('adminShops');
     Route::get('/shops/create', 'ShopController@create')->name('adminShopCreate');
     Route::post('/shops', 'ShopController@store')->name('adminShopstore');
+    Route::get('/shops/{id}/edit', 'ShopController@edit')->name('adminShopEdit');
+    Route::put('/shops/{id}', 'ShopController@update')->name('adminShopUpdate');
 
     Route::get('/cities/create', 'CityController@create')->name('adminCitiesCreate');
     Route::post('/cities', 'CityController@store')->name('adminCitiesStore');

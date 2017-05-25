@@ -57,6 +57,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/types/{id}/delete', 'TypeController@destroy')->name('adminTypesDelete');
 
     Route::get('/shops', 'ShopController@index')->name('adminShops');
+    Route::get('/shops/create', 'ShopController@create')->name('adminShopsCreate');
+    Route::post('/shops', 'ShopController@store')->name('adminShopsStore');
+
 
     Route::get('/cities/create', 'CityController@create')->name('adminCitiesCreate');
     Route::post('/cities', 'CityController@store')->name('adminCitiesStore');

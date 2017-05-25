@@ -26,7 +26,7 @@
                         <div class="form-group">
                             {!! Form::label('street', 'Street:') !!}
                             <div class="form-controls">
-                                {{ Form::text('street', null, ['class'=>'form-control']) }}
+                                {{ Form::text('street', $address->street, ['class'=>'form-control']) }}
                             </div>
                         </div>
                         <div class="form-group">
@@ -50,13 +50,13 @@
                         <div class="form-group">
                             {!! Form::label('code', 'Zip Code:') !!}
                             <div class="form-controls">
-                                {{ Form::text('zip_code', null, ['class'=>'form-control']) }}
+                                {{ Form::text('zip_code', $address->zip_code, ['class'=>'form-control']) }}
                             </div>
                         </div>
                         <div class="form-group">
                             {!! Form::label('phone', 'Phone Number:') !!}
                             <div class="form-controls">
-                                {{ Form::text('phone_number', null, ['class'=>'form-control']) }}
+                                {{ Form::text('phone_number', $address->phone_number, ['class'=>'form-control']) }}
                             </div>
                         </div>
                         {{ Form::submit('Update', ['class'=>'btn btn-primary']) }}

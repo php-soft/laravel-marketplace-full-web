@@ -65,8 +65,8 @@ class AddressController extends Controller
     {
         $this->validate($request, [
             'street' => 'required|unique:addresses,street,'.$id,
-            'zip_code' => 'required|unique:addresses|max:255',
-            'phone_number' => 'required|unique:addresses|max:255',
+            'zip_code' => 'required|unique:addresses,zip_code,'.$id,
+            'phone_number' => 'required|unique:addresses,phone_number,'.$id,
             'city_id' => 'required|numeric|exists:cities,id',
             'district_id' => 'required|numeric|exists:districts,id',
             'country_id' => 'required|numeric|exists:countries,id',

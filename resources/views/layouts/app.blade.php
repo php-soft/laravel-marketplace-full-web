@@ -89,7 +89,7 @@
                     </ul>
                 </div>
             </div>
-            @if (!empty($type))
+            @if (!empty($types))
                 <div class="bg-primary">
                     <div class="container">
                         <div class="collapse navbar-collapse" id="app-navbar-collapse">

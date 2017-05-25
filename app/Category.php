@@ -16,6 +16,7 @@ class Category extends Model
     public function products($options = [])
     {
         $relation = $this->hasMany('App\Product');
+
         if (!empty($options['newest'])) {
             $relation = $relation->orderBy('id', 'desc');
         }

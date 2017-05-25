@@ -76,4 +76,10 @@ class AddressController extends Controller
         $address->update($request->all());
         return redirect()->route('adminAddresses');
     }
+
+    public function destroy($id)
+    {
+        Address::destroy($id);
+        return redirect()->route('adminAddresses');
+    }
 }

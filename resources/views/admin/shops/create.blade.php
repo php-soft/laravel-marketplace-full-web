@@ -17,7 +17,7 @@
                             </ul>
                         </div>
                     @endif
-                    {{Form::open(['route'=>'adminShopsStore', 'files' => true])}}
+                    {{Form::open(['route'=>'adminShopStore', 'files' => true])}}
                         <div class="form-group">
                             {!! Form::label('name', 'Shop Name') !!}
                             <div class="form-controls">
@@ -82,3 +82,5 @@
     </div>
 </div>
 @endsection
+
+

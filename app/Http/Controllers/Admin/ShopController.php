@@ -59,4 +59,5 @@ class ShopController extends Controller
         Shop::create($data);
         return redirect()->route('adminShops');
     }
+    
 }

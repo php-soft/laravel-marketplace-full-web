@@ -20,8 +20,8 @@
         ]) !!};
     </script>
 </head>
-<body>
-    <div id="app">
+<body class="app">
+    <header>
         <nav class="navbar navbar-default navbar-fixed-top m-x-auto">
             <div class="container" >
                 <div class="navbar-header">
@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Market-place') }}
+                        {{ config('app.name', 'Marketplace') }}
                     </a>
                 </div>
 
@@ -89,6 +89,7 @@
                     </ul>
                 </div>
             </div>
+            @if (!empty($type))
             <div class="bg-primary">
                 <div class="container">
                     <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -108,17 +109,17 @@
                     </div>
                 </div>
             </div>
+            @endif
         </nav>
-        <div class="container content">
+    </header>
 
-        @yield('content')
+    @yield('content')
+
+    <footer>
+        <div class="container">
+            &copy;2017 Copy right by iViettech PHP 16 team
         </div>
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container">
-                &copy;2017 Copy right by iViettech PHP 16 team
-            </div>
-        </nav>
-    </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

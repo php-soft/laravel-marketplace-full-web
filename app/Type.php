@@ -10,9 +10,15 @@ class Type extends Model
         'name',
     ];
     
-    public function categories()
+    public function categories($options = [])
     {
-        return $this->hasMany('App\Category');
+        $relation = $this->hasMany('App\Category');
+
+        if (!empty($options['limit'])) {
+            $relation = $relation->take($options['limit'])->get();
+        }
+
+        return $relation;
     }
 
     public function shops()

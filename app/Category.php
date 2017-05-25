@@ -13,8 +13,16 @@ class Category extends Model
         return $this->belongsTo('App\Type');
     }
 
-    public function products()
+    public function products($options = [])
     {
-        return $this->hasMany('App\Product');
+        $relation = $this->hasMany('App\Product');
+        if (!empty($options['newest'])) {
+            $relation = $relation->orderBy('id', 'desc');
+        }
+        if (!empty($options['limit'])) {
+            $relation = $relation->take($options['limit']);
+        }
+
+        return $relation->get();
     }
 }

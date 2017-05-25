@@ -8,11 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Marketplace') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -20,10 +20,10 @@
         ]) !!};
     </script>
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+<body class="app">
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top m-x-auto">
+            <div class="container" >
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Marketplace') }}
                     </a>
                 </div>
 
@@ -45,12 +45,24 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="input-group input-seach">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ "#" }}"><span class="badge pull-right">2</span>
+                        <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-user">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
@@ -73,13 +85,41 @@
                                 </ul>
                             </li>
                         @endif
+                        <li><a href="{{ '#' }}"><button class="btn btn-danger btn-xs">Shop Register</button></a></li>
                     </ul>
                 </div>
             </div>
+            @if (!empty($type))
+                <div class="bg-primary">
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                            <!-- Left Side Of Navbar -->
+                            <ul class="nav navbar-nav">
+                                @foreach ($types as $type)
+                                    <li class="dropdown">
+                                        <a href="#" style="color: white">{{ $type->name }}</a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            @foreach ($type->categories as $category)
+                                                <li><a href="#">{{ $category->name }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </nav>
+    </header>
 
-        @yield('content')
-    </div>
+    @yield('content')
+
+    <footer>
+        <div class="container">
+            &copy;2017 Copy right by iViettech PHP 16 team
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

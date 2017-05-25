@@ -62,6 +62,8 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('adminDistricts') }}">Districts</a></li>
                                 <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('adminAddresses') }}">Addresses</a></li>
+                                <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('adminTypes') }}">Types</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('adminCategories') }}">Categories</a></li>

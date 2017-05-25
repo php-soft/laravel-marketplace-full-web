@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of Shops
-                    <div class="pull-right"><a href="{{ route('adminShopsCreate') }}"><button class="btn btn-xs btn-primary">Create new Shop</button></a></div>
+                    <div class="pull-right"><a href="{{ route('adminShopCreate') }}"><button class="btn btn-xs btn-primary">Create new Shop</button></a></div>
                 </div>
 
                 <div class="panel-body">

@@ -12,3 +12,4 @@
 .dropdown:hover {background: #8dd35e;}
 .content {margin-top: 150px; margin-bottom: 150px;}
 .dropdown ul {position: absolute; width: 200%;}
+.input-seach {width: 200%; margin-left: 3em; }

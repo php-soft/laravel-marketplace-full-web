@@ -16,6 +16,10 @@ body.app {
 .product-page .margin-top {margin-top: 2em;}
 .product-page .product-img img {width: 100%;}
 
+.cart-page .cart-table img {width: 100%;}
+.cart-page .cart-table .set-width-30 {width: 30%;}
+.cart-page .cart-table .set-width-15 {width: 15%;}
+
 header nav .dropdown ul {display: none;}
 header nav .dropdown:hover ul {display: block;background: #fff4aa;}
 header nav .dropdown:hover {background: #8dd35e;}

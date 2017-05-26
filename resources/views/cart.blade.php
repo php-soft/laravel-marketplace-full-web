@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container cart-page">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ ''}}"><button class="btn btn-xs btn-primary pull-right">Buy continue</button></a>
+            <a href="{{ ''}}"><button class="btn btn-xs btn-primary pull-right">Continue shopping</button></a>
             <h4>My shopping cart</h4>
-            <table class="table table-striped">
+            <table class="table table-striped cart-table">
                     <tr>
                         <th colspan="2">Name</th>
                         <th>Price</th>
@@ -16,8 +16,8 @@
                     </tr>
                 @foreach ($carts as $cart)
                     <tr>
-                        <td><img class="img-responsive img-thumbnail pull-left" src="{{ asset('upload/'.$cart->options['image']) }}" alt="noImage" style="width: 150px"></td>
-                        <td style="width:30%">{{ $cart->name }}</td>
+                        <td class='set-width-15'><img class="img-responsive img-thumbnail" src="{{ asset('upload/'.$cart->options['image']) }}" alt="noImage"></td>
+                        <td class='set-width-30'>{{ $cart->name }}</td>
                         <td>{{ number_format($cart->price) }}</td>
                         <td>
                             {{Form::open()}}
@@ -30,15 +30,14 @@
                             <a href="" data-toggle="modal" data-target="{{"#".$cart->id}}"><span class="glyphicon glyphicon-remove"></span></a>
                             <div id="{{$cart->id}}" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
-
-                                            <!-- Modal content-->
+                                <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             <h4 class="modal-title">Warning!</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Do you sure want to delete this product on my shopping cart?</p><br>
+                                            <p>Do you sure want to delete this product from your shopping cart?</p><br>
                                             <h4>{{$cart->name}}</h4>
                                         </div>
                                         <div class="modal-footer">

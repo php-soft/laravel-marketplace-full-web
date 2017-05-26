@@ -14,9 +14,13 @@
                             <h4>Shop:{{ $product->shop->name }}</h4>
                             <h3>Price:{{ number_format($product->price) }}VND</h3>
                             {{Form::open()}}
+                                <div class="form-inline">
                                 {!! Form::label('quantity', 'Quantity') !!}
+                                <div class="form-controls">
                                 {{ Form::select('qty', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], null, ['class'=>'form-control']) }}
                                 <a href="{{ '#' }}"><button class="btn btn-success">Add to cart <span class="glyphicon glyphicon-shopping-cart"></span></button></a>
+                                </div>
+                                </div>
                             {{ Form::close() }}
                         </div>
                         <div class='border-top margin-top'>

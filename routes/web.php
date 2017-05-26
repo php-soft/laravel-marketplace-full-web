@@ -16,6 +16,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 
+
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
 Route::get('/cart/show', 'CartController@show')->name('cartShow');
 
@@ -78,6 +79,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/addresses', 'AddressController@store')->name('adminAddressesStore');
     Route::get('/addresses/{id}/edit', 'AddressController@edit')->name('adminAddressesEdit');
     Route::put('/addresses/{id}', 'AddressController@update')->name('adminAddressesUpdate');
+    Route::get('/addresses/{id}/delete', 'AddressController@destroy')->name('adminAddressesDelete');
 
     Route::get('/users', 'UserController@index')->name('adminUsers');
 

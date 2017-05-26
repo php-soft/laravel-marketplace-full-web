@@ -13,6 +13,7 @@ class CartController extends Controller
     {
         $types = Type::all();
         $array = $request->all();
+        $array['qty'] = $array['qty'] + 1;
         $array['options'] = ['image' => $request['image']];
         Cart::add($array);
         return redirect()->route('cartShow');

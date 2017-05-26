@@ -74,6 +74,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/addresses', 'AddressController@store')->name('adminAddressesStore');
     Route::get('/addresses/{id}/edit', 'AddressController@edit')->name('adminAddressesEdit');
     Route::put('/addresses/{id}', 'AddressController@update')->name('adminAddressesUpdate');
+    Route::get('/addresses/{id}/delete', 'AddressController@destroy')->name('adminAddressesDelete');
 
     Route::get('/users', 'UserController@index')->name('adminUsers');
 

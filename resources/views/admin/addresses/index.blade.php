@@ -38,6 +38,7 @@
                                     <td>{{ $address->country->name }}</td>
                                     <td class="text-right">
                                         <a href="{{ route('adminAddressesEdit', ['id' => $address->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                        <a href="{{ route('adminAddressesDelete', ['id' => $address->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
                                     </td>
                                 </tr>
                             @endforeach

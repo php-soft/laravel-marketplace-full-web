@@ -15,7 +15,7 @@
                             <div class="panel-body">
                                 <div class="row">
                                     @foreach ($category->products(['limit' => 4, 'newest' => 1]) as $product)
-                                        <a href="#">
+                                        <a href={{ route('productsDetail', ['id' => $product->id]) }}>
                                             <div class="col-md-3">
                                                 <div class="thumbnail" style="height: 450px">
                                                     <img class="img-responsive img-thumbnail" src="{{ asset('upload/'.$product->image) }}" alt="noImage" style="width: 300px;height: 300px">

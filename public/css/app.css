@@ -10,7 +10,10 @@
 
 body.app {
     padding-top: 150px;
+
 }
+.border-top {border-top: 1px solid #ccc;}
+.margin-top {margin-top: 2em;}
 
 header nav .dropdown ul {display: none;}
 header nav .dropdown:hover ul {display: block;background: #fff4aa;}

@@ -16,8 +16,8 @@
                     </tr>
                 @foreach ($carts as $cart)
                     <tr>
-                        <td><img class="img-responsive img-thumbnail pull-left" src="{{ asset('upload/'.$cart->options['image']) }}" alt="noImage" style="width: 150px;height: 150px"></td>
-                        <td>{{ $cart->name }}</td>
+                        <td><img class="img-responsive img-thumbnail pull-left" src="{{ asset('upload/'.$cart->options['image']) }}" alt="noImage" style="width: 150px"></td>
+                        <td style="width:30%">{{ $cart->name }}</td>
                         <td>{{ number_format($cart->price) }}</td>
                         <td>
                             {{Form::open()}}

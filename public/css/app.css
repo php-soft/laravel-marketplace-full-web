@@ -14,7 +14,7 @@ body.app {
 }
 .product-page .border-top {border-top: 1px solid #ccc;}
 .product-page .margin-top {margin-top: 2em;}
-.product-page img {width: 400px; height: 400px;}
+.product-page .product-img img {width: 100%;}
 
 header nav .dropdown ul {display: none;}
 header nav .dropdown:hover ul {display: block;background: #fff4aa;}

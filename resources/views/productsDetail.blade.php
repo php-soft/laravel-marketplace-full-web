@@ -4,10 +4,10 @@
 <div class="container product-page">
     <div class="row">
         <div class="col-md-12">
-            <div class="col-md-5">
+            <div class="col-md-5 product-img">
                 <img class="img-responsive img-thumbnail" src="{{ asset('upload/'.$product->image) }}" alt="noImage">
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 ">
                 <h3>{{ $product->name }}</h3>
                 <div class='border-top'>
                     <h4>Shop:{{ $product->shop->name }}</h4>

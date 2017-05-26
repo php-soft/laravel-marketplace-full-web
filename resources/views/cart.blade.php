@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h4>My shopping cart</h4>
             <a href="{{ ''}}"><button class="btn btn-xs btn-primary pull-right">Buy continue</button></a>
+            <h4>My shopping cart</h4>
             <table class="table table-striped">
                     <tr>
                         <th colspan="2">Name</th>

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container product-page">
     <div class="row">
         <div class="col-md-12">
@@ -12,7 +13,11 @@
                 <div class='border-top'>
                     <h4>Shop:{{ $product->shop->name }}</h4>
                     <h3>Price:{{ number_format($product->price) }}VND</h3>
-                    {{Form::open()}}
+                    {{Form::open(['route'=>'cartStore'])}}
+                        {{ Form::hidden('id', $product->id) }}
+                        {{ Form::hidden('name', $product->name) }}
+                        {{ Form::hidden('price', $product->price) }}
+                        {{ Form::hidden('image', $product->image) }}
                         <div class="form-inline">
                             {!! Form::label('quantity', 'Quantity') !!}
                             <div class="form-controls">

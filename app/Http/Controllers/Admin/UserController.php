@@ -30,10 +30,13 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'avatar' => 'required|unique:users|max:255',
             'first_name' => 'required|unique:users|max:255',
             'last_name' => 'required|unique:users|max:255',
             'phone_number' => 'required|unique:users|max:255',
             'date_of_birth' => 'required|unique:users|max:255',
+            'email' => 'required|unique:users|max:255',
+            'password' => 'required|unique:users|max:255',
             'address' => 'required|unique:users|max:255',
             'city_id' => 'required|numeric|exists:cities,id',
             'district_id' => 'required|numeric|exists:districts,id',

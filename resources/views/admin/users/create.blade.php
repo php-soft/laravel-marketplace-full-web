@@ -41,6 +41,13 @@
                         </div>
 
                         <div class="form-group">
+                            {!! Form::label('date_of_birth', 'Date of birth:') !!}
+                            <div class="form-controls">
+                                {{ Form::text('date_of_birth', null, ['class'=>'form-control']) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             {!! Form::label('phone_number', 'Phone Number:') !!}
                             <div class="form-controls">
                                 {{ Form::text('phone_number', null, ['class'=>'form-control']) }}
@@ -48,9 +55,16 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('date_of_birth', 'Date of birth:') !!}
+                            {!! Form::label('email', 'Email:') !!}
                             <div class="form-controls">
-                                {{ Form::text('date_of_birth', null, ['class'=>'form-control']) }}
+                                {{ Form::text('email', null, ['class'=>'form-control']) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('password', 'Password:') !!}
+                            <div class="form-controls">
+                                {{ Form::password('password', null, ['class'=>'form-control']) }}
                             </div>
                         </div>
 

@@ -14,8 +14,8 @@ class CreateRelationshipForAssignmentsTable extends Migration
     public function up()
     {
         Schema::table('assignments', function ($table) {
-            $table->foreign('role_id')->references('id')->on('roles');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

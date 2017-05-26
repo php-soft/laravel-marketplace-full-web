@@ -14,10 +14,10 @@ class CreateOrdersReferencesTable extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('country_id')->references('id')->on('countries');
-            $table->foreign('city_id')->references('id')->on('cities');
-            $table->foreign('district_id')->references('id')->on('districts');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
+            $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');
         });
     }
 

@@ -14,8 +14,8 @@ class CreateProductsReferencesTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->foreign('shop_id')->references('id')->on('shops');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

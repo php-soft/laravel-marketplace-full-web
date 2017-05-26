@@ -14,7 +14,7 @@ class CreateForeignForDistrictsTable extends Migration
     public function up()
     {
         Schema::table('districts', function (Blueprint $table) {
-            $table->foreign('city_id')->references('id')->on('cities');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
         });
     }
 

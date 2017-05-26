@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Type;
+use App\Category;
 use App\Product;
+use App\Type;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,5 +16,14 @@ class ProductController extends Controller
         return view('productsDetail')
             ->with('types', $types)
             ->with('product', $product);
+    }
+
+    public function showProductByCategory($id)
+    {
+        $types = Type::all();
+        $category = Category::findOrFail($id);
+        return view('outside.products.show')
+            ->with('category', $category)
+            ->with('types', $types);
     }
 }

@@ -4,7 +4,6 @@
 <div class="container cart-page">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('/') }}"><button class="btn btn-xs btn-primary pull-right">Continue shopping</button></a>
             <h4>My shopping cart</h4>
             <table class="table table-striped cart-table">
                     <tr>
@@ -27,8 +26,8 @@
                             {{ Form::close() }}
                         </td>
                         <td>{{ number_format($cart->price*$cart->qty) }}</td>
-                        <td>
-                            <a href="" data-toggle="modal" data-target="{{"#".$cart->id}}"><span class="glyphicon glyphicon-remove"></span></a>
+                        <td class="set-width-5">
+                            <a href="" data-toggle="modal" data-target="{{"#".$cart->id}}"><span class="glyphicon glyphicon-remove pull-right"></span></a>
                             <div id="{{$cart->id}}" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
                                 <!-- Modal content-->
@@ -51,13 +50,18 @@
                         </td>
                     </tr>
                 @endforeach
-                    <tr>
-                        <td></td>
-                        <td colspan="3"><h4>Subtotal</h4></td>
-                        <td><h4>{{ Cart::subtotal() }}</h4></td>
-                        <td><a href=""><button class="btn btn-success">Order <span class="glyphicon glyphicon-shopping-cart"></span></button></a></td>
-                    </tr>
             </table>
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-4 ">
+                    <h3 class="border-bottom">Subtotal:
+                    <span class="pull-right">{{ Cart::subtotal() }}</span></h3>
+                    <div class="padding-top pull-right">
+                        <a href=""><button class="btn btn-success">Order <span class="glyphicon glyphicon-shopping-cart"></span></button></a>
+                        or <a href="{{ url('/') }}"><button class="btn btn-default">Continue shopping</button></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -23,6 +23,7 @@
                         <tbody>
                             @foreach($shopImages as $shopimage)
                                 <tr>
+                                    <td>{{ $shopimage->id }}</td>
                                     <td>{{ $shopimage->shop->name }}</td>
                                     <td>{{ $shopimage->image }}</td>
                                     <td class="text-right">

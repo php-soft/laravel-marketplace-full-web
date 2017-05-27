@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shop extends Model
 {
+    const STATUS_PENDING = 0;
+    const STATUS_APPROVED = 1;
+    const STATUS_BANNED = 2;
     protected $fillable = [
         'name',
         'user_id',
@@ -49,5 +52,18 @@ class Shop extends Model
     public function shopAssignment()
     {
         return $this->belongsTo('App\ShopAssignment');
+    }
+
+    public function statusText()
+    {
+        if ($this->status == self::STATUS_PENDING) {
+            return '0';
+        } elseif ($this->status == self::STATUS_APPROVED) {
+            return "1";
+        } elseif ($this->status == self::STATUS_BANNED) {
+            return "2";
+        } else {
+            return 'PENDING';
+        }
     }
 }

@@ -62,14 +62,14 @@ class ShopController extends Controller
 
     public function edit($id)
     {
-        $shops = Shop::findOrFail($id);
+        $shop = Shop::findOrFail($id);
         $types = Type::pluck('name', 'id');
         $users = User::pluck('email', 'id');
         $cities = City::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
         $districts = District::pluck('name', 'id');
         return view('admin.shops.edit')
-            ->with('shops', $shops)
+            ->with('shop', $shop)
             ->with('cities', $cities)
             ->with('countries', $countries)
             ->with('districts', $districts)
@@ -87,7 +87,7 @@ class ShopController extends Controller
             'district_id' => 'required|numeric|exists:districts,id',
             'country_id' => 'required|numeric|exists:countries,id',
             'description' => 'required',
-            'status' => 'required|numeric',
+            'status'=>'required|numeric',
             'photo' => 'image'
         ]);
         $data = $request->all();

@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
-use App\Http\ViewComposers\TypeComposer;
 use App\Type;
 
 class ComposerServiceProvider extends ServiceProvider

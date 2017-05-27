@@ -42,7 +42,7 @@
                                     <td>{{ $shop->status }}</td>
                                     <td class="text-right">
                                         <a href="#"><button class="btn btn-xs btn-primary">Edit</button></a>
-                                        <a href="#" ><button class="btn btn-xs btn-danger">Delete</button></a>
+                                        <a href="{{ route('adminShopsDelete', ['id' => $shop->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
                                     </td>
                                 </tr>
                             @endforeach

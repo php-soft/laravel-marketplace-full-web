@@ -59,4 +59,10 @@ class ShopController extends Controller
         Shop::create($data);
         return redirect()->route('adminShops');
     }
+
+    public function destroy($id)
+    {
+        Shop::destroy($id);
+        return redirect('admin/shops');
+    }
 }

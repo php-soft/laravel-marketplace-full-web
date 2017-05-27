@@ -17,7 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
- Route::get('/cart/show', 'CartController@show')->name('cartShow');
+Route::get('/cart/show', 'CartController@show')->name('cartShow');
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {

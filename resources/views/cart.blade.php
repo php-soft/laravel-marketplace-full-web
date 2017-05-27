@@ -20,7 +20,8 @@
                         <td class='set-width-30'>{{ $cart->name }}</td>
                         <td>{{ number_format($cart->price) }}</td>
                         <td>
-                            {{Form::open()}}
+                            {{ Form::open() }}
+                                {{ Form::hidden('rowID', $cart->rowID) }}
                                 {{ Form::text('qty', $cart->qty, ['size' =>1]) }}
                                 <button><span class="glyphicon glyphicon-refresh"></span></button>
                             {{ Form::close() }}
@@ -41,7 +42,7 @@
                                             <h4>{{$cart->name}}</h4>
                                         </div>
                                         <div class="modal-footer">
-                                            <a href="{{ '' }}"><button type="button" class="btn btn-danger">Yes</button></a>
+                                            <a href="#"><button type="button" class="btn btn-danger">Yes</button></a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                                         </div>
                                     </div>

@@ -53,11 +53,12 @@ class Shop extends Model
     {
         return $this->belongsTo('App\ShopAssignment');
     }
-    public static function getStatuses(){
+    public static function getStatuses()
+    {
         return [
-            self::STATUS_PENDING => 'PENDING',
-            self::STATUS_APPROVED =>'APPROVED',
-            self::STATUS_BANNED => 'BANNED'
-            ];
+                self::STATUS_PENDING => 'PENDING',
+                self::STATUS_APPROVED =>'APPROVED',
+                self::STATUS_BANNED => 'BANNED'
+                ];
     }
 }

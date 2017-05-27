@@ -59,4 +59,45 @@ class ShopController extends Controller
         Shop::create($data);
         return redirect()->route('adminShops');
     }
+
+    public function edit($id)
+    {
+        $shops = Shop::findOrFail($id);
+        $types = Type::pluck('name', 'id');
+        $users = User::pluck('email', 'id');
+        $cities = City::pluck('name', 'id');
+        $countries = Country::pluck('name', 'id');
+        $districts = District::pluck('name', 'id');
+        return view('admin.shops.edit')
+            ->with('shops', $shops)
+            ->with('cities', $cities)
+            ->with('countries', $countries)
+            ->with('districts', $districts)
+            ->with('users', $users)
+            ->with('types', $types);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'user_id' => 'required|numeric|exists:users,id',
+            'type_id' => 'required|numeric|exists:types,id',
+            'city_id' => 'required|numeric|exists:cities,id',
+            'district_id' => 'required|numeric|exists:districts,id',
+            'country_id' => 'required|numeric|exists:countries,id',
+            'description' => 'required',
+            'status' => 'required|numeric',
+            'photo' => 'image'
+        ]);
+        $data = $request->all();
+        $file = $request->file('photo');
+        if (!empty($file)) {
+            $data['image'] = str_slug(Carbon::now().'_'.$data['name'].'.'.$file->getClientOriginalExtension());
+            $file->move('upload', $data['image']);
+        }
+        $shops = Shop::findOrFail($id);
+        $shops->update($data);
+        return redirect('admin/shops');
+    }
 }

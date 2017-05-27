@@ -68,7 +68,9 @@ class ShopController extends Controller
         $cities = City::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
         $districts = District::pluck('name', 'id');
+        $status = Shop::getStatuses();
         return view('admin.shops.edit')
+            ->with('status', $status)
             ->with('shop', $shop)
             ->with('cities', $cities)
             ->with('countries', $countries)
@@ -87,7 +89,6 @@ class ShopController extends Controller
             'district_id' => 'required|numeric|exists:districts,id',
             'country_id' => 'required|numeric|exists:countries,id',
             'description' => 'required',
-            'status'=>'required|numeric',
             'photo' => 'image'
         ]);
         $data = $request->all();

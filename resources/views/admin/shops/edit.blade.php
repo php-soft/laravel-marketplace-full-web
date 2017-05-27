@@ -69,9 +69,9 @@
                         <img class="img-responsive img-thumbnail" src="{{ asset('upload/'.$shop->image) }}" alt="noImage" style="width: 200px;height: 200px">
                         {{ Form::hidden('image', $shop->image) }}
                         <div class="form-group">
-                            {!! Form::label('status', 'status') !!}
+                            {!! Form::label('status', 'Status') !!}
                             <div class="form-controls">
-                                {{ Form::text('status', $shop->statusText(), ['class'=>'form-control']) }}
+                                {{ Form::select('status', $status, $shop->getStatuses(), ['class'=>'form-control']) }}
                             </div>
                         </div>
                         {!! Form::submit('Edit', ['class'=>'btn btn-primary']) !!}

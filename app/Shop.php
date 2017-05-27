@@ -53,17 +53,11 @@ class Shop extends Model
     {
         return $this->belongsTo('App\ShopAssignment');
     }
-
-    public function statusText()
-    {
-        if ($this->status == self::STATUS_PENDING) {
-            return '0';
-        } elseif ($this->status == self::STATUS_APPROVED) {
-            return "1";
-        } elseif ($this->status == self::STATUS_BANNED) {
-            return "2";
-        } else {
-            return 'PENDING';
-        }
+    public static function getStatuses(){
+        return [
+            self::STATUS_PENDING => 'PENDING',
+            self::STATUS_APPROVED =>'APPROVED',
+            self::STATUS_BANNED => 'BANNED'
+            ];
     }
 }

@@ -11,10 +11,9 @@ class CartController extends Controller
 {
     public function store(Request $request)
     {
-        $array = $request->all();
-        $array['qty'] = $array['qty'] + 1;
-        $array['options'] = ['image' => $request['image']];
-        Cart::add($array);
+        $data = $request->all();
+        $data['options'] = ['image' => $request['image']];
+        Cart::add($data);
         return redirect()->route('cartShow');
     }
 
@@ -22,7 +21,7 @@ class CartController extends Controller
     {
         $types = Type::all();
         $carts = Cart::content();
-        return view('cart')
+        return view('carts.cart')
             ->with('types', $types)
             ->with('carts', $carts);
     }

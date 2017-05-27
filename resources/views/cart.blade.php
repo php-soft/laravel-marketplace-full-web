@@ -4,7 +4,7 @@
 <div class="container cart-page">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ ''}}"><button class="btn btn-xs btn-primary pull-right">Continue shopping</button></a>
+            <a href="{{ url('/') }}"><button class="btn btn-xs btn-primary pull-right">Continue shopping</button></a>
             <h4>My shopping cart</h4>
             <table class="table table-striped cart-table">
                     <tr>
@@ -22,7 +22,7 @@
                         <td>
                             {{Form::open()}}
                                 {{ Form::text('qty', $cart->qty, ['size' =>1]) }}
-                                <a href="#"><span class="glyphicon glyphicon-refresh"></span></a>
+                                <button><span class="glyphicon glyphicon-refresh"></span></button>
                             {{ Form::close() }}
                         </td>
                         <td>{{ number_format($cart->price*$cart->qty) }}</td>

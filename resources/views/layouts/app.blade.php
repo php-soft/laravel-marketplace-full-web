@@ -58,7 +58,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ "#" }}"><span class="badge pull-right">{{ Cart::count() }}</span>
+                        <li><a href="{{ route('cartShow') }}"><span class="badge pull-right">{{ Cart::count() }}</span>
                         <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())

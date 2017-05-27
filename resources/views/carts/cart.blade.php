@@ -41,7 +41,7 @@
                                             <h4>{{$cart->name}}</h4>
                                         </div>
                                         <div class="modal-footer">
-                                            <a href="#"><button type="button" class="btn btn-danger">Yes</button></a>
+                                            <a href="{{ route('cartDelete',['rowId' => $cart->rowId]) }}"><button type="button" class="btn btn-danger">Yes</button></a>
                                             <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                                         </div>
                                     </div>

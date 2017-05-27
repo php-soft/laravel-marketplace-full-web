@@ -25,4 +25,10 @@ class CartController extends Controller
             ->with('types', $types)
             ->with('carts', $carts);
     }
+    public function update(Request $request, $rowId)
+    {
+        $qty = $request['qty'];
+        Cart::update($rowId, $qty);
+        return redirect()->route('cartShow');
+    }
 }

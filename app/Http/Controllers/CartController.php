@@ -19,10 +19,8 @@ class CartController extends Controller
 
     public function show()
     {
-        $types = Type::all();
         $carts = Cart::content();
         return view('carts.cart')
-            ->with('types', $types)
             ->with('carts', $carts);
     }
 }

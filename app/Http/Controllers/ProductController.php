@@ -13,7 +13,6 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $types = Type::all();
         return view('products.productsDetail')
-            ->with('types', $types)
             ->with('product', $product);
     }
 }

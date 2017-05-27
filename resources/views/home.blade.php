@@ -18,7 +18,7 @@
                                         <a href={{ route('productsDetail', ['id' => $product->id]) }}>
                                             <div class="col-md-3">
                                                 <div class="thumbnail" style="height: 450px">
-                                                    <img class="img-responsive img-thumbnail" src="{{ asset('upload/'.$product->image) }}" alt="noImage" style="width: 300px;height: 300px">
+                                                    <img class="img-responsive img-thumbnail" src="{{ asset('upload/'.$product->image) }}" alt="noImage" style="width: 100%">
                                                     <div class="caption">
                                                         <h4>{{ $product->name }}</h4>
                                                         <p>Price:{{ number_format($product->price) }}VND</p>

@@ -22,7 +22,7 @@ class ProductController extends Controller
     {
         $types = Type::all();
         $category = Category::findOrFail($id);
-        return view('outside.products.show')
+        return view('products.show-by-category')
             ->with('category', $category)
             ->with('types', $types);
     }

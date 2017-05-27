@@ -23,8 +23,8 @@ class UserController extends Controller
         $districts = District::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
         return view('admin.users.create')->with('cities', $cities)
-                ->with('districts', $districts)
-                ->with('countries', $countries);
+            ->with('districts', $districts)
+            ->with('countries', $countries);
     }
 
     public function store(Request $request)

@@ -17,13 +17,4 @@ class ProductController extends Controller
             ->with('types', $types)
             ->with('product', $product);
     }
-
-    public function showProductByCategory($id)
-    {
-        $types = Type::all();
-        $category = Category::findOrFail($id);
-        return view('products.show-by-category')
-            ->with('category', $category)
-            ->with('types', $types);
-    }
 }

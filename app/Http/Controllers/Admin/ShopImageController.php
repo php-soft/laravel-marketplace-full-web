@@ -18,7 +18,7 @@ class ShopImageController extends Controller
 
     public function create()
     {
-    	$shops = Shop::pluck('name', 'id');
+        $shops = Shop::pluck('name', 'id');
         return view('admin.shopImages.create')->with('shops', $shops);
     }
 

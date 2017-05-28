@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <h3>{{ $category->name }}</h3>
             <div class="row">
-                @foreach ($category->products(['newest' => 1]) as $product)
+                @foreach ($category->products(['newest' => true]) as $product)
                     @include('partials.products.product')
                 @endforeach
             </div>

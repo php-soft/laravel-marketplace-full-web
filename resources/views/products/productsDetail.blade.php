@@ -33,5 +33,17 @@
             </div>
         </div>
     </div>
+    <div class='border-top margin-top'>
+        <h3>SIMILAR PRODUCTS</h3>
+        <div class="row">
+            @foreach ($product->category->products(['limit' => 4, 'newest' => 1]) as $product)
+                <a href={{ route('productsDetail', ['id' => $product->id]) }}>
+                    <div class="col-md-3">
+                        @include('partials.products.product')
+                    </div>
+                </a>
+            @endforeach
+        </div>
+    </div>
 </div>
 @endsection

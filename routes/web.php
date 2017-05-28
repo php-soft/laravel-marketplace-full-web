@@ -16,9 +16,13 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 
+Route::get('/categoy/{id}', 'CategoryController@show')->name('showProductByCategory');
+
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
 Route::get('/cart/show', 'CartController@show')->name('cartShow');
+Route::get('/cart/{rowId}/delete', 'CartController@delete')->name('cartDelete');
 Route::post('/cart/{rowId}/update', 'CartController@update')->name('cartUpdate');
+
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin');
@@ -83,6 +87,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/addresses/{id}/delete', 'AddressController@destroy')->name('adminAddressesDelete');
 
     Route::get('/users', 'UserController@index')->name('adminUsers');
+    Route::get('/users/create', 'UserController@create')->name('adminUsersCreate');
+    Route::post('/users', 'UserController@store')->name('adminUsersStore');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');

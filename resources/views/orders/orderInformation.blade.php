@@ -43,7 +43,7 @@
                             <td>{{ $order->shipping_name }}</td>
                         </tr>
                         <tr>
-                            <td>Phone<</td>
+                            <td>Phone</td>
                             <td>{{ $order->shipping_phone }}</td>
                         </tr>
                         <tr>

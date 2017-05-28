@@ -25,7 +25,6 @@ Route::post('/cart/{rowId}/update', 'CartController@update')->name('cartUpdate')
 
 Route::get('/order/show', 'OrderController@show')->name('orderShow');
 Route::post('/order/store', 'OrderController@store')->name('orderStore');
-Route::get('/order/information', 'OrderController@orderInformation')->name('orderInformation');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin');

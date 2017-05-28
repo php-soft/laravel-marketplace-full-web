@@ -12,15 +12,11 @@
                 <div class='border-top'>
                     <h4>Shop:{{ $product->shop->name }}</h4>
                     <h3>Price:{{ number_format($product->price) }}VND</h3>
-                    {{Form::open(['route' => 'cartStore'])}}
-                        {{ Form::hidden('id', $product->id) }}
-                        {{ Form::hidden('name', $product->name) }}
-                        {{ Form::hidden('price', $product->price) }}
-                        {{ Form::hidden('image', $product->image) }}
+                    {{Form::open()}}
                         <div class="form-inline">
-                            {!! Form::label('qty', 'Quantity') !!}
+                            {!! Form::label('quantity', 'Quantity') !!}
                             <div class="form-controls">
-                                {{ Form::text('qty', 1, ['class'=>'form-control', 'size' => 1 ]) }}
+                                {{ Form::select('qty', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], null, ['class'=>'form-control']) }}
                                 <button class="btn btn-success">Add to cart <span class="glyphicon glyphicon-shopping-cart"></span></button>
                             </div>
                         </div>

@@ -40,5 +40,4 @@ class CartController extends Controller
         $qty = $request['qty'];
         Cart::update($rowId, $qty);
     }
-
 }

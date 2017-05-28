@@ -100,7 +100,7 @@
                                         <a href="#" style="color: white">{{ $type->name }}</a>
                                         <ul class="nav nav-pills nav-stacked">
                                             @foreach ($type->categories as $category)
-                                                <li><a href="#">{{ $category->name }}</a></li>
+                                                <li><a href="{{ route('showProductByCategory', ['id' => $category->id] ) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>

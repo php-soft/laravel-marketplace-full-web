@@ -25,7 +25,7 @@ class Category extends Model
         }
 
         if (!empty($options['similar'])) {
-            $relation = $relation->where('id', '>', $options['similar']);
+            $relation = $relation->where('id', '<>', $options['similar']);
         }
 
         return $relation->get();

@@ -4,6 +4,15 @@
 <div class="container cart-page">
     <div class="row">
         <div class="col-md-12">
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <h4>My shopping cart</h4>
             <table class="table table-striped cart-table">
                     <tr>

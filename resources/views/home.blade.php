@@ -10,7 +10,7 @@
                     @foreach ($type->categories(['limit' => 2]) as $category)
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                {{ $category->name }}
+                                <h4>{{ $category->name }}</h4>
                             </div>
                             <div class="panel-body">
                                 <div class="row">

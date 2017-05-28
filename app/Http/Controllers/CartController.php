@@ -25,4 +25,10 @@ class CartController extends Controller
             ->with('types', $types)
             ->with('carts', $carts);
     }
+
+    public function delete($rowId)
+    {
+        Cart::remove($rowId);
+        return redirect()->route('cartShow');
+    }
 }

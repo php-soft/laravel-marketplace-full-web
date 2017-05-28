@@ -19,6 +19,8 @@ Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
 Route::get('/cart/show', 'CartController@show')->name('cartShow');
 
+Route::get('/cart/{rowId}/delete', 'CartController@delete')->name('cartDelete');
+
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin');

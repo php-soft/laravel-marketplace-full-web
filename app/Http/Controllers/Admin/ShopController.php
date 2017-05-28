@@ -97,8 +97,8 @@ class ShopController extends Controller
             $data['image'] = str_slug(Carbon::now().'_'.$data['name'].'.'.$file->getClientOriginalExtension());
             $file->move('upload', $data['image']);
         }
-        $shops = Shop::findOrFail($id);
-        $shops->update($data);
+        $shop = Shop::findOrFail($id);
+        $shop->update($data);
         return redirect('admin/shops');
     }
 }

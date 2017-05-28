@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     List of users
+                    <div class="pull-right"><a href="{{ route('adminUsersCreate') }}"><button class="btn btn-xs btn-primary">Create new user</button></a></div>
                 </div>
 
                 <div class="panel-body">

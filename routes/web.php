@@ -64,7 +64,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::get('/shops', 'ShopController@index')->name('adminShops')->middleware('auth');
     Route::get('/shops/create', 'ShopController@create')->name('adminShopCreate')->middleware('auth');
-    Route::post('/shops', 'ShopController@store')->name('adminShopStore');
+    Route::post('/shops', 'ShopController@store')->name('adminShopStore')->middleware('auth');
     Route::get('/shops/{id}/delete', 'ShopController@destroy')->name('adminShopsDelete')->middleware('auth');
 
     Route::get('/cities/create', 'CityController@create')->name('adminCitiesCreate')->middleware('auth');

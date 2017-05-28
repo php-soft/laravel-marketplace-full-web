@@ -24,6 +24,10 @@ class Category extends Model
             $relation = $relation->take($options['limit']);
         }
 
+        if (!empty($options['similar'])) {
+            $relation = $relation->where('id', '>', $options['similar']);
+        }
+
         return $relation->get();
     }
 }

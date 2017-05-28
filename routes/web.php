@@ -25,7 +25,7 @@ Route::get('/cart/{rowId}/delete', 'CartController@delete')->name('cartDelete');
 
 
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['web']], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'AdminController@index')->name('admin');
 
     Route::get('/products', 'ProductController@index')->name('adminProducts');

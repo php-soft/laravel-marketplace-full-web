@@ -18,6 +18,8 @@ Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 
 Route::get('/categoy/{id}', 'CategoryController@show')->name('showProductByCategory');
 
+Route::get('/type/{id}', 'TypeController@show')->name('showProductByType');
+
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
 Route::get('/cart/show', 'CartController@show')->name('cartShow');
 Route::get('/cart/{rowId}/delete', 'CartController@delete')->name('cartDelete');

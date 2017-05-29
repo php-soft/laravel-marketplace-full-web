@@ -74,6 +74,8 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('adminShops') }}">Shops</a></li>
                                 <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('adminShopImages') }}">ShopImages</a></li>
+                                <li role="separator" class="divider"></li>
                                 <li><a href="#">Shop Assignments</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('adminProducts') }}">Products</a></li>

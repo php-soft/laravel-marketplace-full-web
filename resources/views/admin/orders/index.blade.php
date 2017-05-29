@@ -18,6 +18,7 @@
                                 <th>User</th>
                                 <th>Quantity</th>
                                 <th>Total Price</th>
+                                <th>Status</th>
                                 <th class="text-right">Actions</th>
                             </tr>
                         </thead>
@@ -29,6 +30,7 @@
                                     <td>{{ $order->user->first_name }} {{ $order->user->last_name }}</td>
                                     <td>{{ $order->orderProducts->sum('quantity') }}</td>
                                     <td>{{ $order->orderProducts->sum('price') }}</td>
+                                    <td>{{ $order->statusText() }}</td>
                                     <td class="text-right">
                                         <a href="{{ route('adminOrdersShow', ['id' => $order->id] ) }}"><button class="btn btn-xs btn-primary">Show</button></a>
                                     </td>

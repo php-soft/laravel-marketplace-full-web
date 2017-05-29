@@ -24,7 +24,7 @@ body.app {
 .cart-page .padding-top {padding-top: 1em;}
 
 .user-page h3 { display: inline-block; }
-.user-page .user-img img {width: 100%;}
+.user-page .user-img img {width: 100%; margin-bottom: 10px;	}
 
 header nav .dropdown ul {display: none;}
 header nav .dropdown:hover ul {display: block;background: #fff4aa;}

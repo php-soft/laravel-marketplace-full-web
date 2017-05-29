@@ -42,7 +42,10 @@
                                     <td>{{ $user->district->name }}</td>
                                     <td>{{ $user->city->name }}</td>
                                     <td>{{ $user->country->name }}</td>
-                                    <td class="text-right">#</td>
+                                    <td class="text-right">
+                                        <a href="{{ route('adminUsersEdit', ['id' => $user->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                        <a href="{{ route('adminUsersDelete', ['id' => $user->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

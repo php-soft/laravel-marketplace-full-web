@@ -44,7 +44,7 @@ class ShopImageController extends Controller
     public function edit($id)
     {
         $shopimage = ShopImage::findOrFail($id);
-        $shops = Shop::pluck('name', 'id');       
+        $shops = Shop::pluck('name', 'id');
         return view('admin.shopImages.edit')
             ->with('shops', $shops)
             ->with('shopimage', $shopimage);
@@ -67,4 +67,4 @@ class ShopImageController extends Controller
         $shopimage->update($data);
         return redirect('admin/shopImages');
     }
-}    
+}

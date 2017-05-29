@@ -18,13 +18,12 @@ class OrderController extends Controller
         if (Cart::count() == 0) {
             $error = "Cart is empty! Please add products.";
             return redirect()->route('cartError', ['error' => $error]);
-        } else {
-            $carts = Cart::content();
-            $countries = Country::pluck('name', 'id');
-            return view('orders.order')
-                ->with('carts', $carts)
-                ->with('countries', $countries);
         }
+        $carts = Cart::content();
+        $countries = Country::pluck('name', 'id');
+        return view('orders.order')
+            ->with('carts', $carts)
+            ->with('countries', $countries);
     }
 
     public function store(Request $request)
@@ -42,22 +41,21 @@ class OrderController extends Controller
         if (Cart::count() == 0) {
             $error = "Cart is empty! Please add products.";
             return redirect()->route('cartError', ['error' => $error]);
-        } else {
-            $order_id = mt_rand();
-            $data = $request->all();
-            $data['id'] = $order_id;
-            unset($data['_token']);
-            if (!Auth::guest()) {
-                $data['user_id'] = Auth::user()->id;
-            }
-            Order::insert($data);
-            OrderProduct::store($order_id);
-            $subtotal = Cart::subtotal();
-            Cart::destroy();
-            return redirect()->route('orderInformation', [
-                'order_id' => $order_id,
-                'subtotal' => $subtotal]);
         }
+        $order_id = mt_rand();
+        $data = $request->all();
+        $data['id'] = $order_id;
+        unset($data['_token']);
+        if (!Auth::guest()) {
+            $data['user_id'] = Auth::user()->id;
+        }
+        Order::insert($data);
+        OrderProduct::store($order_id);
+        $subtotal = Cart::subtotal();
+        Cart::destroy();
+        return redirect()->route('orderInformation', [
+            'order_id' => $order_id,
+            'subtotal' => $subtotal]);
     }
 
     public function orderInformation($order_id, $subtotal)

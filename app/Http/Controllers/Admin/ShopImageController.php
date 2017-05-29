@@ -45,7 +45,6 @@ class ShopImageController extends Controller
     {
         $shopimage = ShopImage::findOrFail($id);
         $shops = Shop::pluck('name', 'id');       
-
         return view('admin.shopImages.edit')
             ->with('shops', $shops)
             ->with('shopimage', $shopimage);
@@ -64,7 +63,6 @@ class ShopImageController extends Controller
             $data['image'] = str_slug(Carbon::now().'_'.$shopName.'.'.$file->getClientOriginalExtension());
             $file->move('upload', $data['image']);
         }
-
         $shopimage = ShopImage::findOrFail($id);
         $shopimage->update($data);
         return redirect('admin/shopImages');

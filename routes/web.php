@@ -16,9 +16,9 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 
-Route::get('/categoy/{id}', 'CategoryController@show')->name('showProductByCategory');
+Route::get('/categories/{id}', 'CategoryController@show')->name('showProductByCategory');
 
-Route::get('/type/{id}', 'TypeController@show')->name('showProductByType');
+Route::get('/types/{id}', 'TypeController@show')->name('showProductByType');
 
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
 Route::get('/cart/show', 'CartController@show')->name('cartShow');

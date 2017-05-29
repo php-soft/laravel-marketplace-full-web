@@ -99,6 +99,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::post('/users', 'UserController@store')->name('adminUsersStore');
     Route::get('/users/{id}/edit', 'UserController@edit')->name('adminUsersEdit');
     Route::put('/user{id}', 'UserController@update')->name('adminUsersUpdate');
+    Route::get('/users/{id}/delete', 'UserController@destroy')->name('adminUsersDelete');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');

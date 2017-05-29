@@ -44,8 +44,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
     Route::get('/countries', 'CountryController@index')->name('adminCountries');
     Route::get('/countries/create', 'CountryController@create')->name('adminCountriesCreate');
-    Route::post('/countries', 'CountryController@store')->name('adminCountries');
-
+    
     Route::get('/shopImages', 'ShopImageController@index')->name('adminShopImages');
 
     Route::post('/countries', 'CountryController@store')->name('adminCountriesStore');

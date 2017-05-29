@@ -20,7 +20,6 @@
                                 <th>Last Name</th>
                                 <th>Date of birth</th>
                                 <th>Phone Number</th>
-                                <th>Email</th>
                                 <th>Address</th>
                                 <th>District</th>
                                 <th>City</th>
@@ -37,7 +36,6 @@
                                     <td>{{ $user->last_name }}</td>
                                     <td>{{ $user->date_of_birth }}</td>
                                     <td>{{ $user->phone_number }}</td>
-                                    <td>{{ $user->email }}</td>
                                     <td>{{ $user->address }}</td>
                                     @if (!empty($user->district))
                                     <td>{{ $user->district->name }}</td>

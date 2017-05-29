@@ -21,7 +21,7 @@
                         <div class="form-group">
                             {!! Form::label('avatar', 'Avatar:') !!}
                             <div class="form-controls">
-                                {{ Form::text('avatar', null, ['class'=>'form-control']) }}
+                                {{ Form::file('avatar', null, ['class'=>'form-control']) }}
                             </div>
                         </div>
 
@@ -50,20 +50,6 @@
                             {!! Form::label('phone_number', 'Phone Number:') !!}
                             <div class="form-controls">
                                 {{ Form::text('phone_number', null, ['class'=>'form-control']) }}
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('email', 'Email:') !!}
-                            <div class="form-controls">
-                                {{ Form::text('email', null, ['class'=>'form-control']) }}
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('password', 'Password:') !!}
-                            <div class="form-controls">
-                                {{ Form::password('password', null, ['class'=>'form-control']) }}
                             </div>
                         </div>
 

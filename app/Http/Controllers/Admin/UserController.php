@@ -30,7 +30,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'avatar' => 'required|unique:users|max:255',
+            'avatar' => 'image',
             'first_name' => 'required|unique:users|max:255',
             'last_name' => 'required|unique:users|max:255',
             'phone_number' => 'required|unique:users|max:255',
@@ -63,7 +63,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'avatar' => 'required|unique:users,avatar,'.$id,
+            'avatar' => 'image',
             'first_name' => 'required|unique:users,first_name,'.$id,
             'last_name' => 'required|unique:users,last_name,'.$id,
             'phone_number' => 'required|unique:users,phone_number,'.$id,

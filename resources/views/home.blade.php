@@ -10,20 +10,14 @@
                     @foreach ($type->categories(['limit' => 2]) as $category)
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                {{ $category->name }}
+                                <h4>{{ $category->name }}</h4>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
                                     @foreach ($category->products(['limit' => 4, 'newest' => 1]) as $product)
                                         <a href={{ route('productsDetail', ['id' => $product->id]) }}>
                                             <div class="col-md-3">
-                                                <div class="thumbnail" style="height: 450px">
-                                                    <img class="img-responsive img-thumbnail" src="{{ asset('upload/'.$product->image) }}" alt="noImage" style="width: 100%">
-                                                    <div class="caption">
-                                                        <h4>{{ $product->name }}</h4>
-                                                        <p>Price:{{ number_format($product->price) }}VND</p>
-                                                    </div>
-                                                </div>
+                                                @include('partials.products.product')
                                             </div>
                                         </a>
                                     @endforeach

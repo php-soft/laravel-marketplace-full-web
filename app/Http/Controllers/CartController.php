@@ -10,6 +10,9 @@ class CartController extends Controller
 {
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'qty' => 'required|numeric'
+        ]);
         $data = $request->all();
         $data['options'] = ['image' => $request['image']];
         Cart::add($data);
@@ -26,6 +29,16 @@ class CartController extends Controller
     public function delete($rowId)
     {
         Cart::remove($rowId);
+        return redirect()->route('cartShow');
+    }
+
+    public function update(Request $request, $rowId)
+    {
+        $this->validate($request, [
+            'qty' => 'required|numeric'
+        ]);
+        $qty = $request['qty'];
+        Cart::update($rowId, $qty);
         return redirect()->route('cartShow');
     }
 }

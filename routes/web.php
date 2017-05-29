@@ -22,12 +22,13 @@ Route::get('/type/{id}', 'TypeController@show')->name('showProductByType');
 
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
 Route::get('/cart/show', 'CartController@show')->name('cartShow');
-
 Route::get('/cart/{rowId}/delete', 'CartController@delete')->name('cartDelete');
+Route::post('/cart/{rowId}/update', 'CartController@update')->name('cartUpdate');
 
+Route::get('/order/show', 'OrderController@show')->name('orderShow');
+Route::post('/order/store', 'OrderController@store')->name('orderStore');
 
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'AdminController@index')->name('admin');
 
     Route::get('/products', 'ProductController@index')->name('adminProducts');
@@ -46,9 +47,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::get('/countries', 'CountryController@index')->name('adminCountries');
     Route::get('/countries/create', 'CountryController@create')->name('adminCountriesCreate');
-    Route::post('/countries', 'CountryController@store')->name('adminCountries');
-
+    
     Route::get('/shopImages', 'ShopImageController@index')->name('adminShopImages');
+    Route::get('/shopImages/create', 'ShopImageController@create')->name('adminShopImagesCreate');
+    Route::post('/shopImages', 'ShopImageController@store')->name('adminShopImagesStore');
 
     Route::post('/countries', 'CountryController@store')->name('adminCountriesStore');
     Route::get('/countries/{id}/edit', 'CountryController@edit')->name('adminCountriesEdit');
@@ -92,6 +94,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/users', 'UserController@index')->name('adminUsers');
     Route::get('/users/create', 'UserController@create')->name('adminUsersCreate');
     Route::post('/users', 'UserController@store')->name('adminUsersStore');
+    Route::get('/users/{id}/edit', 'UserController@edit')->name('adminUsersEdit');
+    Route::put('/user{id}', 'UserController@update')->name('adminUsersUpdate');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');

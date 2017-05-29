@@ -4,6 +4,15 @@
 <div class="container cart-page">
     <div class="row">
         <div class="col-md-12">
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <h4>My shopping cart</h4>
             <table class="table table-striped cart-table">
                     <tr>
@@ -19,8 +28,7 @@
                         <td class='set-width-30'>{{ $cart->name }}</td>
                         <td>{{ number_format($cart->price) }}</td>
                         <td>
-                            {{ Form::open() }}
-                                {{ Form::hidden('rowID', $cart->rowID) }}
+                            {{ Form::open(['route'=>[ 'cartUpdate', $cart->rowId ]]) }}
                                 {{ Form::text('qty', $cart->qty, ['size' =>1]) }}
                                 <button><span class="glyphicon glyphicon-refresh"></span></button>
                             {{ Form::close() }}
@@ -57,8 +65,11 @@
                     <h3 class="border-bottom">Subtotal:
                     <span class="pull-right">{{ Cart::subtotal() }}</span></h3>
                     <div class="padding-top pull-right">
-                        <a href=""><button class="btn btn-success">Order <span class="glyphicon glyphicon-shopping-cart"></span></button></a>
-                        or <a href="{{ url('/') }}"><button class="btn btn-default">Continue shopping</button></a>
+                        @if (Cart::count() > 0)
+                            <a href="{{ route('orderShow') }}"><button class="btn btn-success">Order <span class="glyphicon glyphicon-shopping-cart"></span></button></a>
+                            or
+                        @endif
+                        <a href="{{ url('/') }}"><button class="btn btn-default">Continue shopping</button></a>
                     </div>
                 </div>
             </div>

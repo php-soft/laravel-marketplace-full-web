@@ -64,9 +64,9 @@ class Shop extends Model
     public static function getStatuses()
     {
         return [
-        self::STATUS_PENDING => 'PENDING',
-        self::STATUS_APPROVED =>'APPROVED',
-        self::STATUS_BANNED => 'BANNED'
+            self::STATUS_PENDING => 'PENDING',
+            self::STATUS_APPROVED =>'APPROVED',
+            self::STATUS_BANNED => 'BANNED'
         ];
     }
 }

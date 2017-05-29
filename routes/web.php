@@ -16,9 +16,9 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 
-Route::get('/categoy/{id}', 'CategoryController@show')->name('showProductByCategory');
+Route::get('/categories/{id}', 'CategoryController@show')->name('showProductByCategory');
 
-Route::get('/type/{id}', 'TypeController@show')->name('showProductByType');
+Route::get('/types/{id}', 'TypeController@show')->name('showProductByType');
 
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
 Route::get('/cart/show', 'CartController@show')->name('cartShow');
@@ -57,7 +57,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::get('/shopImages', 'ShopImageController@index')->name('adminShopImages');
     Route::get('/shopImages/create', 'ShopImageController@create')->name('adminShopImagesCreate');
     Route::post('/shopImages', 'ShopImageController@store')->name('adminShopImagesStore');
-
+    Route::get('/shopImages/{id}/edit', 'ShopImageController@edit')->name('adminShopImagesEdit');
+    Route::put('/shopImages/{id}', 'ShopImageController@update')->name('adminShopImagesUpdate');
+ 
     Route::post('/countries', 'CountryController@store')->name('adminCountriesStore');
     Route::get('/countries/{id}/edit', 'CountryController@edit')->name('adminCountriesEdit');
     Route::put('/countries/{id}', 'CountryController@update')->name('adminCountriesUpdate');
@@ -102,6 +104,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::post('/users', 'UserController@store')->name('adminUsersStore');
     Route::get('/users/{id}/edit', 'UserController@edit')->name('adminUsersEdit');
     Route::put('/user{id}', 'UserController@update')->name('adminUsersUpdate');
+    Route::get('/users/{id}/delete', 'UserController@destroy')->name('adminUsersDelete');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');

@@ -81,4 +81,10 @@ class UserController extends Controller
         
         return redirect()->route('adminUsers');
     }
+
+    public function destroy($id)
+    {
+        User::destroy($id);
+        return redirect()->route('adminUsers');
+    }
 }

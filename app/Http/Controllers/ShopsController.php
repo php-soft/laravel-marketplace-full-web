@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+
 use App\User;
 use App\Type;
 use App\City;
@@ -10,13 +10,14 @@ use App\District;
 use Carbon\Carbon;
 use App\Shop;
 use Auth;
+use Illuminate\Http\Request;
 
 class ShopsController extends Controller
 {
 	public function create()
     {
         $types = Type::pluck('name', 'id');
-        $users = User::select( 'email' )->where('id',Auth::user()->id)->first();
+        $users = User::select('email')->where('id',Auth::user()->id)->first();
         $cities = City::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
         $districts = District::pluck('name', 'id');
@@ -38,7 +39,7 @@ class ShopsController extends Controller
             'country_id' => 'required|numeric|exists:countries,id',
             'description' => 'required',
             'photo' => 'image'
-        ]);
+            ]);
         $data = $request->all();
         $data['status'] = 0;
         $data['user_id'] = Auth::user()->id;

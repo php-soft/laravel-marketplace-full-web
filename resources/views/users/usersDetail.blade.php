@@ -58,6 +58,13 @@
                     @endif
 
                 </form>
+    <h3>Order list</h3>
+    @foreach ($user->orders as $order)
+        <ul>
+            <li><a href="{{ route('orderInformation', ['order_id' => $order->id]) }}">
+            Order id {{ $order->id }}</a> Status:{{ $order->statusText() }}</li>
+        </ul>
+    @endforeach 
             </div>
         </div>
     </div>

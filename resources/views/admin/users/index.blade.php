@@ -39,9 +39,15 @@
                                     <td>{{ $user->phone_number }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->address }}</td>
+                                    @if (!empty($user->district))
                                     <td>{{ $user->district->name }}</td>
+                                    @endif
+                                    @if (!empty($user->city))
                                     <td>{{ $user->city->name }}</td>
+                                    @endif
+                                    @if (!empty($user->country))
                                     <td>{{ $user->country->name }}</td>
+                                    @endif
                                     <td class="text-right">
                                         <a href="{{ route('adminUsersEdit', ['id' => $user->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
                                         <a href="{{ route('adminUsersDelete', ['id' => $user->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>

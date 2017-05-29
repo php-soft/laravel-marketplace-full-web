@@ -13,6 +13,11 @@
                     </ul>
                 </div>
             @endif
+            @if (!empty($error))
+                <div class="alert alert-danger">
+                    {{ $error }}
+                </div>
+            @endif
             <h4>My shopping cart</h4>
             <table class="table table-striped cart-table">
                     <tr>

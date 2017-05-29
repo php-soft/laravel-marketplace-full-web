@@ -28,7 +28,8 @@ Route::get('/cart/{error}', 'CartController@error')->name('cartError');
 
 Route::get('/order/show', 'OrderController@show')->name('orderShow');
 Route::post('/order/store', 'OrderController@store')->name('orderStore');
-Route::get('/order/{order_id}/{subtotal}/orderInformation', 'OrderController@orderInformation')->name('orderInformation');
+Route::get('/order/{order_id}/{subtotal}', 'OrderController@orderInformation')
+    ->name('orderInformation');
 
 Route::get('/ajaxCity', 'CityController@select');
 Route::get('/ajaxDistrict', "DistrictController@select");

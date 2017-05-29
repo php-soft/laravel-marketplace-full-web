@@ -10,7 +10,7 @@
                 <div class="col-md-12">
                     <h4>{{ $category->name }}</h4>
                     <div>
-                        @foreach ($category->products(['limit' => 4,'newest' => true]) as $product)
+                        @foreach ($category->products(['limit' => 4, 'newest' => true]) as $product)
                             <div class="col-md-3">
                                 @include('partials.products.product')
                             </div>

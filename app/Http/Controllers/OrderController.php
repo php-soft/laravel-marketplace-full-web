@@ -24,11 +24,11 @@ class OrderController extends Controller
                 ->with('error', $error)
                 ->with('countries', $countries);
         } else {
-        $carts = Cart::content();
-        $countries = Country::pluck('name', 'id');
-        return view('orders.order')
-            ->with('carts', $carts)
-            ->with('countries', $countries);
+            $carts = Cart::content();
+            $countries = Country::pluck('name', 'id');
+            return view('orders.order')
+                ->with('carts', $carts)
+                ->with('countries', $countries);
         }
     }
 

@@ -56,6 +56,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::post('/shopImages', 'ShopImageController@store')->name('adminShopImagesStore');
     Route::get('/shopImages/{id}/edit', 'ShopImageController@edit')->name('adminShopImagesEdit');
     Route::put('/shopImages/{id}', 'ShopImageController@update')->name('adminShopImagesUpdate');
+    Route::get('/shopImages/{id}/delete', 'ShopImageController@destroy')->name('adminShopImagesDelete');
  
     Route::post('/countries', 'CountryController@store')->name('adminCountriesStore');
     Route::get('/countries/{id}/edit', 'CountryController@edit')->name('adminCountriesEdit');

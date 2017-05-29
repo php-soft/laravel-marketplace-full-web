@@ -26,6 +26,9 @@ Route::post('/cart/{rowId}/update', 'CartController@update')->name('cartUpdate')
 Route::get('/order/show', 'OrderController@show')->name('orderShow');
 Route::post('/order/store', 'OrderController@store')->name('orderStore');
 
+Route::get('/ajaxCity', 'CityController@select');
+Route::get('/ajaxDistrict', "DistrictController@select");
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'AdminController@index')->name('admin');
 

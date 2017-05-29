@@ -18,7 +18,7 @@ class OrderController extends Controller
     public function show()
     {
         $carts = Cart::content();
-        $cities = City::pluck('name', 'id');
+        $cities = City::where('country_id',1)->get()->pluck('name', 'id');
         $districts = District::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
         return view('orders.order')

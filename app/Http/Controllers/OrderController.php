@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Address;
-use App\City;
 use App\Country;
-use App\District;
 use Cart;
 use Auth;
 use App\OrderProduct;
@@ -18,13 +16,9 @@ class OrderController extends Controller
     public function show()
     {
         $carts = Cart::content();
-        $cities = City::pluck('name', 'id');
-        $districts = District::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
         return view('orders.order')
             ->with('carts', $carts)
-            ->with('cities', $cities)
-            ->with('districts', $districts)
             ->with('countries', $countries);
     }
 

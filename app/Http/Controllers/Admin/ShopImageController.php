@@ -67,4 +67,9 @@ class ShopImageController extends Controller
         $shopimage->update($data);
         return redirect('admin/shopImages');
     }
+    public function destroy($id)
+    {
+        ShopImage::destroy($id);
+        return redirect('admin/shopImages');
+    }
 }

@@ -5,12 +5,12 @@
     <div class="row">
         <div class="col-md-12">
             @foreach ($types as $type)
-                <h3>{{ $type->name }}</h3>
+                <a href="{{ route('showProductByType', ['id' => $type->id] ) }}"><h3>{{ $type->name }}</h3></a>
                 <div class="panel-group">
                     @foreach ($type->categories(['limit' => 2]) as $category)
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                <h4>{{ $category->name }}</h4>
+                                <a href="{{ route('showProductByCategory', ['id' => $category->id] ) }}"><h4>{{ $category->name }}</h4></a>
                             </div>
                             <div class="panel-body">
                                 <div class="row">

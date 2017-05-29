@@ -62,7 +62,7 @@ class OrderController extends Controller
             OrderProduct::store($order_id);
             $subtotal = Cart::subtotal();
             Cart::destroy();
-            return redirect()->route('orderInformation',[
+            return redirect()->route('orderInformation', [
                 'order_id' => $order_id,
                 'subtotal' => $subtotal]);
         }

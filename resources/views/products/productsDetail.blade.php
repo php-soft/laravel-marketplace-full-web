@@ -4,6 +4,15 @@
 <div class="container product-page">
     <div class="row">
         <div class="col-md-12">
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                         @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="col-md-5 product-img">
                 <img class="img-responsive img-thumbnail" src="{{ asset('upload/'.$product->image) }}" alt="noImage">
             </div>
@@ -31,6 +40,18 @@
                     <p>{{ $product->description }}</p>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class='border-top margin-top'>
+        <h3>SIMILAR PRODUCTS</h3>
+        <div class="row">
+            @foreach ($product->category->products(['limit' => 4, 'newest' => 1, 'similar' => $product->id]) as $product)
+                <a href={{ route('productsDetail', ['id' => $product->id]) }}>
+                    <div class="col-md-3">
+                        @include('partials.products.product')
+                    </div>
+                </a>
+            @endforeach
         </div>
     </div>
 </div>

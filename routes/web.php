@@ -17,10 +17,12 @@ Route::get('/', 'HomeController@index');
 Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 Route::get('/users/{id}', 'UserController@show')->name('usersDetail');
 
+Route::get('/categoy/{id}', 'CategoryController@show')->name('showProductByCategory');
+
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
 Route::get('/cart/show', 'CartController@show')->name('cartShow');
-
 Route::get('/cart/{rowId}/delete', 'CartController@delete')->name('cartDelete');
+Route::post('/cart/{rowId}/update', 'CartController@update')->name('cartUpdate');
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {

@@ -10,10 +10,8 @@ class CategoryController extends Controller
 {
     public function show($id)
     {
-        $types = Type::all();
         $category = Category::findOrFail($id);
         return view('categories.show')
-            ->with('category', $category)
-            ->with('types', $types);
+            ->with('category', $category);
     }
 }

@@ -18,6 +18,8 @@ Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 
 Route::get('/categoy/{id}', 'CategoryController@show')->name('showProductByCategory');
 
+Route::get('/type/{id}', 'TypeController@show')->name('showProductByType');
+
 Route::post('/cart/store', 'CartController@store')->name('cartStore');
 Route::get('/cart/show', 'CartController@show')->name('cartShow');
 Route::get('/cart/{rowId}/delete', 'CartController@delete')->name('cartDelete');
@@ -95,6 +97,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::get('/users', 'UserController@index')->name('adminUsers');
     Route::get('/users/create', 'UserController@create')->name('adminUsersCreate');
     Route::post('/users', 'UserController@store')->name('adminUsersStore');
+    Route::get('/users/{id}/edit', 'UserController@edit')->name('adminUsersEdit');
+    Route::put('/user{id}', 'UserController@update')->name('adminUsersUpdate');
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');

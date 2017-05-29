@@ -97,7 +97,7 @@
                             <ul class="nav navbar-nav">
                                 @foreach ($types as $type)
                                     <li class="dropdown">
-                                        <a href="#" style="color: white">{{ $type->name }}</a>
+                                        <a href="{{ route('showProductByType', ['id' => $type->id] ) }}" style="color: white">{{ $type->name }}</a>
                                         <ul class="nav nav-pills nav-stacked">
                                             @foreach ($type->categories as $category)
                                                 <li><a href="{{ route('showProductByCategory', ['id' => $category->id] ) }}">{{ $category->name }}</a></li>

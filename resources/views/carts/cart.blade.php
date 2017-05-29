@@ -65,8 +65,11 @@
                     <h3 class="border-bottom">Subtotal:
                     <span class="pull-right">{{ Cart::subtotal() }}</span></h3>
                     <div class="padding-top pull-right">
-                        <a href=""><button class="btn btn-success">Order <span class="glyphicon glyphicon-shopping-cart"></span></button></a>
-                        or <a href="{{ url('/') }}"><button class="btn btn-default">Continue shopping</button></a>
+                        @if (Cart::count() > 0)
+                            <a href="{{ route('orderShow') }}"><button class="btn btn-success">Order <span class="glyphicon glyphicon-shopping-cart"></span></button></a>
+                            or
+                        @endif
+                        <a href="{{ url('/') }}"><button class="btn btn-default">Continue shopping</button></a>
                     </div>
                 </div>
             </div>

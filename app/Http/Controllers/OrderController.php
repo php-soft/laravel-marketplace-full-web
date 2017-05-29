@@ -18,11 +18,9 @@ class OrderController extends Controller
         if (Cart::count() == 0) {
             $error = "Cart is empty! Please add products.";
             $carts = Cart::content();
-            $countries = Country::pluck('name', 'id');
             return view('carts.cart')
                 ->with('carts', $carts)
-                ->with('error', $error)
-                ->with('countries', $countries);
+                ->with('error', $error);
         } else {
             $carts = Cart::content();
             $countries = Country::pluck('name', 'id');
@@ -64,10 +62,17 @@ class OrderController extends Controller
             OrderProduct::store($order_id);
             $subtotal = Cart::subtotal();
             Cart::destroy();
-            $order = Order::findOrFail($order_id);
-            return view('orders.orderInformation')
+            return redirect()->route('orderInformation',[
+                'order_id' => $order_id,
+                'subtotal' => $subtotal]);
+        }
+    }
+
+    public function orderInformation($order_id, $subtotal)
+    {
+        $order = Order::findOrFail($order_id);
+        return view('orders.orderInformation')
                 ->with('order', $order)
                 ->with('subtotal', $subtotal);
-        }
     }
 }

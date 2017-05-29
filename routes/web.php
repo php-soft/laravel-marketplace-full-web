@@ -27,6 +27,7 @@ Route::post('/cart/{rowId}/update', 'CartController@update')->name('cartUpdate')
 
 Route::get('/order/show', 'OrderController@show')->name('orderShow');
 Route::post('/order/store', 'OrderController@store')->name('orderStore');
+Route::get('/order/{order_id}/{subtotal}/orderInformation', 'OrderController@orderInformation')->name('orderInformation');
 
 Route::get('/ajaxCity', 'CityController@select');
 Route::get('/ajaxDistrict', "DistrictController@select");

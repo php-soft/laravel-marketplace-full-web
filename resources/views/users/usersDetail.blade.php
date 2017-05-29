@@ -38,18 +38,24 @@
                         {!! Form::label('address', 'Address') !!}
                         {{ $user->address }}
                     </div>
+                    @if (!empty($user->country))
                     <div class="form-group">
                         {!! Form::label('country', 'Country') !!}
                         {{ $user->country->name }}
                     </div>
+                    @endif
+                    @if (!empty($user->city))
                     <div class="form-group">
                         {!! Form::label('city', 'City') !!}
                         {{ $user->city->name }}
                     </div>
+                    @endif
+                    @if (!empty($user->district))
                     <div class="form-group">
                         {!! Form::label('district', 'District') !!}
                         {{ $user->district->name }}
                     </div>
+                    @endif
 
                 </form>
             </div>

@@ -27,7 +27,7 @@
                                     <td>{{ $shopimage->shop->name }}</td>
                                     <td>{{ $shopimage->image }}</td>
                                     <td class="text-right">
-                                        <a href="#"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                        <a href="{{ route('adminShopImagesEdit', ['id' => $shopimage->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
                                         <a href="#"><button class="btn btn-xs btn-danger">Delete</button></a>
                                     </td>
                                 </tr>

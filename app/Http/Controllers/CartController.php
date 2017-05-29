@@ -41,4 +41,12 @@ class CartController extends Controller
         Cart::update($rowId, $qty);
         return redirect()->route('cartShow');
     }
+
+    public function error($error)
+    {
+        $carts = Cart::content();
+        return view('carts.cart')
+            ->with('error', $error)
+            ->with('carts', $carts);
+    }
 }

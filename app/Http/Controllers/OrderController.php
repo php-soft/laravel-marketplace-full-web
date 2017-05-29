@@ -44,12 +44,7 @@ class OrderController extends Controller
 
         if (Cart::count() == 0) {
             $error = "Cart is empty! Please add products.";
-            $carts = Cart::content();
-            $countries = Country::pluck('name', 'id');
-            return view('carts.cart')
-                ->with('carts', $carts)
-                ->with('error', $error)
-                ->with('countries', $countries);
+            return redirect()->route('cartError', ['error' => $error]);
         } else {
             $order_id = mt_rand();
             $data = $request->all();

@@ -14,10 +14,11 @@ use Illuminate\Http\Request;
 
 class ShopsController extends Controller
 {
-	public function create()
+    public function create()
     {
         $types = Type::pluck('name', 'id');
-        $users = User::select('email')->where('id',Auth::user()->id)->first();
+        $users = User::select('email')
+            ->where('id', Auth::user()->id)->first();
         $cities = City::pluck('name', 'id');
         $countries = Country::pluck('name', 'id');
         $districts = District::pluck('name', 'id');

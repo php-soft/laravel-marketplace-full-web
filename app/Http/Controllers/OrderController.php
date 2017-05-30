@@ -51,16 +51,15 @@ class OrderController extends Controller
         }
         Order::insert($data);
         OrderProduct::store($order_id);
-        $subtotal = Cart::subtotal();
         Cart::destroy();
         return redirect()->route('orderInformation', [
-            'order_id' => $order_id,
-            'subtotal' => $subtotal]);
+            'order_id' => $order_id]);
     }
 
-    public function orderInformation($order_id, $subtotal)
+    public function orderInformation($order_id)
     {
         $order = Order::findOrFail($order_id);
+        $subtotal = $order->subtotal();
         return view('orders.orderInformation')
                 ->with('order', $order)
                 ->with('subtotal', $subtotal);

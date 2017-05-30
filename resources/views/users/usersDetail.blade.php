@@ -61,5 +61,29 @@
             </div>
         </div>
     </div>
+    <div>
+        <h3>Orders list</h3>
+        <table class="table table-striped">
+                <tr>
+                    <td>Order id</td>
+                    <td>Date order</td>
+                    <td>Item</td>
+                    <td>Subtotal</td>
+                    <td>Status</td>
+                    <td>Detail</td>
+                </tr>
+            @foreach ($user->orders as $order)
+                <tr>
+                    <td>
+                    {{ $order->id }}</td>
+                    <td>{{ $order->create_at }}</td>
+                    <td>{{ $order->items() }}</td>
+                    <td>{{ $order->subtotal() }}</td>
+                    <td>{{ $order->statusText() }}</td>
+                    <td><a href="{{ route('orderInformation', ['order_id' => $order->id]) }}">Detail Information</a></td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
 </div>
 @endsection

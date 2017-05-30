@@ -69,4 +69,22 @@ class Order extends Model
             return 'New';
         }
     }
+
+    public function subtotal()
+    {
+        $subtotal = 0;
+        foreach ($this->orderProducts as $orderProduct) {
+            $subtotal = $subtotal + $orderProduct->quantity * $orderProduct->price;
+        }
+        return number_format($subtotal);
+    }
+
+    public function items()
+    {
+        $items = 0;
+        foreach ($this->orderProducts as $orderProduct) {
+            $items = $items + $orderProduct->quantity;
+        }
+        return number_format($items);
+    }
 }

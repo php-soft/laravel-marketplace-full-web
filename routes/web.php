@@ -35,8 +35,11 @@ Route::get('/order/{order_id}', 'OrderController@orderInformation')
 Route::get('/ajaxCity', 'CityController@select');
 Route::get('/ajaxDistrict', "DistrictController@select");
 
-Route::get('/registerShops/create', 'ShopsController@create')->name('registerShopCreate');
-Route::post('/registerShops', 'ShopsController@store')->name('registerShopStore');
+Route::group([ 'middleware' => ['auth']], function () {
+
+    Route::get('/registerShops/create', 'ShopsController@create')->name('registerShopCreate');
+    Route::post('/registerShops', 'ShopsController@store')->name('registerShopStore');
+});
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'AdminController@index')->name('admin');

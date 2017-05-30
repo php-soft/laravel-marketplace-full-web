@@ -13,6 +13,7 @@ class Order extends Model
     const STATUS_RETURN = 4;
     const STATUS_DONE = 5;
 
+    public $timestamps = true;
     protected $fillable = [
         'user_id',
         'shipping_name',

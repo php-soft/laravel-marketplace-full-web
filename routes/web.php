@@ -110,6 +110,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');
+    Route::put('/orders/{id}/edit', 'OrderController@edit')->name('orderAdminEdit');
 
     Route::get('/roles', 'RoleController@index')->name('adminRoles');
     Route::get('/roles/{id}/edit', 'RoleController@edit')->name('adminRolesEdit');

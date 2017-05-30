@@ -17,6 +17,20 @@ class OrderController extends Controller
     public function show($id)
     {
         $order = Order::findOrFail($id);
-        return view('admin.orders.show')->with('order', $order);
+        $status = $order->status;
+        $total_amount = 0;
+        foreach ($order->orderProducts as $product) {
+            $amount = $product->price*$product->quantity;
+            $total_amount = $amount + $total_amount;
+        }
+        return view('admin.orders.show')->with('order', $order)->with('status', $status)->with('total_amount', $total_amount);
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $aa = $request->status;
+        $order = Order::findOrFail($id);
+        $order->update($request->all());
+        return redirect()->route('adminOrdersShow', ['id' => $id]);
     }
 }

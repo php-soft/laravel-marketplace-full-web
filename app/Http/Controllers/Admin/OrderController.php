@@ -31,7 +31,6 @@ class OrderController extends Controller
 
     public function edit(Request $request, $id)
     {
-        $aa = $request->status;
         $order = Order::findOrFail($id);
         $order->update($request->all());
         return redirect()->route('adminOrdersShow', ['id' => $id]);

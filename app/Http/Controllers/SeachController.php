@@ -9,14 +9,14 @@ class SeachController extends Controller
 {
     public function seach(Request $request)
     {
-        $key = $request->key;
-        $data = [];
+        $key = $request['key'];
+        $products = [];
         foreach (Product::all() as $product) {
             if (strpos($product->name, $key) > 0) {
-                $data[] = $product;
+                $products[] = $product;
             }
         }
-        return view('seach')
-            ->with('data', $data);
+        return view('seachs.seach')
+            ->with('products', $products);
     }
 }

@@ -47,11 +47,13 @@
                     </ul>
                     <form class="navbar-form navbar-left">
                         <div class="input-group input-seach">
-                            <input type="text" class="form-control" placeholder="Search">
+                            {{Form::open(['route'=>'seach'])}}
+                            <input type="text" name='key' class="form-control" placeholder="Search">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <i class="glyphicon glyphicon-search"></i>
                                 </button>
+                            {{ Form::close() }}
                             </div>
                         </div>
                     </form>

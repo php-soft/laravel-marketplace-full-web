@@ -32,6 +32,8 @@ Route::post('/order/store', 'OrderController@store')->name('orderStore');
 Route::get('/order/{order_id}/{subtotal}', 'OrderController@orderInformation')
     ->name('orderInformation');
 
+Route::post('/seach', 'SeachController@seach')->name('seach');
+
 Route::get('/ajaxCity', 'CityController@select');
 Route::get('/ajaxDistrict', "DistrictController@select");
 

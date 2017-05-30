@@ -99,6 +99,12 @@ class ShopController extends Controller
         }
         $shop = Shop::findOrFail($id);
         $shop->update($data);
-        return redirect('admin/shops');
+        return redirect('adminShops');
+    }
+
+    public function destroy($id)
+    {
+        Shop::destroy($id);
+        return redirect('adminShops');
     }
 }

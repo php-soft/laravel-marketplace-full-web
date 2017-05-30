@@ -27,4 +27,9 @@ class Product extends Model
     {
         return $this->hasMany('App\ProductImage');
     }
+
+    public static function seach($key)
+    {
+        return Product::where('name', 'like', '%' . $key . '%')->get();
+    }
 }

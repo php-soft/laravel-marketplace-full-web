@@ -32,7 +32,7 @@ Route::post('/order/store', 'OrderController@store')->name('orderStore');
 Route::get('/order/{order_id}', 'OrderController@orderInformation')
     ->name('orderInformation');
 
-Route::post('/seach', 'SeachController@seach')->name('seach');
+Route::post('/seach', 'SeachController@index')->name('seach');
 
 Route::get('/ajaxCity', 'CityController@select');
 Route::get('/ajaxDistrict', "DistrictController@select");

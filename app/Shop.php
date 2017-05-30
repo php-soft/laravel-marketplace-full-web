@@ -10,15 +10,15 @@ class Shop extends Model
     const STATUS_APPROVED = 1;
     const STATUS_BANNED = 2;
     protected $fillable = [
-    'name',
-    'user_id',
-    'type_id',
-    'city_id',
-    'district_id',
-    'country_id',
-    'description',
-    'image',
-    'status'
+        'name',
+        'user_id',
+        'type_id',
+        'city_id',
+        'district_id',
+        'country_id',
+        'description',
+        'image',
+        'status'
     ];
 
     public function products()

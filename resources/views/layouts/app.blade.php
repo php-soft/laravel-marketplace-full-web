@@ -89,7 +89,7 @@
                                 </ul>
                             </li>
                         @endif
-                        <li><a href="{{ '#' }}"><button class="btn btn-danger btn-xs">Shop Register</button></a></li>
+                        <li><a href="{{ route('registerShopCreate') }}"><button class="btn btn-danger btn-xs">Shop Register</button></a></li>
                     </ul>
                 </div>
             </div>

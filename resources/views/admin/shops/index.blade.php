@@ -41,7 +41,7 @@
                                     <td>{{ $shop->image }}</td>
                                     <td>{{ $shop->status }}</td>
                                     <td class="text-right">
-                                        <a href="#"><button class="btn btn-xs btn-primary">Edit</button></a>
+                                        <a href="{{ route('adminShopEdit', ['id' => $shop->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
                                         <a href="{{ route('adminShopsDelete', ['id' => $shop->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
                                     </td>
                                 </tr>

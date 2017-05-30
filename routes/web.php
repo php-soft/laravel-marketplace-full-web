@@ -29,13 +29,19 @@ Route::get('/cart/{error}', 'CartController@error')->name('cartError');
 
 Route::get('/order/show', 'OrderController@show')->name('orderShow');
 Route::post('/order/store', 'OrderController@store')->name('orderStore');
-Route::get('/order/{order_id}/{subtotal}', 'OrderController@orderInformation')
+Route::get('/order/{order_id}', 'OrderController@orderInformation')
     ->name('orderInformation');
 
 Route::post('/seach', 'SeachController@seach')->name('seach');
 
 Route::get('/ajaxCity', 'CityController@select');
 Route::get('/ajaxDistrict', "DistrictController@select");
+
+Route::group([ 'middleware' => ['auth']], function () {
+
+    Route::get('/registerShops/create', 'ShopsController@create')->name('registerShopCreate');
+    Route::post('/registerShops', 'ShopsController@store')->name('registerShopStore');
+});
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'AdminController@index')->name('admin');
@@ -81,6 +87,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::get('/shops', 'ShopController@index')->name('adminShops');
     Route::get('/shops/create', 'ShopController@create')->name('adminShopCreate');
     Route::post('/shops', 'ShopController@store')->name('adminShopStore');
+    Route::get('/shops/{id}/edit', 'ShopController@edit')->name('adminShopEdit');
+    Route::put('/shops/{id}', 'ShopController@update')->name('adminShopUpdate');
     Route::get('/shops/{id}/delete', 'ShopController@destroy')->name('adminShopsDelete');
 
     Route::get('/cities/create', 'CityController@create')->name('adminCitiesCreate');
@@ -112,6 +120,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
     Route::get('/orders', 'OrderController@index')->name('adminOrders');
     Route::get('/orders/{id}/show', 'OrderController@show')->name('adminOrdersShow');
+    Route::put('/orders/{id}/edit', 'OrderController@edit')->name('orderAdminEdit');
 
     Route::get('/roles', 'RoleController@index')->name('adminRoles');
     Route::get('/roles/{id}/edit', 'RoleController@edit')->name('adminRolesEdit');

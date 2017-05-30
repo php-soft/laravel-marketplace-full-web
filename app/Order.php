@@ -13,6 +13,7 @@ class Order extends Model
     const STATUS_RETURN = 4;
     const STATUS_DONE = 5;
 
+    public $timestamps = true;
     protected $fillable = [
         'user_id',
         'shipping_name',
@@ -67,5 +68,23 @@ class Order extends Model
         } else {
             return 'New';
         }
+    }
+
+    public function subtotal()
+    {
+        $subtotal = 0;
+        foreach ($this->orderProducts as $orderProduct) {
+            $subtotal = $subtotal + $orderProduct->quantity * $orderProduct->price;
+        }
+        return number_format($subtotal);
+    }
+
+    public function items()
+    {
+        $items = 0;
+        foreach ($this->orderProducts as $orderProduct) {
+            $items = $items + $orderProduct->quantity;
+        }
+        return number_format($items);
     }
 }

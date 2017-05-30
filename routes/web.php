@@ -31,7 +31,7 @@ Route::post('/order/store', 'OrderController@store')->name('orderStore');
 Route::get('/ajaxCity', 'CityController@select');
 Route::get('/ajaxDistrict', "DistrictController@select");
 
-Route::group([ 'middleware' => ['auth'] ] , function (){
+Route::group([ ‘middleware’ => ['auth']], function () {
 
     Route::get('/registerShops/create', 'ShopsController@create')->name('registerShopCreate');
     Route::post('/registerShops', 'ShopsController@store')->name('registerShopStore');

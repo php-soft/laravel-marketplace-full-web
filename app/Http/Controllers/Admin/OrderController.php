@@ -23,7 +23,10 @@ class OrderController extends Controller
             $amount = $product->price*$product->quantity;
             $total_amount = $amount + $total_amount;
         }
-        return view('admin.orders.show')->with('order', $order)->with('status', $status)->with('total_amount', $total_amount);
+        return view('admin.orders.show')
+            ->with('order', $order)
+            ->with('status', $status)
+            ->with('total_amount', $total_amount);
     }
 
     public function edit(Request $request, $id)

@@ -77,4 +77,13 @@ class Order extends Model
         }
         return number_format($subtotal);
     }
+
+    public function items()
+    {
+        $items = 0;
+        foreach ($this->orderProducts as $orderProduct) {
+            $items = $items + $orderProduct->quantity;
+        }
+        return number_format($items);
+    }
 }

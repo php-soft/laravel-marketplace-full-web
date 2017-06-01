@@ -32,6 +32,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {!! $countries->render() !!}
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@
                             </ul>
                         </div>
                     @endif
-                    {{ Form::open(['route' => 'adminUsersStore']) }}
+                    {{ Form::open(['route' => 'adminUsersStore', 'files' => true]) }}
                         
                         <div class="form-group">
                             {!! Form::label('avatar', 'Avatar:') !!}
@@ -32,6 +32,7 @@
                                 {{ Form::text('first_name', null, ['class'=>'form-control']) }}
                             </div>
                         </div>
+                        {{ Form::hidden('image') }}
 
                         <div class="form-group">
                             {!! Form::label('last_name', 'Last Name:') !!}
@@ -58,6 +59,20 @@
                             {!! Form::label('address', 'Address:') !!}
                             <div class="form-controls">
                                 {{ Form::text('address', null, ['class'=>'form-control']) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('email', 'Email:') !!}
+                            <div class="form-controls">
+                                {{ Form::text('email', null, ['class'=>'form-control']) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('password', 'Password:') !!}
+                            <div class="form-controls">
+                                {{ Form::password('password', null, ['class'=>'form-control']) }}
                             </div>
                         </div>
 

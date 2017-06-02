@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use App\Country;
 
 class CountriesTableSeeder extends Seeder
 {
@@ -11,8 +13,12 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('countries')->insert([
-            'name' => 'Việt Nam',
-        ]);
+        $faker = Faker\Factory::create();
+        foreach(range(1,50) as $index)
+        {
+            Country::create([
+                'name' => $faker->name,
+            ]);
+        }
     }
 }

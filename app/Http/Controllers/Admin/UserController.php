@@ -35,15 +35,21 @@ class UserController extends Controller
             'last_name' => 'required|unique:users|max:255',
             'phone_number' => 'required|unique:users|max:255',
             'date_of_birth' => 'required|unique:users|max:255',
-            'email' => 'required|unique:users|max:255',
-            'password' => 'required|unique:users|max:255',
             'address' => 'required|unique:users|max:255',
             'city_id' => 'required|numeric|exists:cities,id',
             'district_id' => 'required|numeric|exists:districts,id',
             'country_id' => 'required|numeric|exists:countries,id',
         ]);
 
-        User::create($request->all());
+        $data = $request->all();
+        $file = $request->file('photo');
+        if (!empty($file)) {
+            $data['image'] = str_slug(Carbon::now().'_'.$data['name'].'.'.$file->getClientOriginalExtension());
+            $file->move('upload', $data['image']);
+        } else {
+            $data['image'] = 'default.jpg';
+        }
+        User::create($data);
 
         return redirect()->route('adminUsers');
     }
@@ -68,16 +74,22 @@ class UserController extends Controller
             'last_name' => 'required|unique:users,last_name,'.$id,
             'phone_number' => 'required|unique:users,phone_number,'.$id,
             'date_of_birth' => 'required|unique:users,date_of_birth,'.$id,
-            'email' => 'required|unique:users,email,'.$id,
-            'password' => 'required|unique:users,password,'.$id,
             'address' => 'required|unique:users,address,'.$id,
             'city_id' => 'required|numeric|exists:cities,id',
             'district_id' => 'required|numeric|exists:districts,id',
             'country_id' => 'required|numeric|exists:countries,id',
         ]);
 
+        $data = $request->all();
+        $file = $request->file('photo');
+        if (!empty($file)) {
+            $data['image'] = str_slug(Carbon::now().'_'.$data['name'].'.'.$file->getClientOriginalExtension());
+            $file->move('upload', $data['image']);
+        } else {
+            $data['image'] = 'default.jpg';
+        }
         $user = User::findOrFail($id);
-        $user->update($request->all());
+        $user->update($data);
         
         return redirect()->route('adminUsers');
     }

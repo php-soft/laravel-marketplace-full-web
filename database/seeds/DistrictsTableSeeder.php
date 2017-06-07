@@ -13,13 +13,44 @@ class DistrictsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
-        foreach(range(1,50) as $index)
-        {
-            District::create([
-                'name' => $faker->name,
-                'city_id' => $faker->randomNumber
-            ]);
-        }
+        DB::table('districts')->insert([
+            'city_id' => 3,
+            'name' => 'Cẩm Lệ',
+        ]);
+
+        DB::table('districts')->insert([
+            'city_id' => 3,
+            'name' => 'Hải Châu',
+        ]);
+
+        DB::table('districts')->insert([
+            'city_id' => 3,
+            'name' => 'Hòa Vang',
+        ]);
+
+        DB::table('districts')->insert([
+            'city_id' => 3,
+            'name' => 'Hoàng Sa',
+        ]);
+
+        DB::table('districts')->insert([
+            'city_id' => 3,
+            'name' => 'Liên Chiểu',
+        ]);
+
+        DB::table('districts')->insert([
+            'city_id' => 3,
+            'name' => 'Ngũ Hành Sơn',
+        ]);
+
+        DB::table('districts')->insert([
+            'city_id' => 3,
+            'name' => 'Sơn Trà',
+        ]);
+        
+        DB::table('districts')->insert([
+            'city_id' => 3,
+            'name' => 'Thanh Khê',
+        ]);
     }
 }

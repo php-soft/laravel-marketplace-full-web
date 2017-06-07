@@ -11,7 +11,7 @@ class DistrictController extends Controller
 {
     public function index()
     {
-        $districts = District::all();
+        $districts = District::paginate(5);
         return view('admin.districts.index')->with('districts', $districts);
     }
 

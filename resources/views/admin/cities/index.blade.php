@@ -25,9 +25,7 @@
                                 <tr>
                                     <td>{{ $city->id }}</td>
                                     <td>{{ $city->name }}</td>
-                                    @if (!empty($city->country))
                                     <td>{{ $city->country->name }}</td>
-                                    @endif
                                     <td class="text-right">
                                       <a href="{{ route('adminCitiesEdit', ['id' => $city->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
                                       <a href="{{ route('adminCitiesDelete', ['id' => $city->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
@@ -36,7 +34,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {!! $cities->render() !!}
                 </div>
             </div>
         </div>

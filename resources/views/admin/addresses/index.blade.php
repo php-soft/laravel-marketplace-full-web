@@ -33,9 +33,15 @@
                                     <td>{{ $address->street }}</td>
                                     <td>{{ $address->zip_code }}</td>
                                     <td>{{ $address->phone_number }}</td>
+                                    @if (!empty($address->district))
                                     <td>{{ $address->district->name }}</td>
+                                    @endif
+                                    @if (!empty($address->city))
                                     <td>{{ $address->city->name }}</td>
+                                    @endif
+                                    @if (!empty($address->country))
                                     <td>{{ $address->country->name }}</td>
+                                    @endif
                                     <td class="text-right">
                                         <a href="{{ route('adminAddressesEdit', ['id' => $address->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
                                         <a href="{{ route('adminAddressesDelete', ['id' => $address->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
@@ -44,6 +50,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {!! $addresses->render() !!}
                 </div>
             </div>
         </div>

@@ -32,6 +32,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {!! $types->render() !!}
                 </div>
             </div>
         </div>

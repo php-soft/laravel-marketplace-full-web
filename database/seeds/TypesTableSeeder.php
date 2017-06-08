@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use App\Type;
 
 class TypesTableSeeder extends Seeder
 {
@@ -11,8 +13,12 @@ class TypesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('types')->insert([
-            'name' => 'Điện tử',
-        ]);
+        $faker = Faker\Factory::create();
+        foreach(range(1,50) as $index)
+        {
+            Type::create([
+                'name' => $faker->name,
+            ]);
+        }
     }
 }

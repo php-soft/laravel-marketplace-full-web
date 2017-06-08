@@ -37,3 +37,12 @@ $factory->define(App\City::class, function (Faker\Generator $faker) {
         }
     ];
 });
+
+$factory->define(App\District::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'city_id' => function () {
+            return factory(App\City::class)->create()->id;
+        }
+    ];
+});

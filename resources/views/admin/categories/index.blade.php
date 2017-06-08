@@ -25,7 +25,9 @@
                                 <tr>
                                     <td>{{ $category->id }}</td>
                                     <td>{{ $category->name }}</td>
+                                    @if (!empty($category->type))
                                     <td>{{ $category->type->name }}</td>
+                                    @endif
                                     <td class="text-right">
                                       <a href="{{ route('adminCategoriesEdit', ['id' => $category->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
                                       <a href="{{ route('adminCategoriesDelete', ['id' => $category->id] ) }}"><button class="btn btn-xs btn-primary">Delete</button></a>
@@ -34,6 +36,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {!! $categories->render() !!}
                 </div>
             </div>
         </div>

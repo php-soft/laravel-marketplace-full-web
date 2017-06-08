@@ -25,7 +25,9 @@
                                 <tr>
                                     <td>{{ $district->id }}</td>
                                     <td>{{ $district->name }}</td>
+                                    @if (!empty($district->city))
                                     <td>{{ $district->city->name }}</td>
+                                    @endif
                                     <td class="text-right">
                                         <a href="{{ route('adminDistrictsEdit', ['id' => $district->id] ) }}"><button class="btn btn-xs btn-primary">Edit</button></a>
                                         <a href="{{ route('adminDistrictsDelete', ['id' => $district->id] ) }}" ><button class="btn btn-xs btn-danger">Delete</button></a>
@@ -34,6 +36,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {!! $districts->render() !!}
                 </div>
             </div>
         </div>

@@ -7,8 +7,8 @@ use Elasticquent\ElasticquentTrait;
 
 class Role extends Model
 {
-	use ElasticquentTrait;
-	
+    use ElasticquentTrait;
+
     protected $fillable = ['name', 'description'];
 
     public function assignments()

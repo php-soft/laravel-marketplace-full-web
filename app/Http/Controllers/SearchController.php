@@ -10,9 +10,9 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        if($request->has('search')){
+        if ($request->has('search')) {
             $countries = Country::search($request->input('search'))->toArray();
         }
-        return view('CountrySearch',compact('countries'));
-    }     
+        return view('CountrySearch', compact('countries'));
+    }
 }

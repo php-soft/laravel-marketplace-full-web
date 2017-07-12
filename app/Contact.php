@@ -7,7 +7,7 @@ use Elasticquent\ElasticquentTrait;
 
 class Contact extends Model
 {
-	use ElasticquentTrait;
+    use ElasticquentTrait;
 
     protected $fillable = [
         'content',

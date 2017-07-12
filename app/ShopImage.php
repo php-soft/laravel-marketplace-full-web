@@ -7,7 +7,7 @@ use Elasticquent\ElasticquentTrait;
 
 class ShopImage extends Model
 {
-	use ElasticquentTrait;
+    use ElasticquentTrait;
 
     protected $fillable = [
         'shop_id',

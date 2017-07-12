@@ -1,42 +1,62 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="row">
-<div class="col-md-8 col-md-offset-2">
-    <h1 class="text-primary" style="text-align: center;">
-    Search Country</h1>
-</div>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laravel 5.3 - laravel scout algolia search example</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
 
 <div class="container">
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <div class="row">
-      <div class="col-lg-6">
-        {!! Form::open(array('method'=>'get','class'=>'')) !!}
-        <div class="input-group">
+    <h2>Laravel Full Text Search using Scout and algolia</h2>
 
-          <input name="search" value="{{ old('search') }}" type="text" class="form-control" placeholder="Search for...">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="submit">Go!</button>
-          </span>
 
-        </div><!-- /input-group -->
-        {!! Form::close() !!}
-      </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
-  </div>
-  <div class="panel-body">
-        <div class="row">
-            <div class="col-lg-6">
-                @if(!empty($countries))
-                    @foreach($countries as $key => $value)
-                        <h3 class="text-danger">{{ $value['name'] }}</h3>
-                    @endforeach
-                @endif
-            </div>
-        </div>
-  </div>
+    
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">Country</div>
+      <div class="panel-body">
+            <form method="GET" action="{{ route('Search') }}">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="namesearch" class="form-control" placeholder="Enter Name For Search Country" value="{{ old('namesearch') }}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button class="btn btn-success">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-bordered">
+                <thead>
+                    <th>Id</th>
+                    <th>Name</th>                    
+                </thead>
+                <tbody>
+                    @if($countries->count())
+                        @foreach($countries as $key => $country)
+                            <tr>
+                                <td>{{ ++$key }}</td>
+                                <td>{{ $country->name }}</td>
+                               
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="4">There are no data.</td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table>
+            {{ $countries->links() }}
+      </div>
+    </div>
+
 </div>
-</div>
-@endsection
+
+</body>
+</html>

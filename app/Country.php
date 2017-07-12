@@ -11,6 +11,11 @@ class Country extends Model
     
     protected $fillable = ['name'];
 
+    public function searchableAs()
+    {
+        return 'countries_index';
+    }
+
     public function orders()
     {
         return $this->hasMany('App\Order');

@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Elasticquent\ElasticquentTrait;
 
 class Address extends Model
 {
+    use ElasticquentTrait;
+    
     protected $fillable = [
         'user_id',
         'city_id',

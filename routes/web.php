@@ -13,6 +13,8 @@
 
 Auth::routes();
 
+Route::get('Search', 'SearchController@index')->name('Search');
+
 Route::get('/', 'HomeController@index');
 Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
 Route::get('/users/{id}', 'UserController@show')->name('usersDetail');

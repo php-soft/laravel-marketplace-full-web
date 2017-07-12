@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Elasticquent\ElasticquentTrait;
 
 class Product extends Model
 {
+    use ElasticquentTrait;
+    
     protected $fillable = ['name', 'description', 'price', 'quantity', 'image', 'category_id', 'shop_id'];
 
     public function category()

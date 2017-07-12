@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Elasticquent\ElasticquentTrait;
 
 class Order extends Model
 {
+    use ElasticquentTrait;
+    
     const STATUS_NEW = 0;
     const STATUS_CONFIRM = 1;
     const STATUS_PAYMENT = 2;

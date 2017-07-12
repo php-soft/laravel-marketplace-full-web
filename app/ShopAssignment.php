@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Elasticquent\ElasticquentTrait;
 
 class ShopAssignment extends Model
 {
+    use ElasticquentTrait;
+    
     protected $fillable = [
         'shop_id',
         'user_id',

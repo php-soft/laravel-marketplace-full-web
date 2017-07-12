@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Elasticquent\ElasticquentTrait;
 
 class Type extends Model
 {
+    use ElasticquentTrait;
+    
     protected $fillable = [
         'name',
     ];

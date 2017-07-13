@@ -3,12 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Elasticquent\ElasticquentTrait;
 
 class Shop extends Model
 {
-    use ElasticquentTrait;
-
     const STATUS_PENDING = 0;
     const STATUS_APPROVED = 1;
     const STATUS_BANNED = 2;

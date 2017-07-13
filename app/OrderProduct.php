@@ -4,12 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cart;
-use Elasticquent\ElasticquentTrait;
 
 class OrderProduct extends Model
 {
-    use ElasticquentTrait;
-
     protected $fillable = [
         'order_id',
         'product_id',

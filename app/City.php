@@ -3,12 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Elasticquent\ElasticquentTrait;
 
 class City extends Model
-{
-    use ElasticquentTrait;
-    
+{    
     protected $fillable = ['name', 'country_id'];
 
     public function orders()

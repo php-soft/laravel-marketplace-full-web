@@ -3,12 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Elasticquent\ElasticquentTrait;
 
 class Assignment extends Model
-{
-    use ElasticquentTrait;
-    
+{    
     protected $fillable = ['role_id', 'user_id',];
     
     public function role()

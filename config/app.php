@@ -167,7 +167,7 @@ return [
         App\Providers\ComposerServiceProvider::class,
         Elasticquent\ElasticquentServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
-
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -235,6 +235,7 @@ return [
         'Input' => Illuminate\Support\Facades\Input::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Es' => Elasticquent\ElasticquentElasticsearchFacade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         
     ],
 

@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
-{    
+{
     const STATUS_NEW = 0;
     const STATUS_CONFIRM = 1;
     const STATUS_PAYMENT = 2;

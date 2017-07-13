@@ -165,6 +165,9 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
+        Elasticquent\ElasticquentServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -229,11 +232,11 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
         'Input' => Illuminate\Support\Facades\Input::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
-
-
+        'Es' => Elasticquent\ElasticquentElasticsearchFacade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        
     ],
 
 ];

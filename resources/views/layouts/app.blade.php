@@ -44,15 +44,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
-                    </ul>
-                    <form class="navbar-form navbar-left">
+                    </ul>                    
+                    <form class="navbar-form navbar-left method="GET" action="{{ route('Search') }}">
                         <div class="input-group input-seach">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </div>
+                            <input type="text" name="search" class="form-control" placeholder="Enter Name For Search Country" value="{{ old('search') }}">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-default">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                           
                         </div>
                     </form>
 

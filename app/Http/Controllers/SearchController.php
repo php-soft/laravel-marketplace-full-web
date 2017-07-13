@@ -8,10 +8,10 @@ use App\Country;
 
 class SearchController extends Controller
 {
-    public function index(Request $request)
+    public function indexCountry(Request $request)
     {
-        if ($request->has('namesearch')) {
-            $countries = Country::search($request->namesearch)
+        if ($request->has('search')) {
+            $countries = Country::search($request->search)
                 ->paginate(6);
         } else {
             $countries = Country::paginate(6);

@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-Route::get('Search', 'SearchController@index')->name('Search');
+Route::get('search', 'SearchController@indexCountry')->name('Search');
 
 Route::get('/', 'HomeController@index');
 Route::get('/products/{id}', 'ProductController@show')->name('productsDetail');
